@@ -12,18 +12,22 @@ queue_out = sqs.get_queue_by_name(QueueName = 'OutputQueue')
 
 # Keep checking for new messages
 while True:
-    message = queue_in.receive_messages()
-    print(message.body)
     # Fetch from input queue
-        print(message.body)
+    message = queue_in.receive_messages()
 
-        # Fetch image from input S3 bucket using ID from input queue
+    if not message:
+        break
+    
+    message = message[0]
+    print(message.body)
 
-        # Trigger image classifier with fetched image
+    # Fetch image from input S3 bucket using ID from input queue
 
-        # Store result in output S3 bucket
+    # Trigger image classifier with fetched image
 
-        # Delete the message from the input queue
-        message.delete()
+    # Store result in output S3 bucket
+
+    # Delete the message from the input queue
+    message.delete()
 
 # Stop the instance
