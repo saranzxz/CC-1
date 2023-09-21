@@ -1,4 +1,5 @@
 import boto3
+from logger import log
 
 
 # Get SQS resource
@@ -17,9 +18,11 @@ while True:
 
     if not message:
         break
-    
+
     message = message[0]
-    print(message.body)
+    
+    # Log the message
+    log('DEBUG', message)
 
     # Fetch image from input S3 bucket using ID from input queue
 
