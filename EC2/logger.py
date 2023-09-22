@@ -8,5 +8,7 @@ logging.basicConfig(
     level = logging.DEBUG
 )
 
+logger = logging.getLogger()
+
 def log(level, message):
-    logging.debug('testtest')
+    logger.debug(message)
