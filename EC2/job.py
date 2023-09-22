@@ -3,6 +3,7 @@ from logger import log
 import re
 import subprocess
 from image_classification import predict
+import os
 
 def parseImageID(id):
     if re.match('^\w+.(jpg|jpeg|JPG|JPEG)$', id):
@@ -54,12 +55,17 @@ while True:
         # print(res.stdout)
         res = predict(id)
         print(res)
+        log('INFO', 'message: {} predicted as: {}'.format(id, res))
 
         # Store result in output S3 bucket
 
         # Delete the message from the input queue
         message.delete()
         log('INFO', 'message: {} deleted'.format(id))
+
+        # Delete locally stored image to save space
+        os.remove(id)
+        log('INFO', 'Locally saved file {} removed'.format(id))
     except Exception as e:
         # Delete message if any issue encountered
         log('ERROR', str(e))
