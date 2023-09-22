@@ -29,4 +29,4 @@ def predict(path):
     #save_name = f"({img_name}, {result})"
     save_name = f"{img_name},{result}"
     
-    return save_name
+    return save_name.split(',')[1]

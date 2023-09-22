@@ -42,7 +42,7 @@ while True:
         if id == -1:
             log('ERROR', 'Invalid ID obtained from input queue')
         
-        obj = s3.get_object(Bucket = 'output-bucket-zxz', Key = id)
+        obj = s3.get_object(Bucket = 'input-bucket-zxz', Key = id)
         img = obj['Body'].read()
         outfh = open(id, 'wb')
         outfh.write(img)
@@ -58,6 +58,7 @@ while True:
         log('INFO', 'message: {} predicted as: {}'.format(id, res))
 
         # Store result in output S3 bucket
+        s3.put_object(Bucket = 'output-bucket-zxz', Key = id.split('.')[0], Body = (id.split('.')[0], res))
 
         # Delete the message from the input queue
         message.delete()
