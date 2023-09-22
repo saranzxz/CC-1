@@ -25,7 +25,7 @@ def predict(path):
     with open('EC2/imagenet-labels.json') as f:
         labels = json.load(f)
     result = labels[np.array(predicted)[0]]
-    img_name = url.split("/")[-1]
+    img_name = path.split("/")[-1]
     #save_name = f"({img_name}, {result})"
     save_name = f"{img_name},{result}"
     
