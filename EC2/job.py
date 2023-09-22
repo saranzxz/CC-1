@@ -50,7 +50,7 @@ while True:
         # Trigger image classifier with fetched image
         res = subprocess.run(['python3 ../image_classification.py {}'.format(id)], shell = True,\
         capture_output = True, text = True)
-        print(res)
+        print(res.stdout)
 
         # Store result in output S3 bucket
 
