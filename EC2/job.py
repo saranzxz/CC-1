@@ -16,7 +16,7 @@ def parseImageID(id):
 # Get resources
 sqs = boto3.resource('sqs', region_name = 'us-east-1')
 s3 = boto3.client('s3')
-ec2 = boto3.client('ec2')
+ec2 = boto3.client('ec2', region_name = 'us-east-1')
 
 
 # Get input queue
