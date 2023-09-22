@@ -4,6 +4,7 @@ import re
 import subprocess
 from image_classification import predict
 import os
+from ec2_metadata import ec2_metadata
 
 def parseImageID(id):
     if re.match('^\w+.(jpg|jpeg|JPG|JPEG)$', id):
@@ -15,6 +16,7 @@ def parseImageID(id):
 # Get resources
 sqs = boto3.resource('sqs', region_name = 'us-east-1')
 s3 = boto3.client('s3')
+ec2 = boto3.client('ec2')
 
 
 # Get input queue
@@ -76,3 +78,4 @@ while True:
         log('INFO', 'message: {} deleted'.format(id))
 
 # Stop the instance
+ec2.stop_instances(InstanceIds = [ec2_metadata.instance_id], DryRun = False)
