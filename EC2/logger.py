@@ -4,7 +4,7 @@ logging.basicConfig(
     filename = 'logs.txt',
     filemode = 'a',
     format = '%(asctime)s,%(msecs)d %(name)s %(levelname)s %(message)s',
-    dateFmt = '%H:%M:%S',
+    datefmt = '%H:%M:%S',
     level = logging.DEBUG
 )
 
