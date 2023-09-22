@@ -2,6 +2,7 @@ import boto3
 from logger import log
 import re
 import subprocess
+from image_classification import predict
 
 def parseImageID(id):
     if re.match('^\w+.(jpg|jpeg|JPG|JPEG)$', id):
@@ -48,9 +49,11 @@ while True:
 
 
         # Trigger image classifier with fetched image
-        res = subprocess.run(['python3 ../image_classification.py {}'.format(id)], shell = True,\
-        capture_output = True, text = True)
-        print(res.stdout)
+        # res = subprocess.run(['python3 ../image_classification.py {}'.format(id)], shell = True,\
+        # capture_output = True, text = True)
+        # print(res.stdout)
+        res = predict(id)
+        print(res)
 
         # Store result in output S3 bucket
 
