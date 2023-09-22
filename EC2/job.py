@@ -20,7 +20,7 @@ while True:
             break
 
         message = message[0]
-        log('DEBUG', message.body)
+        log('DEBUG', 'Message received from input queue: ' + message.body)
 
         # Fetch image from input S3 bucket using ID from input queue
 
@@ -30,8 +30,9 @@ while True:
 
         # Delete the message from the input queue
         message.delete()
-    except:
+    except Exception as e:
         # Delete message if any issue encountered
+        log('ERROR', e)
         message.delete()
 
 # Stop the instance
