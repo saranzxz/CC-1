@@ -41,7 +41,7 @@ while True:
         
         obj = s3.get_object(Bucket = 'output-bucket-zxz', Key = id)
         img = obj['Body'].read()
-        outfh = open(id, 'w')
+        outfh = open(id, 'wb')
         outfh.write(img)
         outfh.close()
 
