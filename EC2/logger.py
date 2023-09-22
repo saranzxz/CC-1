@@ -19,4 +19,4 @@ file = './EC2/logs.txt'
 def log(level, message):
     fh = open(file, 'a')
     fh.write(datetime.now().strftime("%d/%m/%Y %H:%M:%S") + '\t' + level + '\t' + message + '\n')
-    fh,close()
+    fh.close()
