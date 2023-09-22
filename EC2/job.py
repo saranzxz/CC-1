@@ -78,4 +78,4 @@ while True:
         log('INFO', 'message: {} deleted'.format(id))
 
 # Stop the instance
-ec2.stop_instances(InstanceIds = [ec2_metadata.instance_id], DryRun = False)
+#ec2.stop_instances(InstanceIds = [ec2_metadata.instance_id], DryRun = False)
