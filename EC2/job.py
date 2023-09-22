@@ -2,9 +2,9 @@ import boto3
 from logger import log
 import re
 
-def parseImageID(message):
-    if re.match('^\w+.(jpg|jpeg|JPG|JPEG)$', message):
-        return message
+def parseImageID(id):
+    if re.match('^\w+.(jpg|jpeg|JPG|JPEG)$', id):
+        return id
     else:
         return -1
 
@@ -34,7 +34,7 @@ while True:
         log('DEBUG', 'Message received from input queue: ' + message.body)
 
         # Fetch image from input S3 bucket using ID from input queue
-        id = parseImageID(message)
+        id = parseImageID(message.body)
 
         if id == -1:
             log('ERROR', 'Invalid ID obtained from input queue')
