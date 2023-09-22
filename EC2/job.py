@@ -60,6 +60,7 @@ while True:
         # Store result in output S3 bucket
         s3.put_object(Bucket = 'output-bucket-zxz', Key = id.split('.')[0],\
         Body = '({}, {})'.format(id.split('.')[0], res))
+        log('INFO', 'Saved result: ({}. {}) to output-bucket-zxz'.format(id.split('.')[0], res))
 
         # Delete the message from the input queue
         message.delete()
