@@ -9,4 +9,4 @@ logging.basicConfig(
 )
 
 def log(level, message):
-    logger.debug('testtest')
+    logging.debug('testtest')
