@@ -22,7 +22,7 @@ def predict(path):
     outputs = model(img_tensor)
     _, predicted = torch.max(outputs.data, 1)
 
-    with open('./imagenet-labels.json') as f:
+    with open('EC2/imagenet-labels.json') as f:
         labels = json.load(f)
     result = labels[np.array(predicted)[0]]
     img_name = url.split("/")[-1]

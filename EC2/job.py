@@ -59,9 +59,11 @@ while True:
 
         # Delete the message from the input queue
         message.delete()
+        log('INFO', 'message: {} deleted'.format(id))
     except Exception as e:
         # Delete message if any issue encountered
-        log('ERROR', e)
+        log('ERROR', str(e))
         message.delete()
+        log('INFO', 'message: {} deleted'.format(id))
 
 # Stop the instance
