@@ -58,7 +58,8 @@ while True:
         log('INFO', 'message: {} predicted as: {}'.format(id, res))
 
         # Store result in output S3 bucket
-        s3.put_object(Bucket = 'output-bucket-zxz', Key = id.split('.')[0], Body = (id.split('.')[0], res))
+        s3.put_object(Bucket = 'output-bucket-zxz', Key = id.split('.')[0],\
+        Body = b'({}, {})'.format(id.split('.')[0], res))
 
         # Delete the message from the input queue
         message.delete()
