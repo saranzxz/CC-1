@@ -1,0 +1,655 @@
+
+DEBUG:botocore.hooks:Changing event name from creating-client-class.iot-data to creating-client-class.iot-data-plane
+DEBUG:botocore.hooks:Changing event name from before-call.apigateway to before-call.api-gateway
+DEBUG:botocore.hooks:Changing event name from request-created.machinelearning.Predict to request-created.machine-learning.Predict
+DEBUG:botocore.hooks:Changing event name from before-parameter-build.autoscaling.CreateLaunchConfiguration to before-parameter-build.auto-scaling.CreateLaunchConfiguration
+DEBUG:botocore.hooks:Changing event name from before-parameter-build.route53 to before-parameter-build.route-53
+DEBUG:botocore.hooks:Changing event name from request-created.cloudsearchdomain.Search to request-created.cloudsearch-domain.Search
+DEBUG:botocore.hooks:Changing event name from docs.*.autoscaling.CreateLaunchConfiguration.complete-section to docs.*.auto-scaling.CreateLaunchConfiguration.complete-section
+DEBUG:botocore.hooks:Changing event name from before-parameter-build.logs.CreateExportTask to before-parameter-build.cloudwatch-logs.CreateExportTask
+DEBUG:botocore.hooks:Changing event name from docs.*.logs.CreateExportTask.complete-section to docs.*.cloudwatch-logs.CreateExportTask.complete-section
+DEBUG:botocore.hooks:Changing event name from before-parameter-build.cloudsearchdomain.Search to before-parameter-build.cloudsearch-domain.Search
+DEBUG:botocore.hooks:Changing event name from docs.*.cloudsearchdomain.Search.complete-section to docs.*.cloudsearch-domain.Search.complete-section
+DEBUG:botocore.loaders:Loading JSON file: /home/ubuntu/.local/lib/python3.10/site-packages/boto3/data/sqs/2012-11-05/resources-1.json
+DEBUG:botocore.utils:IMDS ENDPOINT: http://169.254.169.254/
+DEBUG:botocore.credentials:Looking for credentials via: env
+DEBUG:botocore.credentials:Looking for credentials via: assume-role
+DEBUG:botocore.credentials:Looking for credentials via: assume-role-with-web-identity
+DEBUG:botocore.credentials:Looking for credentials via: sso
+DEBUG:botocore.credentials:Looking for credentials via: shared-credentials-file
+DEBUG:botocore.credentials:Looking for credentials via: custom-process
+DEBUG:botocore.credentials:Looking for credentials via: config-file
+DEBUG:botocore.credentials:Looking for credentials via: ec2-credentials-file
+DEBUG:botocore.credentials:Looking for credentials via: boto-config
+DEBUG:botocore.credentials:Looking for credentials via: container-role
+DEBUG:botocore.credentials:Looking for credentials via: iam-role
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 169.254.169.254:80
+DEBUG:urllib3.connectionpool:http://169.254.169.254:80 "PUT /latest/api/token HTTP/1.1" 200 56
+DEBUG:urllib3.connectionpool:Resetting dropped connection: 169.254.169.254
+DEBUG:urllib3.connectionpool:http://169.254.169.254:80 "GET /latest/meta-data/iam/security-credentials/ HTTP/1.1" 200 14
+DEBUG:urllib3.connectionpool:Resetting dropped connection: 169.254.169.254
+DEBUG:urllib3.connectionpool:http://169.254.169.254:80 "GET /latest/meta-data/iam/security-credentials/EC2QueueAccess HTTP/1.1" 200 1582
+INFO:botocore.credentials:Found credentials from IAM Role: EC2QueueAccess
+DEBUG:botocore.loaders:Loading JSON file: /home/ubuntu/.local/lib/python3.10/site-packages/botocore/data/endpoints.json
+DEBUG:botocore.loaders:Loading JSON file: /home/ubuntu/.local/lib/python3.10/site-packages/botocore/data/sdk-default-configuration.json
+DEBUG:botocore.hooks:Event choose-service-name: calling handler <function handle_service_name_alias at 0x7f4aa51a3d90>
+DEBUG:botocore.loaders:Loading JSON file: /home/ubuntu/.local/lib/python3.10/site-packages/botocore/data/sqs/2012-11-05/service-2.json
+DEBUG:botocore.loaders:Loading JSON file: /home/ubuntu/.local/lib/python3.10/site-packages/botocore/data/sqs/2012-11-05/endpoint-rule-set-1.json.gz
+DEBUG:botocore.loaders:Loading JSON file: /home/ubuntu/.local/lib/python3.10/site-packages/botocore/data/partitions.json
+DEBUG:botocore.hooks:Event creating-client-class.sqs: calling handler <function add_generate_presigned_url at 0x7f4aa531e5f0>
+DEBUG:botocore.configprovider:Looking for endpoint for sqs via: environment_service
+DEBUG:botocore.configprovider:Looking for endpoint for sqs via: environment_global
+DEBUG:botocore.configprovider:Looking for endpoint for sqs via: config_service
+DEBUG:botocore.configprovider:Looking for endpoint for sqs via: config_global
+DEBUG:botocore.configprovider:No configured endpoint found.
+DEBUG:botocore.endpoint:Setting sqs timeout as (60, 60)
+DEBUG:botocore.loaders:Loading JSON file: /home/ubuntu/.local/lib/python3.10/site-packages/botocore/data/_retry.json
+DEBUG:botocore.client:Registering retry handlers for service: sqs
+DEBUG:boto3.resources.factory:Loading sqs:sqs
+DEBUG:boto3.resources.action:Calling sqs:get_queue_url with {'QueueName': 'InputQueue'}
+DEBUG:botocore.hooks:Event before-parameter-build.sqs.GetQueueUrl: calling handler <function generate_idempotent_uuid at 0x7f4aa51f1510>
+DEBUG:botocore.regions:Calling endpoint provider with parameters: {'Region': 'us-east-1', 'UseDualStack': False, 'UseFIPS': False}
+DEBUG:botocore.regions:Endpoint provider result: https://sqs.us-east-1.amazonaws.com
+DEBUG:botocore.hooks:Event before-call.sqs.GetQueueUrl: calling handler <function add_recursion_detection_header at 0x7f4aa51f11b0>
+DEBUG:botocore.hooks:Event before-call.sqs.GetQueueUrl: calling handler <function inject_api_version_header_if_needed at 0x7f4aa51f2d40>
+DEBUG:botocore.endpoint:Making request for OperationModel(name=GetQueueUrl) with params: {'url_path': '/', 'query_string': '', 'method': 'POST', 'headers': {'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8', 'User-Agent': 'Boto3/1.28.52 md/Botocore#1.31.52 ua/2.0 os/linux#6.2.0-1009-aws md/arch#x86_64 lang/python#3.10.12 md/pyimpl#CPython cfg/retry-mode#legacy Botocore/1.31.52 Resource'}, 'body': {'Action': 'GetQueueUrl', 'Version': '2012-11-05', 'QueueName': 'InputQueue'}, 'url': 'https://sqs.us-east-1.amazonaws.com/', 'context': {'client_region': 'us-east-1', 'client_config': <botocore.config.Config object at 0x7f4aa4f8e740>, 'has_streaming_input': False, 'auth_type': None}}
+DEBUG:botocore.hooks:Event request-created.sqs.GetQueueUrl: calling handler <bound method RequestSigner.handler of <botocore.signers.RequestSigner object at 0x7f4aa4f8d000>>
+DEBUG:botocore.hooks:Event choose-signer.sqs.GetQueueUrl: calling handler <function set_operation_specific_signer at 0x7f4aa51f13f0>
+DEBUG:botocore.auth:Calculating signature using v4 auth.
+DEBUG:botocore.auth:CanonicalRequest:
+POST
+/
+
+content-type:application/x-www-form-urlencoded; charset=utf-8
+host:sqs.us-east-1.amazonaws.com
+x-amz-date:20230922T015313Z
+x-amz-security-token:IQoJb3JpZ2luX2VjEBIaCXVzLWVhc3QtMSJHMEUCIQC7qUE5bYV4NTLDCNsztZfS+p3VBwtpyw2GTSUipTjaVQIgKwn8cXWhQxiApiVUmW0HvY5B9cK6RCspzkCtcUBbgl4qwwUI+///////////ARAAGgw4MDA2NTM5MzY2MDQiDFkZBOAhw3e68VR16CqXBaWaVwgUQkxt/PZNBVmXOjWjVATXeJ3aEypYD6zvXziQo2+TcuMEUaxzdiQ/wk+XznOjC9f/2rs00iPoTuUwGbUy6RuUXCeX2Ndc1+oJS+wT9tvy8qw5EQOeZTglqaCwK6Dx5t8PLRimXgM7qBonYrbT1oQSINLXtd+6Up5gMnWgB1jezaELkxP8zeUqBfI2VOyik8nXUeCpwbDRyQ/1C7bQV66uv/1/zT0pT2IE1x9Va0IKT38Y8F3Nd/ITRDFzplgAhT8NvkhpIMoXotO8DG1nIQbhgJSr4Mn7XFijFoO+f4t8GiLw1LBvqid54Uv8NmoDdtSWaZfyWUuaR+o6hOVtM6AltmR4qRTPMze3CrEvUKVMclKph00rhKMUZdS+qSUbNGU5d6D+OGXXUP+0ec4q/8j7dVXcjzq0Y4qIQ9y7u+XD7fwf1p9MsOJtMzMOPIV+4NJTXes3zbzEW3fivB7hqoR68Im0fN/0ZigPRrlJEG+9MsmIdWA2VamXsgu7cwjk8hxIYp2g0r6FNb3E45cBxoaRLsRTOdMs8tI2CUxKCG6IVytvn+gMEuD3fV+CfSyUd0dXOx0I5rYELrGAPo+hivVNaoNBTSWyb44F0phs+Kv5eNZ0ssu77tyHap6SSRY2HXjaND2aScABHcX8tSJ+vEga0SpxK8cpIWAtuCyFAml+wNJR+UFccSRzJo1og007WsZq8/TEBzZbzoQP5zLyzW3xzDSg3IXXi6wunocqhaqeeL+cLJbngFa2/HHqedjXnk2SfDia/p4U02blKvodDAFF5Jhq6S731ibVHV5iZoQOeuK/D4MZYmu/s/gHwaqVw8iUMyhs3pp7+TZsMqXNdarMwLhL0G0s6/HL8c+kVjbKukkJ3DCm4rOoBjqxAdpLFYHyiDGDGRvAs3/9fOPTu2DP3rgWxWVNPq5rEIexBDe3WRrTBDfTWweyXlJu3Y4K7whbnXgYKnMdqw2brAE9UmStqkz9pisAkDdCpBPpKYL4BwN6PHxgXzUCt1g+x0xhk4skBqR83nsuhtMQyeTCiYcZdTWSpdmKPXTMcr/Mt2JBPGwc3d9bbeyFeWiQDaL/2DXhLJ1NG/k5bZU5zpivCYC3gtxtDa04wWl+EYVV6A==
+
+content-type;host;x-amz-date;x-amz-security-token
+0ccec10b0678da7506ec2efd52da5ba99b24c857304ad773957ba9aea0097f7e
+DEBUG:botocore.auth:StringToSign:
+AWS4-HMAC-SHA256
+20230922T015313Z
+20230922/us-east-1/sqs/aws4_request
+0a16fc51285cf7465df418dee4a3b66066bbc550449ea04bd3a683cc01b55f09
+DEBUG:botocore.auth:Signature:
+c9a8c19682ea15252311813ad1d1f1d959ea3bc11283895620ee80498e4cc897
+DEBUG:botocore.hooks:Event request-created.sqs.GetQueueUrl: calling handler <function add_retry_headers at 0x7f4aa51f3400>
+DEBUG:botocore.endpoint:Sending http request: <AWSPreparedRequest stream_output=False, method=POST, url=https://sqs.us-east-1.amazonaws.com/, headers={'Content-Type': b'application/x-www-form-urlencoded; charset=utf-8', 'User-Agent': b'Boto3/1.28.52 md/Botocore#1.31.52 ua/2.0 os/linux#6.2.0-1009-aws md/arch#x86_64 lang/python#3.10.12 md/pyimpl#CPython cfg/retry-mode#legacy Botocore/1.31.52 Resource', 'X-Amz-Date': b'20230922T015313Z', 'X-Amz-Security-Token': b'IQoJb3JpZ2luX2VjEBIaCXVzLWVhc3QtMSJHMEUCIQC7qUE5bYV4NTLDCNsztZfS+p3VBwtpyw2GTSUipTjaVQIgKwn8cXWhQxiApiVUmW0HvY5B9cK6RCspzkCtcUBbgl4qwwUI+///////////ARAAGgw4MDA2NTM5MzY2MDQiDFkZBOAhw3e68VR16CqXBaWaVwgUQkxt/PZNBVmXOjWjVATXeJ3aEypYD6zvXziQo2+TcuMEUaxzdiQ/wk+XznOjC9f/2rs00iPoTuUwGbUy6RuUXCeX2Ndc1+oJS+wT9tvy8qw5EQOeZTglqaCwK6Dx5t8PLRimXgM7qBonYrbT1oQSINLXtd+6Up5gMnWgB1jezaELkxP8zeUqBfI2VOyik8nXUeCpwbDRyQ/1C7bQV66uv/1/zT0pT2IE1x9Va0IKT38Y8F3Nd/ITRDFzplgAhT8NvkhpIMoXotO8DG1nIQbhgJSr4Mn7XFijFoO+f4t8GiLw1LBvqid54Uv8NmoDdtSWaZfyWUuaR+o6hOVtM6AltmR4qRTPMze3CrEvUKVMclKph00rhKMUZdS+qSUbNGU5d6D+OGXXUP+0ec4q/8j7dVXcjzq0Y4qIQ9y7u+XD7fwf1p9MsOJtMzMOPIV+4NJTXes3zbzEW3fivB7hqoR68Im0fN/0ZigPRrlJEG+9MsmIdWA2VamXsgu7cwjk8hxIYp2g0r6FNb3E45cBxoaRLsRTOdMs8tI2CUxKCG6IVytvn+gMEuD3fV+CfSyUd0dXOx0I5rYELrGAPo+hivVNaoNBTSWyb44F0phs+Kv5eNZ0ssu77tyHap6SSRY2HXjaND2aScABHcX8tSJ+vEga0SpxK8cpIWAtuCyFAml+wNJR+UFccSRzJo1og007WsZq8/TEBzZbzoQP5zLyzW3xzDSg3IXXi6wunocqhaqeeL+cLJbngFa2/HHqedjXnk2SfDia/p4U02blKvodDAFF5Jhq6S731ibVHV5iZoQOeuK/D4MZYmu/s/gHwaqVw8iUMyhs3pp7+TZsMqXNdarMwLhL0G0s6/HL8c+kVjbKukkJ3DCm4rOoBjqxAdpLFYHyiDGDGRvAs3/9fOPTu2DP3rgWxWVNPq5rEIexBDe3WRrTBDfTWweyXlJu3Y4K7whbnXgYKnMdqw2brAE9UmStqkz9pisAkDdCpBPpKYL4BwN6PHxgXzUCt1g+x0xhk4skBqR83nsuhtMQyeTCiYcZdTWSpdmKPXTMcr/Mt2JBPGwc3d9bbeyFeWiQDaL/2DXhLJ1NG/k5bZU5zpivCYC3gtxtDa04wWl+EYVV6A==', 'Authorization': b'AWS4-HMAC-SHA256 Credential=ASIA3U2VRQ7OJOLN2SAT/20230922/us-east-1/sqs/aws4_request, SignedHeaders=content-type;host;x-amz-date;x-amz-security-token, Signature=c9a8c19682ea15252311813ad1d1f1d959ea3bc11283895620ee80498e4cc897', 'amz-sdk-invocation-id': b'6cdf3cfc-496c-454c-babc-c224dc150185', 'amz-sdk-request': b'attempt=1', 'Content-Length': '58'}>
+DEBUG:botocore.httpsession:Certificate path: /etc/ssl/certs/ca-certificates.crt
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): sqs.us-east-1.amazonaws.com:443
+DEBUG:urllib3.connectionpool:https://sqs.us-east-1.amazonaws.com:443 "POST / HTTP/1.1" 200 330
+DEBUG:botocore.parsers:Response headers: {'x-amzn-RequestId': '199d22c1-e9a5-53c0-bcf2-7f471c6ce022', 'Date': 'Fri, 22 Sep 2023 01:53:13 GMT', 'Content-Type': 'text/xml', 'Content-Length': '330', 'connection': 'keep-alive'}
+DEBUG:botocore.parsers:Response body:
+b'<?xml version="1.0"?><GetQueueUrlResponse xmlns="http://queue.amazonaws.com/doc/2012-11-05/"><GetQueueUrlResult><QueueUrl>https://sqs.us-east-1.amazonaws.com/800653936604/InputQueue</QueueUrl></GetQueueUrlResult><ResponseMetadata><RequestId>199d22c1-e9a5-53c0-bcf2-7f471c6ce022</RequestId></ResponseMetadata></GetQueueUrlResponse>'
+DEBUG:botocore.hooks:Event needs-retry.sqs.GetQueueUrl: calling handler <botocore.retryhandler.RetryHandler object at 0x7f4aa4f8fcd0>
+DEBUG:botocore.retryhandler:No retry needed.
+DEBUG:boto3.resources.action:Response: {'QueueUrl': 'https://sqs.us-east-1.amazonaws.com/800653936604/InputQueue', 'ResponseMetadata': {'RequestId': '199d22c1-e9a5-53c0-bcf2-7f471c6ce022', 'HTTPStatusCode': 200, 'HTTPHeaders': {'x-amzn-requestid': '199d22c1-e9a5-53c0-bcf2-7f471c6ce022', 'date': 'Fri, 22 Sep 2023 01:53:13 GMT', 'content-type': 'text/xml', 'content-length': '330', 'connection': 'keep-alive'}, 'RetryAttempts': 0}}
+DEBUG:boto3.resources.factory:Loading sqs:Queue
+DEBUG:boto3.resources.action:Calling sqs:get_queue_url with {'QueueName': 'OutputQueue'}
+DEBUG:botocore.hooks:Event before-parameter-build.sqs.GetQueueUrl: calling handler <function generate_idempotent_uuid at 0x7f4aa51f1510>
+DEBUG:botocore.regions:Calling endpoint provider with parameters: {'Region': 'us-east-1', 'UseDualStack': False, 'UseFIPS': False}
+DEBUG:botocore.regions:Endpoint provider result: https://sqs.us-east-1.amazonaws.com
+DEBUG:botocore.hooks:Event before-call.sqs.GetQueueUrl: calling handler <function add_recursion_detection_header at 0x7f4aa51f11b0>
+DEBUG:botocore.hooks:Event before-call.sqs.GetQueueUrl: calling handler <function inject_api_version_header_if_needed at 0x7f4aa51f2d40>
+DEBUG:botocore.endpoint:Making request for OperationModel(name=GetQueueUrl) with params: {'url_path': '/', 'query_string': '', 'method': 'POST', 'headers': {'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8', 'User-Agent': 'Boto3/1.28.52 md/Botocore#1.31.52 ua/2.0 os/linux#6.2.0-1009-aws md/arch#x86_64 lang/python#3.10.12 md/pyimpl#CPython cfg/retry-mode#legacy Botocore/1.31.52 Resource'}, 'body': {'Action': 'GetQueueUrl', 'Version': '2012-11-05', 'QueueName': 'OutputQueue'}, 'url': 'https://sqs.us-east-1.amazonaws.com/', 'context': {'client_region': 'us-east-1', 'client_config': <botocore.config.Config object at 0x7f4aa4f8e740>, 'has_streaming_input': False, 'auth_type': None}}
+DEBUG:botocore.hooks:Event request-created.sqs.GetQueueUrl: calling handler <bound method RequestSigner.handler of <botocore.signers.RequestSigner object at 0x7f4aa4f8d000>>
+DEBUG:botocore.hooks:Event choose-signer.sqs.GetQueueUrl: calling handler <function set_operation_specific_signer at 0x7f4aa51f13f0>
+DEBUG:botocore.auth:Calculating signature using v4 auth.
+DEBUG:botocore.auth:CanonicalRequest:
+POST
+/
+
+content-type:application/x-www-form-urlencoded; charset=utf-8
+host:sqs.us-east-1.amazonaws.com
+x-amz-date:20230922T015313Z
+x-amz-security-token:IQoJb3JpZ2luX2VjEBIaCXVzLWVhc3QtMSJHMEUCIQC7qUE5bYV4NTLDCNsztZfS+p3VBwtpyw2GTSUipTjaVQIgKwn8cXWhQxiApiVUmW0HvY5B9cK6RCspzkCtcUBbgl4qwwUI+///////////ARAAGgw4MDA2NTM5MzY2MDQiDFkZBOAhw3e68VR16CqXBaWaVwgUQkxt/PZNBVmXOjWjVATXeJ3aEypYD6zvXziQo2+TcuMEUaxzdiQ/wk+XznOjC9f/2rs00iPoTuUwGbUy6RuUXCeX2Ndc1+oJS+wT9tvy8qw5EQOeZTglqaCwK6Dx5t8PLRimXgM7qBonYrbT1oQSINLXtd+6Up5gMnWgB1jezaELkxP8zeUqBfI2VOyik8nXUeCpwbDRyQ/1C7bQV66uv/1/zT0pT2IE1x9Va0IKT38Y8F3Nd/ITRDFzplgAhT8NvkhpIMoXotO8DG1nIQbhgJSr4Mn7XFijFoO+f4t8GiLw1LBvqid54Uv8NmoDdtSWaZfyWUuaR+o6hOVtM6AltmR4qRTPMze3CrEvUKVMclKph00rhKMUZdS+qSUbNGU5d6D+OGXXUP+0ec4q/8j7dVXcjzq0Y4qIQ9y7u+XD7fwf1p9MsOJtMzMOPIV+4NJTXes3zbzEW3fivB7hqoR68Im0fN/0ZigPRrlJEG+9MsmIdWA2VamXsgu7cwjk8hxIYp2g0r6FNb3E45cBxoaRLsRTOdMs8tI2CUxKCG6IVytvn+gMEuD3fV+CfSyUd0dXOx0I5rYELrGAPo+hivVNaoNBTSWyb44F0phs+Kv5eNZ0ssu77tyHap6SSRY2HXjaND2aScABHcX8tSJ+vEga0SpxK8cpIWAtuCyFAml+wNJR+UFccSRzJo1og007WsZq8/TEBzZbzoQP5zLyzW3xzDSg3IXXi6wunocqhaqeeL+cLJbngFa2/HHqedjXnk2SfDia/p4U02blKvodDAFF5Jhq6S731ibVHV5iZoQOeuK/D4MZYmu/s/gHwaqVw8iUMyhs3pp7+TZsMqXNdarMwLhL0G0s6/HL8c+kVjbKukkJ3DCm4rOoBjqxAdpLFYHyiDGDGRvAs3/9fOPTu2DP3rgWxWVNPq5rEIexBDe3WRrTBDfTWweyXlJu3Y4K7whbnXgYKnMdqw2brAE9UmStqkz9pisAkDdCpBPpKYL4BwN6PHxgXzUCt1g+x0xhk4skBqR83nsuhtMQyeTCiYcZdTWSpdmKPXTMcr/Mt2JBPGwc3d9bbeyFeWiQDaL/2DXhLJ1NG/k5bZU5zpivCYC3gtxtDa04wWl+EYVV6A==
+
+content-type;host;x-amz-date;x-amz-security-token
+e34c9a41733b1a5a48016c390dd3c065aa2f5129b60229bbfb6f005ce1afc443
+DEBUG:botocore.auth:StringToSign:
+AWS4-HMAC-SHA256
+20230922T015313Z
+20230922/us-east-1/sqs/aws4_request
+6f48e62a03570f476995faa0a64be0f7d1725876797ae04c2f81350cc686a3fe
+DEBUG:botocore.auth:Signature:
+95159f8a20ecc8b1bf8c257d523a5864b5b14f00ca45131f320ddad1da718aea
+DEBUG:botocore.hooks:Event request-created.sqs.GetQueueUrl: calling handler <function add_retry_headers at 0x7f4aa51f3400>
+DEBUG:botocore.endpoint:Sending http request: <AWSPreparedRequest stream_output=False, method=POST, url=https://sqs.us-east-1.amazonaws.com/, headers={'Content-Type': b'application/x-www-form-urlencoded; charset=utf-8', 'User-Agent': b'Boto3/1.28.52 md/Botocore#1.31.52 ua/2.0 os/linux#6.2.0-1009-aws md/arch#x86_64 lang/python#3.10.12 md/pyimpl#CPython cfg/retry-mode#legacy Botocore/1.31.52 Resource', 'X-Amz-Date': b'20230922T015313Z', 'X-Amz-Security-Token': b'IQoJb3JpZ2luX2VjEBIaCXVzLWVhc3QtMSJHMEUCIQC7qUE5bYV4NTLDCNsztZfS+p3VBwtpyw2GTSUipTjaVQIgKwn8cXWhQxiApiVUmW0HvY5B9cK6RCspzkCtcUBbgl4qwwUI+///////////ARAAGgw4MDA2NTM5MzY2MDQiDFkZBOAhw3e68VR16CqXBaWaVwgUQkxt/PZNBVmXOjWjVATXeJ3aEypYD6zvXziQo2+TcuMEUaxzdiQ/wk+XznOjC9f/2rs00iPoTuUwGbUy6RuUXCeX2Ndc1+oJS+wT9tvy8qw5EQOeZTglqaCwK6Dx5t8PLRimXgM7qBonYrbT1oQSINLXtd+6Up5gMnWgB1jezaELkxP8zeUqBfI2VOyik8nXUeCpwbDRyQ/1C7bQV66uv/1/zT0pT2IE1x9Va0IKT38Y8F3Nd/ITRDFzplgAhT8NvkhpIMoXotO8DG1nIQbhgJSr4Mn7XFijFoO+f4t8GiLw1LBvqid54Uv8NmoDdtSWaZfyWUuaR+o6hOVtM6AltmR4qRTPMze3CrEvUKVMclKph00rhKMUZdS+qSUbNGU5d6D+OGXXUP+0ec4q/8j7dVXcjzq0Y4qIQ9y7u+XD7fwf1p9MsOJtMzMOPIV+4NJTXes3zbzEW3fivB7hqoR68Im0fN/0ZigPRrlJEG+9MsmIdWA2VamXsgu7cwjk8hxIYp2g0r6FNb3E45cBxoaRLsRTOdMs8tI2CUxKCG6IVytvn+gMEuD3fV+CfSyUd0dXOx0I5rYELrGAPo+hivVNaoNBTSWyb44F0phs+Kv5eNZ0ssu77tyHap6SSRY2HXjaND2aScABHcX8tSJ+vEga0SpxK8cpIWAtuCyFAml+wNJR+UFccSRzJo1og007WsZq8/TEBzZbzoQP5zLyzW3xzDSg3IXXi6wunocqhaqeeL+cLJbngFa2/HHqedjXnk2SfDia/p4U02blKvodDAFF5Jhq6S731ibVHV5iZoQOeuK/D4MZYmu/s/gHwaqVw8iUMyhs3pp7+TZsMqXNdarMwLhL0G0s6/HL8c+kVjbKukkJ3DCm4rOoBjqxAdpLFYHyiDGDGRvAs3/9fOPTu2DP3rgWxWVNPq5rEIexBDe3WRrTBDfTWweyXlJu3Y4K7whbnXgYKnMdqw2brAE9UmStqkz9pisAkDdCpBPpKYL4BwN6PHxgXzUCt1g+x0xhk4skBqR83nsuhtMQyeTCiYcZdTWSpdmKPXTMcr/Mt2JBPGwc3d9bbeyFeWiQDaL/2DXhLJ1NG/k5bZU5zpivCYC3gtxtDa04wWl+EYVV6A==', 'Authorization': b'AWS4-HMAC-SHA256 Credential=ASIA3U2VRQ7OJOLN2SAT/20230922/us-east-1/sqs/aws4_request, SignedHeaders=content-type;host;x-amz-date;x-amz-security-token, Signature=95159f8a20ecc8b1bf8c257d523a5864b5b14f00ca45131f320ddad1da718aea', 'amz-sdk-invocation-id': b'63d9e78a-abc8-4879-8541-e840ab631732', 'amz-sdk-request': b'attempt=1', 'Content-Length': '59'}>
+DEBUG:botocore.httpsession:Certificate path: /etc/ssl/certs/ca-certificates.crt
+DEBUG:urllib3.connectionpool:https://sqs.us-east-1.amazonaws.com:443 "POST / HTTP/1.1" 200 331
+DEBUG:botocore.parsers:Response headers: {'x-amzn-RequestId': '2facd47d-fa98-56d1-bda6-89fb0f518533', 'Date': 'Fri, 22 Sep 2023 01:53:13 GMT', 'Content-Type': 'text/xml', 'Content-Length': '331', 'connection': 'keep-alive'}
+DEBUG:botocore.parsers:Response body:
+b'<?xml version="1.0"?><GetQueueUrlResponse xmlns="http://queue.amazonaws.com/doc/2012-11-05/"><GetQueueUrlResult><QueueUrl>https://sqs.us-east-1.amazonaws.com/800653936604/OutputQueue</QueueUrl></GetQueueUrlResult><ResponseMetadata><RequestId>2facd47d-fa98-56d1-bda6-89fb0f518533</RequestId></ResponseMetadata></GetQueueUrlResponse>'
+DEBUG:botocore.hooks:Event needs-retry.sqs.GetQueueUrl: calling handler <botocore.retryhandler.RetryHandler object at 0x7f4aa4f8fcd0>
+DEBUG:botocore.retryhandler:No retry needed.
+DEBUG:boto3.resources.action:Response: {'QueueUrl': 'https://sqs.us-east-1.amazonaws.com/800653936604/OutputQueue', 'ResponseMetadata': {'RequestId': '2facd47d-fa98-56d1-bda6-89fb0f518533', 'HTTPStatusCode': 200, 'HTTPHeaders': {'x-amzn-requestid': '2facd47d-fa98-56d1-bda6-89fb0f518533', 'date': 'Fri, 22 Sep 2023 01:53:13 GMT', 'content-type': 'text/xml', 'content-length': '331', 'connection': 'keep-alive'}, 'RetryAttempts': 0}}
+DEBUG:boto3.resources.factory:Loading sqs:Queue
+DEBUG:boto3.resources.action:Calling sqs:receive_message with {'QueueUrl': 'https://sqs.us-east-1.amazonaws.com/800653936604/InputQueue'}
+DEBUG:botocore.hooks:Event before-parameter-build.sqs.ReceiveMessage: calling handler <function generate_idempotent_uuid at 0x7f4aa51f1510>
+DEBUG:botocore.regions:Calling endpoint provider with parameters: {'Region': 'us-east-1', 'UseDualStack': False, 'UseFIPS': False}
+DEBUG:botocore.regions:Endpoint provider result: https://sqs.us-east-1.amazonaws.com
+DEBUG:botocore.hooks:Event before-call.sqs.ReceiveMessage: calling handler <function add_recursion_detection_header at 0x7f4aa51f11b0>
+DEBUG:botocore.hooks:Event before-call.sqs.ReceiveMessage: calling handler <function inject_api_version_header_if_needed at 0x7f4aa51f2d40>
+DEBUG:botocore.endpoint:Making request for OperationModel(name=ReceiveMessage) with params: {'url_path': '/', 'query_string': '', 'method': 'POST', 'headers': {'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8', 'User-Agent': 'Boto3/1.28.52 md/Botocore#1.31.52 ua/2.0 os/linux#6.2.0-1009-aws md/arch#x86_64 lang/python#3.10.12 md/pyimpl#CPython cfg/retry-mode#legacy Botocore/1.31.52 Resource'}, 'body': {'Action': 'ReceiveMessage', 'Version': '2012-11-05', 'QueueUrl': 'https://sqs.us-east-1.amazonaws.com/800653936604/InputQueue'}, 'url': 'https://sqs.us-east-1.amazonaws.com/', 'context': {'client_region': 'us-east-1', 'client_config': <botocore.config.Config object at 0x7f4aa4f8e740>, 'has_streaming_input': False, 'auth_type': None}}
+DEBUG:botocore.hooks:Event request-created.sqs.ReceiveMessage: calling handler <bound method RequestSigner.handler of <botocore.signers.RequestSigner object at 0x7f4aa4f8d000>>
+DEBUG:botocore.hooks:Event choose-signer.sqs.ReceiveMessage: calling handler <function set_operation_specific_signer at 0x7f4aa51f13f0>
+DEBUG:botocore.auth:Calculating signature using v4 auth.
+DEBUG:botocore.auth:CanonicalRequest:
+POST
+/
+
+content-type:application/x-www-form-urlencoded; charset=utf-8
+host:sqs.us-east-1.amazonaws.com
+x-amz-date:20230922T015313Z
+x-amz-security-token:IQoJb3JpZ2luX2VjEBIaCXVzLWVhc3QtMSJHMEUCIQC7qUE5bYV4NTLDCNsztZfS+p3VBwtpyw2GTSUipTjaVQIgKwn8cXWhQxiApiVUmW0HvY5B9cK6RCspzkCtcUBbgl4qwwUI+///////////ARAAGgw4MDA2NTM5MzY2MDQiDFkZBOAhw3e68VR16CqXBaWaVwgUQkxt/PZNBVmXOjWjVATXeJ3aEypYD6zvXziQo2+TcuMEUaxzdiQ/wk+XznOjC9f/2rs00iPoTuUwGbUy6RuUXCeX2Ndc1+oJS+wT9tvy8qw5EQOeZTglqaCwK6Dx5t8PLRimXgM7qBonYrbT1oQSINLXtd+6Up5gMnWgB1jezaELkxP8zeUqBfI2VOyik8nXUeCpwbDRyQ/1C7bQV66uv/1/zT0pT2IE1x9Va0IKT38Y8F3Nd/ITRDFzplgAhT8NvkhpIMoXotO8DG1nIQbhgJSr4Mn7XFijFoO+f4t8GiLw1LBvqid54Uv8NmoDdtSWaZfyWUuaR+o6hOVtM6AltmR4qRTPMze3CrEvUKVMclKph00rhKMUZdS+qSUbNGU5d6D+OGXXUP+0ec4q/8j7dVXcjzq0Y4qIQ9y7u+XD7fwf1p9MsOJtMzMOPIV+4NJTXes3zbzEW3fivB7hqoR68Im0fN/0ZigPRrlJEG+9MsmIdWA2VamXsgu7cwjk8hxIYp2g0r6FNb3E45cBxoaRLsRTOdMs8tI2CUxKCG6IVytvn+gMEuD3fV+CfSyUd0dXOx0I5rYELrGAPo+hivVNaoNBTSWyb44F0phs+Kv5eNZ0ssu77tyHap6SSRY2HXjaND2aScABHcX8tSJ+vEga0SpxK8cpIWAtuCyFAml+wNJR+UFccSRzJo1og007WsZq8/TEBzZbzoQP5zLyzW3xzDSg3IXXi6wunocqhaqeeL+cLJbngFa2/HHqedjXnk2SfDia/p4U02blKvodDAFF5Jhq6S731ibVHV5iZoQOeuK/D4MZYmu/s/gHwaqVw8iUMyhs3pp7+TZsMqXNdarMwLhL0G0s6/HL8c+kVjbKukkJ3DCm4rOoBjqxAdpLFYHyiDGDGRvAs3/9fOPTu2DP3rgWxWVNPq5rEIexBDe3WRrTBDfTWweyXlJu3Y4K7whbnXgYKnMdqw2brAE9UmStqkz9pisAkDdCpBPpKYL4BwN6PHxgXzUCt1g+x0xhk4skBqR83nsuhtMQyeTCiYcZdTWSpdmKPXTMcr/Mt2JBPGwc3d9bbeyFeWiQDaL/2DXhLJ1NG/k5bZU5zpivCYC3gtxtDa04wWl+EYVV6A==
+
+content-type;host;x-amz-date;x-amz-security-token
+efebb81553df6cac235a938df4b920d705bab2f76d1d5166451650efa6b7616b
+DEBUG:botocore.auth:StringToSign:
+AWS4-HMAC-SHA256
+20230922T015313Z
+20230922/us-east-1/sqs/aws4_request
+818888c5aaab9b152dbb70d7a288946cb40909aaf18dc324a62b25081d1ba099
+DEBUG:botocore.auth:Signature:
+4b3a2fad894bc5aa1bbd4ea7209ec761a30a5649d8c884bb3d0328ff8a0a3102
+DEBUG:botocore.hooks:Event request-created.sqs.ReceiveMessage: calling handler <function add_retry_headers at 0x7f4aa51f3400>
+DEBUG:botocore.endpoint:Sending http request: <AWSPreparedRequest stream_output=False, method=POST, url=https://sqs.us-east-1.amazonaws.com/, headers={'Content-Type': b'application/x-www-form-urlencoded; charset=utf-8', 'User-Agent': b'Boto3/1.28.52 md/Botocore#1.31.52 ua/2.0 os/linux#6.2.0-1009-aws md/arch#x86_64 lang/python#3.10.12 md/pyimpl#CPython cfg/retry-mode#legacy Botocore/1.31.52 Resource', 'X-Amz-Date': b'20230922T015313Z', 'X-Amz-Security-Token': b'IQoJb3JpZ2luX2VjEBIaCXVzLWVhc3QtMSJHMEUCIQC7qUE5bYV4NTLDCNsztZfS+p3VBwtpyw2GTSUipTjaVQIgKwn8cXWhQxiApiVUmW0HvY5B9cK6RCspzkCtcUBbgl4qwwUI+///////////ARAAGgw4MDA2NTM5MzY2MDQiDFkZBOAhw3e68VR16CqXBaWaVwgUQkxt/PZNBVmXOjWjVATXeJ3aEypYD6zvXziQo2+TcuMEUaxzdiQ/wk+XznOjC9f/2rs00iPoTuUwGbUy6RuUXCeX2Ndc1+oJS+wT9tvy8qw5EQOeZTglqaCwK6Dx5t8PLRimXgM7qBonYrbT1oQSINLXtd+6Up5gMnWgB1jezaELkxP8zeUqBfI2VOyik8nXUeCpwbDRyQ/1C7bQV66uv/1/zT0pT2IE1x9Va0IKT38Y8F3Nd/ITRDFzplgAhT8NvkhpIMoXotO8DG1nIQbhgJSr4Mn7XFijFoO+f4t8GiLw1LBvqid54Uv8NmoDdtSWaZfyWUuaR+o6hOVtM6AltmR4qRTPMze3CrEvUKVMclKph00rhKMUZdS+qSUbNGU5d6D+OGXXUP+0ec4q/8j7dVXcjzq0Y4qIQ9y7u+XD7fwf1p9MsOJtMzMOPIV+4NJTXes3zbzEW3fivB7hqoR68Im0fN/0ZigPRrlJEG+9MsmIdWA2VamXsgu7cwjk8hxIYp2g0r6FNb3E45cBxoaRLsRTOdMs8tI2CUxKCG6IVytvn+gMEuD3fV+CfSyUd0dXOx0I5rYELrGAPo+hivVNaoNBTSWyb44F0phs+Kv5eNZ0ssu77tyHap6SSRY2HXjaND2aScABHcX8tSJ+vEga0SpxK8cpIWAtuCyFAml+wNJR+UFccSRzJo1og007WsZq8/TEBzZbzoQP5zLyzW3xzDSg3IXXi6wunocqhaqeeL+cLJbngFa2/HHqedjXnk2SfDia/p4U02blKvodDAFF5Jhq6S731ibVHV5iZoQOeuK/D4MZYmu/s/gHwaqVw8iUMyhs3pp7+TZsMqXNdarMwLhL0G0s6/HL8c+kVjbKukkJ3DCm4rOoBjqxAdpLFYHyiDGDGRvAs3/9fOPTu2DP3rgWxWVNPq5rEIexBDe3WRrTBDfTWweyXlJu3Y4K7whbnXgYKnMdqw2brAE9UmStqkz9pisAkDdCpBPpKYL4BwN6PHxgXzUCt1g+x0xhk4skBqR83nsuhtMQyeTCiYcZdTWSpdmKPXTMcr/Mt2JBPGwc3d9bbeyFeWiQDaL/2DXhLJ1NG/k5bZU5zpivCYC3gtxtDa04wWl+EYVV6A==', 'Authorization': b'AWS4-HMAC-SHA256 Credential=ASIA3U2VRQ7OJOLN2SAT/20230922/us-east-1/sqs/aws4_request, SignedHeaders=content-type;host;x-amz-date;x-amz-security-token, Signature=4b3a2fad894bc5aa1bbd4ea7209ec761a30a5649d8c884bb3d0328ff8a0a3102', 'amz-sdk-invocation-id': b'9abc3408-6792-4f50-859b-a674dce204c3', 'amz-sdk-request': b'attempt=1', 'Content-Length': '119'}>
+DEBUG:botocore.httpsession:Certificate path: /etc/ssl/certs/ca-certificates.crt
+DEBUG:urllib3.connectionpool:https://sqs.us-east-1.amazonaws.com:443 "POST / HTTP/1.1" 200 831
+DEBUG:botocore.parsers:Response headers: {'x-amzn-RequestId': 'a3581054-3b8a-5a22-951f-4dd2ce4349c0', 'Date': 'Fri, 22 Sep 2023 01:53:13 GMT', 'Content-Type': 'text/xml', 'Content-Length': '831', 'connection': 'keep-alive'}
+DEBUG:botocore.parsers:Response body:
+b'<?xml version="1.0"?><ReceiveMessageResponse xmlns="http://queue.amazonaws.com/doc/2012-11-05/"><ReceiveMessageResult><Message><MessageId>53b17780-e1e3-472a-899b-62331ca96a34</MessageId><ReceiptHandle>AQEBQrGNJkK1GflKrAkqy4You3F8Ejy9DYzzZYZbFljesd1YaBvHtls9KuDxWcrmVTWEO7AIb1Fmv4N5l6OHQymBVfjk9e+AUHTDdaQEjFnQHVkDUsKpJu8cBniXCgVNMW1dsxU6ywsaGFn49bA5T1iTM+2GLOOgPa66Gfi6wICk/orqZt8GwT7bz94PEFWIJu7l9Sik2GS5FjArEwF+Xu5RU1GpIoo9P0yxZ4Sb1EY8Nh2w/mGGUP0CU5KRmkCP/IzMYelJpAwq/wfawsscYN/qNjyFL4PTkw4mD/XSmXzOS4s4eXVkXcSD1/kMJeS0QcWirV8DRvcUTS4DNmDwPxgiBM8+/WYTbBdOL0RMox+vubot75imUyVbKD5/EcpY75dv</ReceiptHandle><MD5OfBody>098f6bcd4621d373cade4e832627b4f6</MD5OfBody><Body>test</Body></Message></ReceiveMessageResult><ResponseMetadata><RequestId>a3581054-3b8a-5a22-951f-4dd2ce4349c0</RequestId></ResponseMetadata></ReceiveMessageResponse>'
+DEBUG:botocore.hooks:Event needs-retry.sqs.ReceiveMessage: calling handler <botocore.retryhandler.RetryHandler object at 0x7f4aa4f8fcd0>
+DEBUG:botocore.retryhandler:No retry needed.
+DEBUG:boto3.resources.action:Response: {'Messages': [{'MessageId': '53b17780-e1e3-472a-899b-62331ca96a34', 'ReceiptHandle': 'AQEBQrGNJkK1GflKrAkqy4You3F8Ejy9DYzzZYZbFljesd1YaBvHtls9KuDxWcrmVTWEO7AIb1Fmv4N5l6OHQymBVfjk9e+AUHTDdaQEjFnQHVkDUsKpJu8cBniXCgVNMW1dsxU6ywsaGFn49bA5T1iTM+2GLOOgPa66Gfi6wICk/orqZt8GwT7bz94PEFWIJu7l9Sik2GS5FjArEwF+Xu5RU1GpIoo9P0yxZ4Sb1EY8Nh2w/mGGUP0CU5KRmkCP/IzMYelJpAwq/wfawsscYN/qNjyFL4PTkw4mD/XSmXzOS4s4eXVkXcSD1/kMJeS0QcWirV8DRvcUTS4DNmDwPxgiBM8+/WYTbBdOL0RMox+vubot75imUyVbKD5/EcpY75dv', 'MD5OfBody': '098f6bcd4621d373cade4e832627b4f6', 'Body': 'test'}], 'ResponseMetadata': {'RequestId': 'a3581054-3b8a-5a22-951f-4dd2ce4349c0', 'HTTPStatusCode': 200, 'HTTPHeaders': {'x-amzn-requestid': 'a3581054-3b8a-5a22-951f-4dd2ce4349c0', 'date': 'Fri, 22 Sep 2023 01:53:13 GMT', 'content-type': 'text/xml', 'content-length': '831', 'connection': 'keep-alive'}, 'RetryAttempts': 0}}
+DEBUG:boto3.resources.factory:Loading sqs:Message
+DEBUG:boto3.resources.model:Renaming Message attribute receipt_handle
+DEBUG:boto3.resources.action:Calling sqs:delete_message with {'QueueUrl': 'https://sqs.us-east-1.amazonaws.com/800653936604/InputQueue', 'ReceiptHandle': 'AQEBQrGNJkK1GflKrAkqy4You3F8Ejy9DYzzZYZbFljesd1YaBvHtls9KuDxWcrmVTWEO7AIb1Fmv4N5l6OHQymBVfjk9e+AUHTDdaQEjFnQHVkDUsKpJu8cBniXCgVNMW1dsxU6ywsaGFn49bA5T1iTM+2GLOOgPa66Gfi6wICk/orqZt8GwT7bz94PEFWIJu7l9Sik2GS5FjArEwF+Xu5RU1GpIoo9P0yxZ4Sb1EY8Nh2w/mGGUP0CU5KRmkCP/IzMYelJpAwq/wfawsscYN/qNjyFL4PTkw4mD/XSmXzOS4s4eXVkXcSD1/kMJeS0QcWirV8DRvcUTS4DNmDwPxgiBM8+/WYTbBdOL0RMox+vubot75imUyVbKD5/EcpY75dv'}
+DEBUG:botocore.hooks:Event before-parameter-build.sqs.DeleteMessage: calling handler <function generate_idempotent_uuid at 0x7f4aa51f1510>
+DEBUG:botocore.regions:Calling endpoint provider with parameters: {'Region': 'us-east-1', 'UseDualStack': False, 'UseFIPS': False}
+DEBUG:botocore.regions:Endpoint provider result: https://sqs.us-east-1.amazonaws.com
+DEBUG:botocore.hooks:Event before-call.sqs.DeleteMessage: calling handler <function add_recursion_detection_header at 0x7f4aa51f11b0>
+DEBUG:botocore.hooks:Event before-call.sqs.DeleteMessage: calling handler <function inject_api_version_header_if_needed at 0x7f4aa51f2d40>
+DEBUG:botocore.endpoint:Making request for OperationModel(name=DeleteMessage) with params: {'url_path': '/', 'query_string': '', 'method': 'POST', 'headers': {'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8', 'User-Agent': 'Boto3/1.28.52 md/Botocore#1.31.52 ua/2.0 os/linux#6.2.0-1009-aws md/arch#x86_64 lang/python#3.10.12 md/pyimpl#CPython cfg/retry-mode#legacy Botocore/1.31.52 Resource'}, 'body': {'Action': 'DeleteMessage', 'Version': '2012-11-05', 'QueueUrl': 'https://sqs.us-east-1.amazonaws.com/800653936604/InputQueue', 'ReceiptHandle': 'AQEBQrGNJkK1GflKrAkqy4You3F8Ejy9DYzzZYZbFljesd1YaBvHtls9KuDxWcrmVTWEO7AIb1Fmv4N5l6OHQymBVfjk9e+AUHTDdaQEjFnQHVkDUsKpJu8cBniXCgVNMW1dsxU6ywsaGFn49bA5T1iTM+2GLOOgPa66Gfi6wICk/orqZt8GwT7bz94PEFWIJu7l9Sik2GS5FjArEwF+Xu5RU1GpIoo9P0yxZ4Sb1EY8Nh2w/mGGUP0CU5KRmkCP/IzMYelJpAwq/wfawsscYN/qNjyFL4PTkw4mD/XSmXzOS4s4eXVkXcSD1/kMJeS0QcWirV8DRvcUTS4DNmDwPxgiBM8+/WYTbBdOL0RMox+vubot75imUyVbKD5/EcpY75dv'}, 'url': 'https://sqs.us-east-1.amazonaws.com/', 'context': {'client_region': 'us-east-1', 'client_config': <botocore.config.Config object at 0x7f4aa4f8e740>, 'has_streaming_input': False, 'auth_type': None}}
+DEBUG:botocore.hooks:Event request-created.sqs.DeleteMessage: calling handler <bound method RequestSigner.handler of <botocore.signers.RequestSigner object at 0x7f4aa4f8d000>>
+DEBUG:botocore.hooks:Event choose-signer.sqs.DeleteMessage: calling handler <function set_operation_specific_signer at 0x7f4aa51f13f0>
+DEBUG:botocore.auth:Calculating signature using v4 auth.
+DEBUG:botocore.auth:CanonicalRequest:
+POST
+/
+
+content-type:application/x-www-form-urlencoded; charset=utf-8
+host:sqs.us-east-1.amazonaws.com
+x-amz-date:20230922T015313Z
+x-amz-security-token:IQoJb3JpZ2luX2VjEBIaCXVzLWVhc3QtMSJHMEUCIQC7qUE5bYV4NTLDCNsztZfS+p3VBwtpyw2GTSUipTjaVQIgKwn8cXWhQxiApiVUmW0HvY5B9cK6RCspzkCtcUBbgl4qwwUI+///////////ARAAGgw4MDA2NTM5MzY2MDQiDFkZBOAhw3e68VR16CqXBaWaVwgUQkxt/PZNBVmXOjWjVATXeJ3aEypYD6zvXziQo2+TcuMEUaxzdiQ/wk+XznOjC9f/2rs00iPoTuUwGbUy6RuUXCeX2Ndc1+oJS+wT9tvy8qw5EQOeZTglqaCwK6Dx5t8PLRimXgM7qBonYrbT1oQSINLXtd+6Up5gMnWgB1jezaELkxP8zeUqBfI2VOyik8nXUeCpwbDRyQ/1C7bQV66uv/1/zT0pT2IE1x9Va0IKT38Y8F3Nd/ITRDFzplgAhT8NvkhpIMoXotO8DG1nIQbhgJSr4Mn7XFijFoO+f4t8GiLw1LBvqid54Uv8NmoDdtSWaZfyWUuaR+o6hOVtM6AltmR4qRTPMze3CrEvUKVMclKph00rhKMUZdS+qSUbNGU5d6D+OGXXUP+0ec4q/8j7dVXcjzq0Y4qIQ9y7u+XD7fwf1p9MsOJtMzMOPIV+4NJTXes3zbzEW3fivB7hqoR68Im0fN/0ZigPRrlJEG+9MsmIdWA2VamXsgu7cwjk8hxIYp2g0r6FNb3E45cBxoaRLsRTOdMs8tI2CUxKCG6IVytvn+gMEuD3fV+CfSyUd0dXOx0I5rYELrGAPo+hivVNaoNBTSWyb44F0phs+Kv5eNZ0ssu77tyHap6SSRY2HXjaND2aScABHcX8tSJ+vEga0SpxK8cpIWAtuCyFAml+wNJR+UFccSRzJo1og007WsZq8/TEBzZbzoQP5zLyzW3xzDSg3IXXi6wunocqhaqeeL+cLJbngFa2/HHqedjXnk2SfDia/p4U02blKvodDAFF5Jhq6S731ibVHV5iZoQOeuK/D4MZYmu/s/gHwaqVw8iUMyhs3pp7+TZsMqXNdarMwLhL0G0s6/HL8c+kVjbKukkJ3DCm4rOoBjqxAdpLFYHyiDGDGRvAs3/9fOPTu2DP3rgWxWVNPq5rEIexBDe3WRrTBDfTWweyXlJu3Y4K7whbnXgYKnMdqw2brAE9UmStqkz9pisAkDdCpBPpKYL4BwN6PHxgXzUCt1g+x0xhk4skBqR83nsuhtMQyeTCiYcZdTWSpdmKPXTMcr/Mt2JBPGwc3d9bbeyFeWiQDaL/2DXhLJ1NG/k5bZU5zpivCYC3gtxtDa04wWl+EYVV6A==
+
+content-type;host;x-amz-date;x-amz-security-token
+5541a0669a0ef31393f90bb8bb61d25169856b05562820f4cab78f38971d733c
+DEBUG:botocore.auth:StringToSign:
+AWS4-HMAC-SHA256
+20230922T015313Z
+20230922/us-east-1/sqs/aws4_request
+1e692f91c556ef41c438f70afc3fddd5a7522f62a4ed6f23ec63a42a56b52762
+DEBUG:botocore.auth:Signature:
+823ab998aa21b0f52d5f463592f0eb63ca96dd20110fdc2357d005836fa6f9e4
+DEBUG:botocore.hooks:Event request-created.sqs.DeleteMessage: calling handler <function add_retry_headers at 0x7f4aa51f3400>
+DEBUG:botocore.endpoint:Sending http request: <AWSPreparedRequest stream_output=False, method=POST, url=https://sqs.us-east-1.amazonaws.com/, headers={'Content-Type': b'application/x-www-form-urlencoded; charset=utf-8', 'User-Agent': b'Boto3/1.28.52 md/Botocore#1.31.52 ua/2.0 os/linux#6.2.0-1009-aws md/arch#x86_64 lang/python#3.10.12 md/pyimpl#CPython cfg/retry-mode#legacy Botocore/1.31.52 Resource', 'X-Amz-Date': b'20230922T015313Z', 'X-Amz-Security-Token': b'IQoJb3JpZ2luX2VjEBIaCXVzLWVhc3QtMSJHMEUCIQC7qUE5bYV4NTLDCNsztZfS+p3VBwtpyw2GTSUipTjaVQIgKwn8cXWhQxiApiVUmW0HvY5B9cK6RCspzkCtcUBbgl4qwwUI+///////////ARAAGgw4MDA2NTM5MzY2MDQiDFkZBOAhw3e68VR16CqXBaWaVwgUQkxt/PZNBVmXOjWjVATXeJ3aEypYD6zvXziQo2+TcuMEUaxzdiQ/wk+XznOjC9f/2rs00iPoTuUwGbUy6RuUXCeX2Ndc1+oJS+wT9tvy8qw5EQOeZTglqaCwK6Dx5t8PLRimXgM7qBonYrbT1oQSINLXtd+6Up5gMnWgB1jezaELkxP8zeUqBfI2VOyik8nXUeCpwbDRyQ/1C7bQV66uv/1/zT0pT2IE1x9Va0IKT38Y8F3Nd/ITRDFzplgAhT8NvkhpIMoXotO8DG1nIQbhgJSr4Mn7XFijFoO+f4t8GiLw1LBvqid54Uv8NmoDdtSWaZfyWUuaR+o6hOVtM6AltmR4qRTPMze3CrEvUKVMclKph00rhKMUZdS+qSUbNGU5d6D+OGXXUP+0ec4q/8j7dVXcjzq0Y4qIQ9y7u+XD7fwf1p9MsOJtMzMOPIV+4NJTXes3zbzEW3fivB7hqoR68Im0fN/0ZigPRrlJEG+9MsmIdWA2VamXsgu7cwjk8hxIYp2g0r6FNb3E45cBxoaRLsRTOdMs8tI2CUxKCG6IVytvn+gMEuD3fV+CfSyUd0dXOx0I5rYELrGAPo+hivVNaoNBTSWyb44F0phs+Kv5eNZ0ssu77tyHap6SSRY2HXjaND2aScABHcX8tSJ+vEga0SpxK8cpIWAtuCyFAml+wNJR+UFccSRzJo1og007WsZq8/TEBzZbzoQP5zLyzW3xzDSg3IXXi6wunocqhaqeeL+cLJbngFa2/HHqedjXnk2SfDia/p4U02blKvodDAFF5Jhq6S731ibVHV5iZoQOeuK/D4MZYmu/s/gHwaqVw8iUMyhs3pp7+TZsMqXNdarMwLhL0G0s6/HL8c+kVjbKukkJ3DCm4rOoBjqxAdpLFYHyiDGDGRvAs3/9fOPTu2DP3rgWxWVNPq5rEIexBDe3WRrTBDfTWweyXlJu3Y4K7whbnXgYKnMdqw2brAE9UmStqkz9pisAkDdCpBPpKYL4BwN6PHxgXzUCt1g+x0xhk4skBqR83nsuhtMQyeTCiYcZdTWSpdmKPXTMcr/Mt2JBPGwc3d9bbeyFeWiQDaL/2DXhLJ1NG/k5bZU5zpivCYC3gtxtDa04wWl+EYVV6A==', 'Authorization': b'AWS4-HMAC-SHA256 Credential=ASIA3U2VRQ7OJOLN2SAT/20230922/us-east-1/sqs/aws4_request, SignedHeaders=content-type;host;x-amz-date;x-amz-security-token, Signature=823ab998aa21b0f52d5f463592f0eb63ca96dd20110fdc2357d005836fa6f9e4', 'amz-sdk-invocation-id': b'8d9f834d-788d-4844-9e6e-b5edd8c75c0b', 'amz-sdk-request': b'attempt=1', 'Content-Length': '549'}>
+DEBUG:botocore.httpsession:Certificate path: /etc/ssl/certs/ca-certificates.crt
+DEBUG:urllib3.connectionpool:https://sqs.us-east-1.amazonaws.com:443 "POST / HTTP/1.1" 200 215
+DEBUG:botocore.parsers:Response headers: {'x-amzn-RequestId': '8e11be10-e426-566b-928e-e39611ef9589', 'Date': 'Fri, 22 Sep 2023 01:53:13 GMT', 'Content-Type': 'text/xml', 'Content-Length': '215', 'connection': 'keep-alive'}
+DEBUG:botocore.parsers:Response body:
+b'<?xml version="1.0"?><DeleteMessageResponse xmlns="http://queue.amazonaws.com/doc/2012-11-05/"><ResponseMetadata><RequestId>8e11be10-e426-566b-928e-e39611ef9589</RequestId></ResponseMetadata></DeleteMessageResponse>'
+DEBUG:botocore.hooks:Event needs-retry.sqs.DeleteMessage: calling handler <botocore.retryhandler.RetryHandler object at 0x7f4aa4f8fcd0>
+DEBUG:botocore.retryhandler:No retry needed.
+DEBUG:boto3.resources.action:Response: {'ResponseMetadata': {'RequestId': '8e11be10-e426-566b-928e-e39611ef9589', 'HTTPStatusCode': 200, 'HTTPHeaders': {'x-amzn-requestid': '8e11be10-e426-566b-928e-e39611ef9589', 'date': 'Fri, 22 Sep 2023 01:53:13 GMT', 'content-type': 'text/xml', 'content-length': '215', 'connection': 'keep-alive'}, 'RetryAttempts': 0}}
+DEBUG:boto3.resources.action:Calling sqs:receive_message with {'QueueUrl': 'https://sqs.us-east-1.amazonaws.com/800653936604/InputQueue'}
+DEBUG:botocore.hooks:Event before-parameter-build.sqs.ReceiveMessage: calling handler <function generate_idempotent_uuid at 0x7f4aa51f1510>
+DEBUG:botocore.regions:Calling endpoint provider with parameters: {'Region': 'us-east-1', 'UseDualStack': False, 'UseFIPS': False}
+DEBUG:botocore.regions:Endpoint provider result: https://sqs.us-east-1.amazonaws.com
+DEBUG:botocore.hooks:Event before-call.sqs.ReceiveMessage: calling handler <function add_recursion_detection_header at 0x7f4aa51f11b0>
+DEBUG:botocore.hooks:Event before-call.sqs.ReceiveMessage: calling handler <function inject_api_version_header_if_needed at 0x7f4aa51f2d40>
+DEBUG:botocore.endpoint:Making request for OperationModel(name=ReceiveMessage) with params: {'url_path': '/', 'query_string': '', 'method': 'POST', 'headers': {'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8', 'User-Agent': 'Boto3/1.28.52 md/Botocore#1.31.52 ua/2.0 os/linux#6.2.0-1009-aws md/arch#x86_64 lang/python#3.10.12 md/pyimpl#CPython cfg/retry-mode#legacy Botocore/1.31.52 Resource'}, 'body': {'Action': 'ReceiveMessage', 'Version': '2012-11-05', 'QueueUrl': 'https://sqs.us-east-1.amazonaws.com/800653936604/InputQueue'}, 'url': 'https://sqs.us-east-1.amazonaws.com/', 'context': {'client_region': 'us-east-1', 'client_config': <botocore.config.Config object at 0x7f4aa4f8e740>, 'has_streaming_input': False, 'auth_type': None}}
+DEBUG:botocore.hooks:Event request-created.sqs.ReceiveMessage: calling handler <bound method RequestSigner.handler of <botocore.signers.RequestSigner object at 0x7f4aa4f8d000>>
+DEBUG:botocore.hooks:Event choose-signer.sqs.ReceiveMessage: calling handler <function set_operation_specific_signer at 0x7f4aa51f13f0>
+DEBUG:botocore.auth:Calculating signature using v4 auth.
+DEBUG:botocore.auth:CanonicalRequest:
+POST
+/
+
+content-type:application/x-www-form-urlencoded; charset=utf-8
+host:sqs.us-east-1.amazonaws.com
+x-amz-date:20230922T015313Z
+x-amz-security-token:IQoJb3JpZ2luX2VjEBIaCXVzLWVhc3QtMSJHMEUCIQC7qUE5bYV4NTLDCNsztZfS+p3VBwtpyw2GTSUipTjaVQIgKwn8cXWhQxiApiVUmW0HvY5B9cK6RCspzkCtcUBbgl4qwwUI+///////////ARAAGgw4MDA2NTM5MzY2MDQiDFkZBOAhw3e68VR16CqXBaWaVwgUQkxt/PZNBVmXOjWjVATXeJ3aEypYD6zvXziQo2+TcuMEUaxzdiQ/wk+XznOjC9f/2rs00iPoTuUwGbUy6RuUXCeX2Ndc1+oJS+wT9tvy8qw5EQOeZTglqaCwK6Dx5t8PLRimXgM7qBonYrbT1oQSINLXtd+6Up5gMnWgB1jezaELkxP8zeUqBfI2VOyik8nXUeCpwbDRyQ/1C7bQV66uv/1/zT0pT2IE1x9Va0IKT38Y8F3Nd/ITRDFzplgAhT8NvkhpIMoXotO8DG1nIQbhgJSr4Mn7XFijFoO+f4t8GiLw1LBvqid54Uv8NmoDdtSWaZfyWUuaR+o6hOVtM6AltmR4qRTPMze3CrEvUKVMclKph00rhKMUZdS+qSUbNGU5d6D+OGXXUP+0ec4q/8j7dVXcjzq0Y4qIQ9y7u+XD7fwf1p9MsOJtMzMOPIV+4NJTXes3zbzEW3fivB7hqoR68Im0fN/0ZigPRrlJEG+9MsmIdWA2VamXsgu7cwjk8hxIYp2g0r6FNb3E45cBxoaRLsRTOdMs8tI2CUxKCG6IVytvn+gMEuD3fV+CfSyUd0dXOx0I5rYELrGAPo+hivVNaoNBTSWyb44F0phs+Kv5eNZ0ssu77tyHap6SSRY2HXjaND2aScABHcX8tSJ+vEga0SpxK8cpIWAtuCyFAml+wNJR+UFccSRzJo1og007WsZq8/TEBzZbzoQP5zLyzW3xzDSg3IXXi6wunocqhaqeeL+cLJbngFa2/HHqedjXnk2SfDia/p4U02blKvodDAFF5Jhq6S731ibVHV5iZoQOeuK/D4MZYmu/s/gHwaqVw8iUMyhs3pp7+TZsMqXNdarMwLhL0G0s6/HL8c+kVjbKukkJ3DCm4rOoBjqxAdpLFYHyiDGDGRvAs3/9fOPTu2DP3rgWxWVNPq5rEIexBDe3WRrTBDfTWweyXlJu3Y4K7whbnXgYKnMdqw2brAE9UmStqkz9pisAkDdCpBPpKYL4BwN6PHxgXzUCt1g+x0xhk4skBqR83nsuhtMQyeTCiYcZdTWSpdmKPXTMcr/Mt2JBPGwc3d9bbeyFeWiQDaL/2DXhLJ1NG/k5bZU5zpivCYC3gtxtDa04wWl+EYVV6A==
+
+content-type;host;x-amz-date;x-amz-security-token
+efebb81553df6cac235a938df4b920d705bab2f76d1d5166451650efa6b7616b
+DEBUG:botocore.auth:StringToSign:
+AWS4-HMAC-SHA256
+20230922T015313Z
+20230922/us-east-1/sqs/aws4_request
+818888c5aaab9b152dbb70d7a288946cb40909aaf18dc324a62b25081d1ba099
+DEBUG:botocore.auth:Signature:
+4b3a2fad894bc5aa1bbd4ea7209ec761a30a5649d8c884bb3d0328ff8a0a3102
+DEBUG:botocore.hooks:Event request-created.sqs.ReceiveMessage: calling handler <function add_retry_headers at 0x7f4aa51f3400>
+DEBUG:botocore.endpoint:Sending http request: <AWSPreparedRequest stream_output=False, method=POST, url=https://sqs.us-east-1.amazonaws.com/, headers={'Content-Type': b'application/x-www-form-urlencoded; charset=utf-8', 'User-Agent': b'Boto3/1.28.52 md/Botocore#1.31.52 ua/2.0 os/linux#6.2.0-1009-aws md/arch#x86_64 lang/python#3.10.12 md/pyimpl#CPython cfg/retry-mode#legacy Botocore/1.31.52 Resource', 'X-Amz-Date': b'20230922T015313Z', 'X-Amz-Security-Token': b'IQoJb3JpZ2luX2VjEBIaCXVzLWVhc3QtMSJHMEUCIQC7qUE5bYV4NTLDCNsztZfS+p3VBwtpyw2GTSUipTjaVQIgKwn8cXWhQxiApiVUmW0HvY5B9cK6RCspzkCtcUBbgl4qwwUI+///////////ARAAGgw4MDA2NTM5MzY2MDQiDFkZBOAhw3e68VR16CqXBaWaVwgUQkxt/PZNBVmXOjWjVATXeJ3aEypYD6zvXziQo2+TcuMEUaxzdiQ/wk+XznOjC9f/2rs00iPoTuUwGbUy6RuUXCeX2Ndc1+oJS+wT9tvy8qw5EQOeZTglqaCwK6Dx5t8PLRimXgM7qBonYrbT1oQSINLXtd+6Up5gMnWgB1jezaELkxP8zeUqBfI2VOyik8nXUeCpwbDRyQ/1C7bQV66uv/1/zT0pT2IE1x9Va0IKT38Y8F3Nd/ITRDFzplgAhT8NvkhpIMoXotO8DG1nIQbhgJSr4Mn7XFijFoO+f4t8GiLw1LBvqid54Uv8NmoDdtSWaZfyWUuaR+o6hOVtM6AltmR4qRTPMze3CrEvUKVMclKph00rhKMUZdS+qSUbNGU5d6D+OGXXUP+0ec4q/8j7dVXcjzq0Y4qIQ9y7u+XD7fwf1p9MsOJtMzMOPIV+4NJTXes3zbzEW3fivB7hqoR68Im0fN/0ZigPRrlJEG+9MsmIdWA2VamXsgu7cwjk8hxIYp2g0r6FNb3E45cBxoaRLsRTOdMs8tI2CUxKCG6IVytvn+gMEuD3fV+CfSyUd0dXOx0I5rYELrGAPo+hivVNaoNBTSWyb44F0phs+Kv5eNZ0ssu77tyHap6SSRY2HXjaND2aScABHcX8tSJ+vEga0SpxK8cpIWAtuCyFAml+wNJR+UFccSRzJo1og007WsZq8/TEBzZbzoQP5zLyzW3xzDSg3IXXi6wunocqhaqeeL+cLJbngFa2/HHqedjXnk2SfDia/p4U02blKvodDAFF5Jhq6S731ibVHV5iZoQOeuK/D4MZYmu/s/gHwaqVw8iUMyhs3pp7+TZsMqXNdarMwLhL0G0s6/HL8c+kVjbKukkJ3DCm4rOoBjqxAdpLFYHyiDGDGRvAs3/9fOPTu2DP3rgWxWVNPq5rEIexBDe3WRrTBDfTWweyXlJu3Y4K7whbnXgYKnMdqw2brAE9UmStqkz9pisAkDdCpBPpKYL4BwN6PHxgXzUCt1g+x0xhk4skBqR83nsuhtMQyeTCiYcZdTWSpdmKPXTMcr/Mt2JBPGwc3d9bbeyFeWiQDaL/2DXhLJ1NG/k5bZU5zpivCYC3gtxtDa04wWl+EYVV6A==', 'Authorization': b'AWS4-HMAC-SHA256 Credential=ASIA3U2VRQ7OJOLN2SAT/20230922/us-east-1/sqs/aws4_request, SignedHeaders=content-type;host;x-amz-date;x-amz-security-token, Signature=4b3a2fad894bc5aa1bbd4ea7209ec761a30a5649d8c884bb3d0328ff8a0a3102', 'amz-sdk-invocation-id': b'3a32cf9f-51de-479a-b0f9-7165efd58eb3', 'amz-sdk-request': b'attempt=1', 'Content-Length': '119'}>
+DEBUG:botocore.httpsession:Certificate path: /etc/ssl/certs/ca-certificates.crt
+DEBUG:urllib3.connectionpool:https://sqs.us-east-1.amazonaws.com:443 "POST / HTTP/1.1" 200 240
+DEBUG:botocore.parsers:Response headers: {'x-amzn-RequestId': '046558c8-9585-53d4-a78a-054e604cd036', 'Date': 'Fri, 22 Sep 2023 01:53:13 GMT', 'Content-Type': 'text/xml', 'Content-Length': '240', 'connection': 'keep-alive'}
+DEBUG:botocore.parsers:Response body:
+b'<?xml version="1.0"?><ReceiveMessageResponse xmlns="http://queue.amazonaws.com/doc/2012-11-05/"><ReceiveMessageResult/><ResponseMetadata><RequestId>046558c8-9585-53d4-a78a-054e604cd036</RequestId></ResponseMetadata></ReceiveMessageResponse>'
+DEBUG:botocore.hooks:Event needs-retry.sqs.ReceiveMessage: calling handler <botocore.retryhandler.RetryHandler object at 0x7f4aa4f8fcd0>
+DEBUG:botocore.retryhandler:No retry needed.
+DEBUG:boto3.resources.action:Response: {'ResponseMetadata': {'RequestId': '046558c8-9585-53d4-a78a-054e604cd036', 'HTTPStatusCode': 200, 'HTTPHeaders': {'x-amzn-requestid': '046558c8-9585-53d4-a78a-054e604cd036', 'date': 'Fri, 22 Sep 2023 01:53:13 GMT', 'content-type': 'text/xml', 'content-length': '240', 'connection': 'keep-alive'}, 'RetryAttempts': 0}}
+DEBUG:boto3.resources.factory:Loading sqs:Message
+DEBUG:boto3.resources.model:Renaming Message attribute receipt_handle
+DEBUG:botocore.hooks:Changing event name from creating-client-class.iot-data to creating-client-class.iot-data-plane
+DEBUG:botocore.hooks:Changing event name from before-call.apigateway to before-call.api-gateway
+DEBUG:botocore.hooks:Changing event name from request-created.machinelearning.Predict to request-created.machine-learning.Predict
+DEBUG:botocore.hooks:Changing event name from before-parameter-build.autoscaling.CreateLaunchConfiguration to before-parameter-build.auto-scaling.CreateLaunchConfiguration
+DEBUG:botocore.hooks:Changing event name from before-parameter-build.route53 to before-parameter-build.route-53
+DEBUG:botocore.hooks:Changing event name from request-created.cloudsearchdomain.Search to request-created.cloudsearch-domain.Search
+DEBUG:botocore.hooks:Changing event name from docs.*.autoscaling.CreateLaunchConfiguration.complete-section to docs.*.auto-scaling.CreateLaunchConfiguration.complete-section
+DEBUG:botocore.hooks:Changing event name from before-parameter-build.logs.CreateExportTask to before-parameter-build.cloudwatch-logs.CreateExportTask
+DEBUG:botocore.hooks:Changing event name from docs.*.logs.CreateExportTask.complete-section to docs.*.cloudwatch-logs.CreateExportTask.complete-section
+DEBUG:botocore.hooks:Changing event name from before-parameter-build.cloudsearchdomain.Search to before-parameter-build.cloudsearch-domain.Search
+DEBUG:botocore.hooks:Changing event name from docs.*.cloudsearchdomain.Search.complete-section to docs.*.cloudsearch-domain.Search.complete-section
+DEBUG:botocore.loaders:Loading JSON file: /home/ubuntu/.local/lib/python3.10/site-packages/boto3/data/sqs/2012-11-05/resources-1.json
+DEBUG:botocore.utils:IMDS ENDPOINT: http://169.254.169.254/
+DEBUG:botocore.credentials:Looking for credentials via: env
+DEBUG:botocore.credentials:Looking for credentials via: assume-role
+DEBUG:botocore.credentials:Looking for credentials via: assume-role-with-web-identity
+DEBUG:botocore.credentials:Looking for credentials via: sso
+DEBUG:botocore.credentials:Looking for credentials via: shared-credentials-file
+DEBUG:botocore.credentials:Looking for credentials via: custom-process
+DEBUG:botocore.credentials:Looking for credentials via: config-file
+DEBUG:botocore.credentials:Looking for credentials via: ec2-credentials-file
+DEBUG:botocore.credentials:Looking for credentials via: boto-config
+DEBUG:botocore.credentials:Looking for credentials via: container-role
+DEBUG:botocore.credentials:Looking for credentials via: iam-role
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 169.254.169.254:80
+DEBUG:urllib3.connectionpool:http://169.254.169.254:80 "PUT /latest/api/token HTTP/1.1" 200 56
+DEBUG:urllib3.connectionpool:Resetting dropped connection: 169.254.169.254
+DEBUG:urllib3.connectionpool:http://169.254.169.254:80 "GET /latest/meta-data/iam/security-credentials/ HTTP/1.1" 200 14
+DEBUG:urllib3.connectionpool:Resetting dropped connection: 169.254.169.254
+DEBUG:urllib3.connectionpool:http://169.254.169.254:80 "GET /latest/meta-data/iam/security-credentials/EC2QueueAccess HTTP/1.1" 200 1582
+INFO:botocore.credentials:Found credentials from IAM Role: EC2QueueAccess
+DEBUG:botocore.loaders:Loading JSON file: /home/ubuntu/.local/lib/python3.10/site-packages/botocore/data/endpoints.json
+DEBUG:botocore.loaders:Loading JSON file: /home/ubuntu/.local/lib/python3.10/site-packages/botocore/data/sdk-default-configuration.json
+DEBUG:botocore.hooks:Event choose-service-name: calling handler <function handle_service_name_alias at 0x7f85e65a3d90>
+DEBUG:botocore.loaders:Loading JSON file: /home/ubuntu/.local/lib/python3.10/site-packages/botocore/data/sqs/2012-11-05/service-2.json
+DEBUG:botocore.loaders:Loading JSON file: /home/ubuntu/.local/lib/python3.10/site-packages/botocore/data/sqs/2012-11-05/endpoint-rule-set-1.json.gz
+DEBUG:botocore.loaders:Loading JSON file: /home/ubuntu/.local/lib/python3.10/site-packages/botocore/data/partitions.json
+DEBUG:botocore.hooks:Event creating-client-class.sqs: calling handler <function add_generate_presigned_url at 0x7f85e671e5f0>
+DEBUG:botocore.configprovider:Looking for endpoint for sqs via: environment_service
+DEBUG:botocore.configprovider:Looking for endpoint for sqs via: environment_global
+DEBUG:botocore.configprovider:Looking for endpoint for sqs via: config_service
+DEBUG:botocore.configprovider:Looking for endpoint for sqs via: config_global
+DEBUG:botocore.configprovider:No configured endpoint found.
+DEBUG:botocore.endpoint:Setting sqs timeout as (60, 60)
+DEBUG:botocore.loaders:Loading JSON file: /home/ubuntu/.local/lib/python3.10/site-packages/botocore/data/_retry.json
+DEBUG:botocore.client:Registering retry handlers for service: sqs
+DEBUG:boto3.resources.factory:Loading sqs:sqs
+DEBUG:boto3.resources.action:Calling sqs:get_queue_url with {'QueueName': 'InputQueue'}
+DEBUG:botocore.hooks:Event before-parameter-build.sqs.GetQueueUrl: calling handler <function generate_idempotent_uuid at 0x7f85e65f1510>
+DEBUG:botocore.regions:Calling endpoint provider with parameters: {'Region': 'us-east-1', 'UseDualStack': False, 'UseFIPS': False}
+DEBUG:botocore.regions:Endpoint provider result: https://sqs.us-east-1.amazonaws.com
+DEBUG:botocore.hooks:Event before-call.sqs.GetQueueUrl: calling handler <function add_recursion_detection_header at 0x7f85e65f11b0>
+DEBUG:botocore.hooks:Event before-call.sqs.GetQueueUrl: calling handler <function inject_api_version_header_if_needed at 0x7f85e65f2d40>
+DEBUG:botocore.endpoint:Making request for OperationModel(name=GetQueueUrl) with params: {'url_path': '/', 'query_string': '', 'method': 'POST', 'headers': {'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8', 'User-Agent': 'Boto3/1.28.52 md/Botocore#1.31.52 ua/2.0 os/linux#6.2.0-1009-aws md/arch#x86_64 lang/python#3.10.12 md/pyimpl#CPython cfg/retry-mode#legacy Botocore/1.31.52 Resource'}, 'body': {'Action': 'GetQueueUrl', 'Version': '2012-11-05', 'QueueName': 'InputQueue'}, 'url': 'https://sqs.us-east-1.amazonaws.com/', 'context': {'client_region': 'us-east-1', 'client_config': <botocore.config.Config object at 0x7f85e6386740>, 'has_streaming_input': False, 'auth_type': None}}
+DEBUG:botocore.hooks:Event request-created.sqs.GetQueueUrl: calling handler <bound method RequestSigner.handler of <botocore.signers.RequestSigner object at 0x7f85e6385000>>
+DEBUG:botocore.hooks:Event choose-signer.sqs.GetQueueUrl: calling handler <function set_operation_specific_signer at 0x7f85e65f13f0>
+DEBUG:botocore.auth:Calculating signature using v4 auth.
+DEBUG:botocore.auth:CanonicalRequest:
+POST
+/
+
+content-type:application/x-www-form-urlencoded; charset=utf-8
+host:sqs.us-east-1.amazonaws.com
+x-amz-date:20230922T015315Z
+x-amz-security-token:IQoJb3JpZ2luX2VjEBIaCXVzLWVhc3QtMSJHMEUCIQC7qUE5bYV4NTLDCNsztZfS+p3VBwtpyw2GTSUipTjaVQIgKwn8cXWhQxiApiVUmW0HvY5B9cK6RCspzkCtcUBbgl4qwwUI+///////////ARAAGgw4MDA2NTM5MzY2MDQiDFkZBOAhw3e68VR16CqXBaWaVwgUQkxt/PZNBVmXOjWjVATXeJ3aEypYD6zvXziQo2+TcuMEUaxzdiQ/wk+XznOjC9f/2rs00iPoTuUwGbUy6RuUXCeX2Ndc1+oJS+wT9tvy8qw5EQOeZTglqaCwK6Dx5t8PLRimXgM7qBonYrbT1oQSINLXtd+6Up5gMnWgB1jezaELkxP8zeUqBfI2VOyik8nXUeCpwbDRyQ/1C7bQV66uv/1/zT0pT2IE1x9Va0IKT38Y8F3Nd/ITRDFzplgAhT8NvkhpIMoXotO8DG1nIQbhgJSr4Mn7XFijFoO+f4t8GiLw1LBvqid54Uv8NmoDdtSWaZfyWUuaR+o6hOVtM6AltmR4qRTPMze3CrEvUKVMclKph00rhKMUZdS+qSUbNGU5d6D+OGXXUP+0ec4q/8j7dVXcjzq0Y4qIQ9y7u+XD7fwf1p9MsOJtMzMOPIV+4NJTXes3zbzEW3fivB7hqoR68Im0fN/0ZigPRrlJEG+9MsmIdWA2VamXsgu7cwjk8hxIYp2g0r6FNb3E45cBxoaRLsRTOdMs8tI2CUxKCG6IVytvn+gMEuD3fV+CfSyUd0dXOx0I5rYELrGAPo+hivVNaoNBTSWyb44F0phs+Kv5eNZ0ssu77tyHap6SSRY2HXjaND2aScABHcX8tSJ+vEga0SpxK8cpIWAtuCyFAml+wNJR+UFccSRzJo1og007WsZq8/TEBzZbzoQP5zLyzW3xzDSg3IXXi6wunocqhaqeeL+cLJbngFa2/HHqedjXnk2SfDia/p4U02blKvodDAFF5Jhq6S731ibVHV5iZoQOeuK/D4MZYmu/s/gHwaqVw8iUMyhs3pp7+TZsMqXNdarMwLhL0G0s6/HL8c+kVjbKukkJ3DCm4rOoBjqxAdpLFYHyiDGDGRvAs3/9fOPTu2DP3rgWxWVNPq5rEIexBDe3WRrTBDfTWweyXlJu3Y4K7whbnXgYKnMdqw2brAE9UmStqkz9pisAkDdCpBPpKYL4BwN6PHxgXzUCt1g+x0xhk4skBqR83nsuhtMQyeTCiYcZdTWSpdmKPXTMcr/Mt2JBPGwc3d9bbeyFeWiQDaL/2DXhLJ1NG/k5bZU5zpivCYC3gtxtDa04wWl+EYVV6A==
+
+content-type;host;x-amz-date;x-amz-security-token
+0ccec10b0678da7506ec2efd52da5ba99b24c857304ad773957ba9aea0097f7e
+DEBUG:botocore.auth:StringToSign:
+AWS4-HMAC-SHA256
+20230922T015315Z
+20230922/us-east-1/sqs/aws4_request
+0f3b9e56495a3eceaac20f11e5c7af1bfc8edaad82157e1c8c0439a11f4801ca
+DEBUG:botocore.auth:Signature:
+6a75ec62af84b6327d8c2caa0328091d18e305d2adb6cdffd495feccec1c0dd1
+DEBUG:botocore.hooks:Event request-created.sqs.GetQueueUrl: calling handler <function add_retry_headers at 0x7f85e65f3400>
+DEBUG:botocore.endpoint:Sending http request: <AWSPreparedRequest stream_output=False, method=POST, url=https://sqs.us-east-1.amazonaws.com/, headers={'Content-Type': b'application/x-www-form-urlencoded; charset=utf-8', 'User-Agent': b'Boto3/1.28.52 md/Botocore#1.31.52 ua/2.0 os/linux#6.2.0-1009-aws md/arch#x86_64 lang/python#3.10.12 md/pyimpl#CPython cfg/retry-mode#legacy Botocore/1.31.52 Resource', 'X-Amz-Date': b'20230922T015315Z', 'X-Amz-Security-Token': b'IQoJb3JpZ2luX2VjEBIaCXVzLWVhc3QtMSJHMEUCIQC7qUE5bYV4NTLDCNsztZfS+p3VBwtpyw2GTSUipTjaVQIgKwn8cXWhQxiApiVUmW0HvY5B9cK6RCspzkCtcUBbgl4qwwUI+///////////ARAAGgw4MDA2NTM5MzY2MDQiDFkZBOAhw3e68VR16CqXBaWaVwgUQkxt/PZNBVmXOjWjVATXeJ3aEypYD6zvXziQo2+TcuMEUaxzdiQ/wk+XznOjC9f/2rs00iPoTuUwGbUy6RuUXCeX2Ndc1+oJS+wT9tvy8qw5EQOeZTglqaCwK6Dx5t8PLRimXgM7qBonYrbT1oQSINLXtd+6Up5gMnWgB1jezaELkxP8zeUqBfI2VOyik8nXUeCpwbDRyQ/1C7bQV66uv/1/zT0pT2IE1x9Va0IKT38Y8F3Nd/ITRDFzplgAhT8NvkhpIMoXotO8DG1nIQbhgJSr4Mn7XFijFoO+f4t8GiLw1LBvqid54Uv8NmoDdtSWaZfyWUuaR+o6hOVtM6AltmR4qRTPMze3CrEvUKVMclKph00rhKMUZdS+qSUbNGU5d6D+OGXXUP+0ec4q/8j7dVXcjzq0Y4qIQ9y7u+XD7fwf1p9MsOJtMzMOPIV+4NJTXes3zbzEW3fivB7hqoR68Im0fN/0ZigPRrlJEG+9MsmIdWA2VamXsgu7cwjk8hxIYp2g0r6FNb3E45cBxoaRLsRTOdMs8tI2CUxKCG6IVytvn+gMEuD3fV+CfSyUd0dXOx0I5rYELrGAPo+hivVNaoNBTSWyb44F0phs+Kv5eNZ0ssu77tyHap6SSRY2HXjaND2aScABHcX8tSJ+vEga0SpxK8cpIWAtuCyFAml+wNJR+UFccSRzJo1og007WsZq8/TEBzZbzoQP5zLyzW3xzDSg3IXXi6wunocqhaqeeL+cLJbngFa2/HHqedjXnk2SfDia/p4U02blKvodDAFF5Jhq6S731ibVHV5iZoQOeuK/D4MZYmu/s/gHwaqVw8iUMyhs3pp7+TZsMqXNdarMwLhL0G0s6/HL8c+kVjbKukkJ3DCm4rOoBjqxAdpLFYHyiDGDGRvAs3/9fOPTu2DP3rgWxWVNPq5rEIexBDe3WRrTBDfTWweyXlJu3Y4K7whbnXgYKnMdqw2brAE9UmStqkz9pisAkDdCpBPpKYL4BwN6PHxgXzUCt1g+x0xhk4skBqR83nsuhtMQyeTCiYcZdTWSpdmKPXTMcr/Mt2JBPGwc3d9bbeyFeWiQDaL/2DXhLJ1NG/k5bZU5zpivCYC3gtxtDa04wWl+EYVV6A==', 'Authorization': b'AWS4-HMAC-SHA256 Credential=ASIA3U2VRQ7OJOLN2SAT/20230922/us-east-1/sqs/aws4_request, SignedHeaders=content-type;host;x-amz-date;x-amz-security-token, Signature=6a75ec62af84b6327d8c2caa0328091d18e305d2adb6cdffd495feccec1c0dd1', 'amz-sdk-invocation-id': b'34eb7792-c8d5-47dd-be1f-30b2cecec4f3', 'amz-sdk-request': b'attempt=1', 'Content-Length': '58'}>
+DEBUG:botocore.httpsession:Certificate path: /etc/ssl/certs/ca-certificates.crt
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): sqs.us-east-1.amazonaws.com:443
+DEBUG:urllib3.connectionpool:https://sqs.us-east-1.amazonaws.com:443 "POST / HTTP/1.1" 200 330
+DEBUG:botocore.parsers:Response headers: {'x-amzn-RequestId': 'f5422802-6a2c-55f1-8cd2-75849fe737ee', 'Date': 'Fri, 22 Sep 2023 01:53:15 GMT', 'Content-Type': 'text/xml', 'Content-Length': '330', 'connection': 'keep-alive'}
+DEBUG:botocore.parsers:Response body:
+b'<?xml version="1.0"?><GetQueueUrlResponse xmlns="http://queue.amazonaws.com/doc/2012-11-05/"><GetQueueUrlResult><QueueUrl>https://sqs.us-east-1.amazonaws.com/800653936604/InputQueue</QueueUrl></GetQueueUrlResult><ResponseMetadata><RequestId>f5422802-6a2c-55f1-8cd2-75849fe737ee</RequestId></ResponseMetadata></GetQueueUrlResponse>'
+DEBUG:botocore.hooks:Event needs-retry.sqs.GetQueueUrl: calling handler <botocore.retryhandler.RetryHandler object at 0x7f85e6387cd0>
+DEBUG:botocore.retryhandler:No retry needed.
+DEBUG:boto3.resources.action:Response: {'QueueUrl': 'https://sqs.us-east-1.amazonaws.com/800653936604/InputQueue', 'ResponseMetadata': {'RequestId': 'f5422802-6a2c-55f1-8cd2-75849fe737ee', 'HTTPStatusCode': 200, 'HTTPHeaders': {'x-amzn-requestid': 'f5422802-6a2c-55f1-8cd2-75849fe737ee', 'date': 'Fri, 22 Sep 2023 01:53:15 GMT', 'content-type': 'text/xml', 'content-length': '330', 'connection': 'keep-alive'}, 'RetryAttempts': 0}}
+DEBUG:boto3.resources.factory:Loading sqs:Queue
+DEBUG:boto3.resources.action:Calling sqs:get_queue_url with {'QueueName': 'OutputQueue'}
+DEBUG:botocore.hooks:Event before-parameter-build.sqs.GetQueueUrl: calling handler <function generate_idempotent_uuid at 0x7f85e65f1510>
+DEBUG:botocore.regions:Calling endpoint provider with parameters: {'Region': 'us-east-1', 'UseDualStack': False, 'UseFIPS': False}
+DEBUG:botocore.regions:Endpoint provider result: https://sqs.us-east-1.amazonaws.com
+DEBUG:botocore.hooks:Event before-call.sqs.GetQueueUrl: calling handler <function add_recursion_detection_header at 0x7f85e65f11b0>
+DEBUG:botocore.hooks:Event before-call.sqs.GetQueueUrl: calling handler <function inject_api_version_header_if_needed at 0x7f85e65f2d40>
+DEBUG:botocore.endpoint:Making request for OperationModel(name=GetQueueUrl) with params: {'url_path': '/', 'query_string': '', 'method': 'POST', 'headers': {'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8', 'User-Agent': 'Boto3/1.28.52 md/Botocore#1.31.52 ua/2.0 os/linux#6.2.0-1009-aws md/arch#x86_64 lang/python#3.10.12 md/pyimpl#CPython cfg/retry-mode#legacy Botocore/1.31.52 Resource'}, 'body': {'Action': 'GetQueueUrl', 'Version': '2012-11-05', 'QueueName': 'OutputQueue'}, 'url': 'https://sqs.us-east-1.amazonaws.com/', 'context': {'client_region': 'us-east-1', 'client_config': <botocore.config.Config object at 0x7f85e6386740>, 'has_streaming_input': False, 'auth_type': None}}
+DEBUG:botocore.hooks:Event request-created.sqs.GetQueueUrl: calling handler <bound method RequestSigner.handler of <botocore.signers.RequestSigner object at 0x7f85e6385000>>
+DEBUG:botocore.hooks:Event choose-signer.sqs.GetQueueUrl: calling handler <function set_operation_specific_signer at 0x7f85e65f13f0>
+DEBUG:botocore.auth:Calculating signature using v4 auth.
+DEBUG:botocore.auth:CanonicalRequest:
+POST
+/
+
+content-type:application/x-www-form-urlencoded; charset=utf-8
+host:sqs.us-east-1.amazonaws.com
+x-amz-date:20230922T015315Z
+x-amz-security-token:IQoJb3JpZ2luX2VjEBIaCXVzLWVhc3QtMSJHMEUCIQC7qUE5bYV4NTLDCNsztZfS+p3VBwtpyw2GTSUipTjaVQIgKwn8cXWhQxiApiVUmW0HvY5B9cK6RCspzkCtcUBbgl4qwwUI+///////////ARAAGgw4MDA2NTM5MzY2MDQiDFkZBOAhw3e68VR16CqXBaWaVwgUQkxt/PZNBVmXOjWjVATXeJ3aEypYD6zvXziQo2+TcuMEUaxzdiQ/wk+XznOjC9f/2rs00iPoTuUwGbUy6RuUXCeX2Ndc1+oJS+wT9tvy8qw5EQOeZTglqaCwK6Dx5t8PLRimXgM7qBonYrbT1oQSINLXtd+6Up5gMnWgB1jezaELkxP8zeUqBfI2VOyik8nXUeCpwbDRyQ/1C7bQV66uv/1/zT0pT2IE1x9Va0IKT38Y8F3Nd/ITRDFzplgAhT8NvkhpIMoXotO8DG1nIQbhgJSr4Mn7XFijFoO+f4t8GiLw1LBvqid54Uv8NmoDdtSWaZfyWUuaR+o6hOVtM6AltmR4qRTPMze3CrEvUKVMclKph00rhKMUZdS+qSUbNGU5d6D+OGXXUP+0ec4q/8j7dVXcjzq0Y4qIQ9y7u+XD7fwf1p9MsOJtMzMOPIV+4NJTXes3zbzEW3fivB7hqoR68Im0fN/0ZigPRrlJEG+9MsmIdWA2VamXsgu7cwjk8hxIYp2g0r6FNb3E45cBxoaRLsRTOdMs8tI2CUxKCG6IVytvn+gMEuD3fV+CfSyUd0dXOx0I5rYELrGAPo+hivVNaoNBTSWyb44F0phs+Kv5eNZ0ssu77tyHap6SSRY2HXjaND2aScABHcX8tSJ+vEga0SpxK8cpIWAtuCyFAml+wNJR+UFccSRzJo1og007WsZq8/TEBzZbzoQP5zLyzW3xzDSg3IXXi6wunocqhaqeeL+cLJbngFa2/HHqedjXnk2SfDia/p4U02blKvodDAFF5Jhq6S731ibVHV5iZoQOeuK/D4MZYmu/s/gHwaqVw8iUMyhs3pp7+TZsMqXNdarMwLhL0G0s6/HL8c+kVjbKukkJ3DCm4rOoBjqxAdpLFYHyiDGDGRvAs3/9fOPTu2DP3rgWxWVNPq5rEIexBDe3WRrTBDfTWweyXlJu3Y4K7whbnXgYKnMdqw2brAE9UmStqkz9pisAkDdCpBPpKYL4BwN6PHxgXzUCt1g+x0xhk4skBqR83nsuhtMQyeTCiYcZdTWSpdmKPXTMcr/Mt2JBPGwc3d9bbeyFeWiQDaL/2DXhLJ1NG/k5bZU5zpivCYC3gtxtDa04wWl+EYVV6A==
+
+content-type;host;x-amz-date;x-amz-security-token
+e34c9a41733b1a5a48016c390dd3c065aa2f5129b60229bbfb6f005ce1afc443
+DEBUG:botocore.auth:StringToSign:
+AWS4-HMAC-SHA256
+20230922T015315Z
+20230922/us-east-1/sqs/aws4_request
+431e2abd310adb3ddeaec4aae51f2ec44853fb88598edd2affa0f36cecbecf57
+DEBUG:botocore.auth:Signature:
+45337209b4f38750c1d4a0d839c6a60ce32c7e2e983c414dbb36b6dbbe438d9c
+DEBUG:botocore.hooks:Event request-created.sqs.GetQueueUrl: calling handler <function add_retry_headers at 0x7f85e65f3400>
+DEBUG:botocore.endpoint:Sending http request: <AWSPreparedRequest stream_output=False, method=POST, url=https://sqs.us-east-1.amazonaws.com/, headers={'Content-Type': b'application/x-www-form-urlencoded; charset=utf-8', 'User-Agent': b'Boto3/1.28.52 md/Botocore#1.31.52 ua/2.0 os/linux#6.2.0-1009-aws md/arch#x86_64 lang/python#3.10.12 md/pyimpl#CPython cfg/retry-mode#legacy Botocore/1.31.52 Resource', 'X-Amz-Date': b'20230922T015315Z', 'X-Amz-Security-Token': b'IQoJb3JpZ2luX2VjEBIaCXVzLWVhc3QtMSJHMEUCIQC7qUE5bYV4NTLDCNsztZfS+p3VBwtpyw2GTSUipTjaVQIgKwn8cXWhQxiApiVUmW0HvY5B9cK6RCspzkCtcUBbgl4qwwUI+///////////ARAAGgw4MDA2NTM5MzY2MDQiDFkZBOAhw3e68VR16CqXBaWaVwgUQkxt/PZNBVmXOjWjVATXeJ3aEypYD6zvXziQo2+TcuMEUaxzdiQ/wk+XznOjC9f/2rs00iPoTuUwGbUy6RuUXCeX2Ndc1+oJS+wT9tvy8qw5EQOeZTglqaCwK6Dx5t8PLRimXgM7qBonYrbT1oQSINLXtd+6Up5gMnWgB1jezaELkxP8zeUqBfI2VOyik8nXUeCpwbDRyQ/1C7bQV66uv/1/zT0pT2IE1x9Va0IKT38Y8F3Nd/ITRDFzplgAhT8NvkhpIMoXotO8DG1nIQbhgJSr4Mn7XFijFoO+f4t8GiLw1LBvqid54Uv8NmoDdtSWaZfyWUuaR+o6hOVtM6AltmR4qRTPMze3CrEvUKVMclKph00rhKMUZdS+qSUbNGU5d6D+OGXXUP+0ec4q/8j7dVXcjzq0Y4qIQ9y7u+XD7fwf1p9MsOJtMzMOPIV+4NJTXes3zbzEW3fivB7hqoR68Im0fN/0ZigPRrlJEG+9MsmIdWA2VamXsgu7cwjk8hxIYp2g0r6FNb3E45cBxoaRLsRTOdMs8tI2CUxKCG6IVytvn+gMEuD3fV+CfSyUd0dXOx0I5rYELrGAPo+hivVNaoNBTSWyb44F0phs+Kv5eNZ0ssu77tyHap6SSRY2HXjaND2aScABHcX8tSJ+vEga0SpxK8cpIWAtuCyFAml+wNJR+UFccSRzJo1og007WsZq8/TEBzZbzoQP5zLyzW3xzDSg3IXXi6wunocqhaqeeL+cLJbngFa2/HHqedjXnk2SfDia/p4U02blKvodDAFF5Jhq6S731ibVHV5iZoQOeuK/D4MZYmu/s/gHwaqVw8iUMyhs3pp7+TZsMqXNdarMwLhL0G0s6/HL8c+kVjbKukkJ3DCm4rOoBjqxAdpLFYHyiDGDGRvAs3/9fOPTu2DP3rgWxWVNPq5rEIexBDe3WRrTBDfTWweyXlJu3Y4K7whbnXgYKnMdqw2brAE9UmStqkz9pisAkDdCpBPpKYL4BwN6PHxgXzUCt1g+x0xhk4skBqR83nsuhtMQyeTCiYcZdTWSpdmKPXTMcr/Mt2JBPGwc3d9bbeyFeWiQDaL/2DXhLJ1NG/k5bZU5zpivCYC3gtxtDa04wWl+EYVV6A==', 'Authorization': b'AWS4-HMAC-SHA256 Credential=ASIA3U2VRQ7OJOLN2SAT/20230922/us-east-1/sqs/aws4_request, SignedHeaders=content-type;host;x-amz-date;x-amz-security-token, Signature=45337209b4f38750c1d4a0d839c6a60ce32c7e2e983c414dbb36b6dbbe438d9c', 'amz-sdk-invocation-id': b'ad0f7d37-3afe-4f7b-bf14-96562538a586', 'amz-sdk-request': b'attempt=1', 'Content-Length': '59'}>
+DEBUG:botocore.httpsession:Certificate path: /etc/ssl/certs/ca-certificates.crt
+DEBUG:urllib3.connectionpool:https://sqs.us-east-1.amazonaws.com:443 "POST / HTTP/1.1" 200 331
+DEBUG:botocore.parsers:Response headers: {'x-amzn-RequestId': 'af9686ed-7a76-5cf4-9654-db6b8fbd0eeb', 'Date': 'Fri, 22 Sep 2023 01:53:15 GMT', 'Content-Type': 'text/xml', 'Content-Length': '331', 'connection': 'keep-alive'}
+DEBUG:botocore.parsers:Response body:
+b'<?xml version="1.0"?><GetQueueUrlResponse xmlns="http://queue.amazonaws.com/doc/2012-11-05/"><GetQueueUrlResult><QueueUrl>https://sqs.us-east-1.amazonaws.com/800653936604/OutputQueue</QueueUrl></GetQueueUrlResult><ResponseMetadata><RequestId>af9686ed-7a76-5cf4-9654-db6b8fbd0eeb</RequestId></ResponseMetadata></GetQueueUrlResponse>'
+DEBUG:botocore.hooks:Event needs-retry.sqs.GetQueueUrl: calling handler <botocore.retryhandler.RetryHandler object at 0x7f85e6387cd0>
+DEBUG:botocore.retryhandler:No retry needed.
+DEBUG:boto3.resources.action:Response: {'QueueUrl': 'https://sqs.us-east-1.amazonaws.com/800653936604/OutputQueue', 'ResponseMetadata': {'RequestId': 'af9686ed-7a76-5cf4-9654-db6b8fbd0eeb', 'HTTPStatusCode': 200, 'HTTPHeaders': {'x-amzn-requestid': 'af9686ed-7a76-5cf4-9654-db6b8fbd0eeb', 'date': 'Fri, 22 Sep 2023 01:53:15 GMT', 'content-type': 'text/xml', 'content-length': '331', 'connection': 'keep-alive'}, 'RetryAttempts': 0}}
+DEBUG:boto3.resources.factory:Loading sqs:Queue
+DEBUG:boto3.resources.action:Calling sqs:receive_message with {'QueueUrl': 'https://sqs.us-east-1.amazonaws.com/800653936604/InputQueue'}
+DEBUG:botocore.hooks:Event before-parameter-build.sqs.ReceiveMessage: calling handler <function generate_idempotent_uuid at 0x7f85e65f1510>
+DEBUG:botocore.regions:Calling endpoint provider with parameters: {'Region': 'us-east-1', 'UseDualStack': False, 'UseFIPS': False}
+DEBUG:botocore.regions:Endpoint provider result: https://sqs.us-east-1.amazonaws.com
+DEBUG:botocore.hooks:Event before-call.sqs.ReceiveMessage: calling handler <function add_recursion_detection_header at 0x7f85e65f11b0>
+DEBUG:botocore.hooks:Event before-call.sqs.ReceiveMessage: calling handler <function inject_api_version_header_if_needed at 0x7f85e65f2d40>
+DEBUG:botocore.endpoint:Making request for OperationModel(name=ReceiveMessage) with params: {'url_path': '/', 'query_string': '', 'method': 'POST', 'headers': {'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8', 'User-Agent': 'Boto3/1.28.52 md/Botocore#1.31.52 ua/2.0 os/linux#6.2.0-1009-aws md/arch#x86_64 lang/python#3.10.12 md/pyimpl#CPython cfg/retry-mode#legacy Botocore/1.31.52 Resource'}, 'body': {'Action': 'ReceiveMessage', 'Version': '2012-11-05', 'QueueUrl': 'https://sqs.us-east-1.amazonaws.com/800653936604/InputQueue'}, 'url': 'https://sqs.us-east-1.amazonaws.com/', 'context': {'client_region': 'us-east-1', 'client_config': <botocore.config.Config object at 0x7f85e6386740>, 'has_streaming_input': False, 'auth_type': None}}
+DEBUG:botocore.hooks:Event request-created.sqs.ReceiveMessage: calling handler <bound method RequestSigner.handler of <botocore.signers.RequestSigner object at 0x7f85e6385000>>
+DEBUG:botocore.hooks:Event choose-signer.sqs.ReceiveMessage: calling handler <function set_operation_specific_signer at 0x7f85e65f13f0>
+DEBUG:botocore.auth:Calculating signature using v4 auth.
+DEBUG:botocore.auth:CanonicalRequest:
+POST
+/
+
+content-type:application/x-www-form-urlencoded; charset=utf-8
+host:sqs.us-east-1.amazonaws.com
+x-amz-date:20230922T015315Z
+x-amz-security-token:IQoJb3JpZ2luX2VjEBIaCXVzLWVhc3QtMSJHMEUCIQC7qUE5bYV4NTLDCNsztZfS+p3VBwtpyw2GTSUipTjaVQIgKwn8cXWhQxiApiVUmW0HvY5B9cK6RCspzkCtcUBbgl4qwwUI+///////////ARAAGgw4MDA2NTM5MzY2MDQiDFkZBOAhw3e68VR16CqXBaWaVwgUQkxt/PZNBVmXOjWjVATXeJ3aEypYD6zvXziQo2+TcuMEUaxzdiQ/wk+XznOjC9f/2rs00iPoTuUwGbUy6RuUXCeX2Ndc1+oJS+wT9tvy8qw5EQOeZTglqaCwK6Dx5t8PLRimXgM7qBonYrbT1oQSINLXtd+6Up5gMnWgB1jezaELkxP8zeUqBfI2VOyik8nXUeCpwbDRyQ/1C7bQV66uv/1/zT0pT2IE1x9Va0IKT38Y8F3Nd/ITRDFzplgAhT8NvkhpIMoXotO8DG1nIQbhgJSr4Mn7XFijFoO+f4t8GiLw1LBvqid54Uv8NmoDdtSWaZfyWUuaR+o6hOVtM6AltmR4qRTPMze3CrEvUKVMclKph00rhKMUZdS+qSUbNGU5d6D+OGXXUP+0ec4q/8j7dVXcjzq0Y4qIQ9y7u+XD7fwf1p9MsOJtMzMOPIV+4NJTXes3zbzEW3fivB7hqoR68Im0fN/0ZigPRrlJEG+9MsmIdWA2VamXsgu7cwjk8hxIYp2g0r6FNb3E45cBxoaRLsRTOdMs8tI2CUxKCG6IVytvn+gMEuD3fV+CfSyUd0dXOx0I5rYELrGAPo+hivVNaoNBTSWyb44F0phs+Kv5eNZ0ssu77tyHap6SSRY2HXjaND2aScABHcX8tSJ+vEga0SpxK8cpIWAtuCyFAml+wNJR+UFccSRzJo1og007WsZq8/TEBzZbzoQP5zLyzW3xzDSg3IXXi6wunocqhaqeeL+cLJbngFa2/HHqedjXnk2SfDia/p4U02blKvodDAFF5Jhq6S731ibVHV5iZoQOeuK/D4MZYmu/s/gHwaqVw8iUMyhs3pp7+TZsMqXNdarMwLhL0G0s6/HL8c+kVjbKukkJ3DCm4rOoBjqxAdpLFYHyiDGDGRvAs3/9fOPTu2DP3rgWxWVNPq5rEIexBDe3WRrTBDfTWweyXlJu3Y4K7whbnXgYKnMdqw2brAE9UmStqkz9pisAkDdCpBPpKYL4BwN6PHxgXzUCt1g+x0xhk4skBqR83nsuhtMQyeTCiYcZdTWSpdmKPXTMcr/Mt2JBPGwc3d9bbeyFeWiQDaL/2DXhLJ1NG/k5bZU5zpivCYC3gtxtDa04wWl+EYVV6A==
+
+content-type;host;x-amz-date;x-amz-security-token
+efebb81553df6cac235a938df4b920d705bab2f76d1d5166451650efa6b7616b
+DEBUG:botocore.auth:StringToSign:
+AWS4-HMAC-SHA256
+20230922T015315Z
+20230922/us-east-1/sqs/aws4_request
+5a5d5d34522e3786613409555fe34ec684e6160cd0f6253b0419c387fcaba460
+DEBUG:botocore.auth:Signature:
+bb2c59bc204e05e9ee396c35b23a9bc9d784a3cf7753d02bee76ec2ea9381d5e
+DEBUG:botocore.hooks:Event request-created.sqs.ReceiveMessage: calling handler <function add_retry_headers at 0x7f85e65f3400>
+DEBUG:botocore.endpoint:Sending http request: <AWSPreparedRequest stream_output=False, method=POST, url=https://sqs.us-east-1.amazonaws.com/, headers={'Content-Type': b'application/x-www-form-urlencoded; charset=utf-8', 'User-Agent': b'Boto3/1.28.52 md/Botocore#1.31.52 ua/2.0 os/linux#6.2.0-1009-aws md/arch#x86_64 lang/python#3.10.12 md/pyimpl#CPython cfg/retry-mode#legacy Botocore/1.31.52 Resource', 'X-Amz-Date': b'20230922T015315Z', 'X-Amz-Security-Token': b'IQoJb3JpZ2luX2VjEBIaCXVzLWVhc3QtMSJHMEUCIQC7qUE5bYV4NTLDCNsztZfS+p3VBwtpyw2GTSUipTjaVQIgKwn8cXWhQxiApiVUmW0HvY5B9cK6RCspzkCtcUBbgl4qwwUI+///////////ARAAGgw4MDA2NTM5MzY2MDQiDFkZBOAhw3e68VR16CqXBaWaVwgUQkxt/PZNBVmXOjWjVATXeJ3aEypYD6zvXziQo2+TcuMEUaxzdiQ/wk+XznOjC9f/2rs00iPoTuUwGbUy6RuUXCeX2Ndc1+oJS+wT9tvy8qw5EQOeZTglqaCwK6Dx5t8PLRimXgM7qBonYrbT1oQSINLXtd+6Up5gMnWgB1jezaELkxP8zeUqBfI2VOyik8nXUeCpwbDRyQ/1C7bQV66uv/1/zT0pT2IE1x9Va0IKT38Y8F3Nd/ITRDFzplgAhT8NvkhpIMoXotO8DG1nIQbhgJSr4Mn7XFijFoO+f4t8GiLw1LBvqid54Uv8NmoDdtSWaZfyWUuaR+o6hOVtM6AltmR4qRTPMze3CrEvUKVMclKph00rhKMUZdS+qSUbNGU5d6D+OGXXUP+0ec4q/8j7dVXcjzq0Y4qIQ9y7u+XD7fwf1p9MsOJtMzMOPIV+4NJTXes3zbzEW3fivB7hqoR68Im0fN/0ZigPRrlJEG+9MsmIdWA2VamXsgu7cwjk8hxIYp2g0r6FNb3E45cBxoaRLsRTOdMs8tI2CUxKCG6IVytvn+gMEuD3fV+CfSyUd0dXOx0I5rYELrGAPo+hivVNaoNBTSWyb44F0phs+Kv5eNZ0ssu77tyHap6SSRY2HXjaND2aScABHcX8tSJ+vEga0SpxK8cpIWAtuCyFAml+wNJR+UFccSRzJo1og007WsZq8/TEBzZbzoQP5zLyzW3xzDSg3IXXi6wunocqhaqeeL+cLJbngFa2/HHqedjXnk2SfDia/p4U02blKvodDAFF5Jhq6S731ibVHV5iZoQOeuK/D4MZYmu/s/gHwaqVw8iUMyhs3pp7+TZsMqXNdarMwLhL0G0s6/HL8c+kVjbKukkJ3DCm4rOoBjqxAdpLFYHyiDGDGRvAs3/9fOPTu2DP3rgWxWVNPq5rEIexBDe3WRrTBDfTWweyXlJu3Y4K7whbnXgYKnMdqw2brAE9UmStqkz9pisAkDdCpBPpKYL4BwN6PHxgXzUCt1g+x0xhk4skBqR83nsuhtMQyeTCiYcZdTWSpdmKPXTMcr/Mt2JBPGwc3d9bbeyFeWiQDaL/2DXhLJ1NG/k5bZU5zpivCYC3gtxtDa04wWl+EYVV6A==', 'Authorization': b'AWS4-HMAC-SHA256 Credential=ASIA3U2VRQ7OJOLN2SAT/20230922/us-east-1/sqs/aws4_request, SignedHeaders=content-type;host;x-amz-date;x-amz-security-token, Signature=bb2c59bc204e05e9ee396c35b23a9bc9d784a3cf7753d02bee76ec2ea9381d5e', 'amz-sdk-invocation-id': b'723c8ac1-63ce-406d-82b0-dc3b802aa9a4', 'amz-sdk-request': b'attempt=1', 'Content-Length': '119'}>
+DEBUG:botocore.httpsession:Certificate path: /etc/ssl/certs/ca-certificates.crt
+DEBUG:urllib3.connectionpool:https://sqs.us-east-1.amazonaws.com:443 "POST / HTTP/1.1" 200 240
+DEBUG:botocore.parsers:Response headers: {'x-amzn-RequestId': '91afb41a-9113-5001-b365-e99c64d8221e', 'Date': 'Fri, 22 Sep 2023 01:53:16 GMT', 'Content-Type': 'text/xml', 'Content-Length': '240', 'connection': 'keep-alive'}
+DEBUG:botocore.parsers:Response body:
+b'<?xml version="1.0"?><ReceiveMessageResponse xmlns="http://queue.amazonaws.com/doc/2012-11-05/"><ReceiveMessageResult/><ResponseMetadata><RequestId>91afb41a-9113-5001-b365-e99c64d8221e</RequestId></ResponseMetadata></ReceiveMessageResponse>'
+DEBUG:botocore.hooks:Event needs-retry.sqs.ReceiveMessage: calling handler <botocore.retryhandler.RetryHandler object at 0x7f85e6387cd0>
+DEBUG:botocore.retryhandler:No retry needed.
+DEBUG:boto3.resources.action:Response: {'ResponseMetadata': {'RequestId': '91afb41a-9113-5001-b365-e99c64d8221e', 'HTTPStatusCode': 200, 'HTTPHeaders': {'x-amzn-requestid': '91afb41a-9113-5001-b365-e99c64d8221e', 'date': 'Fri, 22 Sep 2023 01:53:16 GMT', 'content-type': 'text/xml', 'content-length': '240', 'connection': 'keep-alive'}, 'RetryAttempts': 0}}
+DEBUG:boto3.resources.factory:Loading sqs:Message
+DEBUG:boto3.resources.model:Renaming Message attribute receipt_handle
+DEBUG:botocore.hooks:Changing event name from creating-client-class.iot-data to creating-client-class.iot-data-plane
+DEBUG:botocore.hooks:Changing event name from before-call.apigateway to before-call.api-gateway
+DEBUG:botocore.hooks:Changing event name from request-created.machinelearning.Predict to request-created.machine-learning.Predict
+DEBUG:botocore.hooks:Changing event name from before-parameter-build.autoscaling.CreateLaunchConfiguration to before-parameter-build.auto-scaling.CreateLaunchConfiguration
+DEBUG:botocore.hooks:Changing event name from before-parameter-build.route53 to before-parameter-build.route-53
+DEBUG:botocore.hooks:Changing event name from request-created.cloudsearchdomain.Search to request-created.cloudsearch-domain.Search
+DEBUG:botocore.hooks:Changing event name from docs.*.autoscaling.CreateLaunchConfiguration.complete-section to docs.*.auto-scaling.CreateLaunchConfiguration.complete-section
+DEBUG:botocore.hooks:Changing event name from before-parameter-build.logs.CreateExportTask to before-parameter-build.cloudwatch-logs.CreateExportTask
+DEBUG:botocore.hooks:Changing event name from docs.*.logs.CreateExportTask.complete-section to docs.*.cloudwatch-logs.CreateExportTask.complete-section
+DEBUG:botocore.hooks:Changing event name from before-parameter-build.cloudsearchdomain.Search to before-parameter-build.cloudsearch-domain.Search
+DEBUG:botocore.hooks:Changing event name from docs.*.cloudsearchdomain.Search.complete-section to docs.*.cloudsearch-domain.Search.complete-section
+DEBUG:botocore.loaders:Loading JSON file: /home/ubuntu/.local/lib/python3.10/site-packages/boto3/data/sqs/2012-11-05/resources-1.json
+DEBUG:botocore.utils:IMDS ENDPOINT: http://169.254.169.254/
+DEBUG:botocore.credentials:Looking for credentials via: env
+DEBUG:botocore.credentials:Looking for credentials via: assume-role
+DEBUG:botocore.credentials:Looking for credentials via: assume-role-with-web-identity
+DEBUG:botocore.credentials:Looking for credentials via: sso
+DEBUG:botocore.credentials:Looking for credentials via: shared-credentials-file
+DEBUG:botocore.credentials:Looking for credentials via: custom-process
+DEBUG:botocore.credentials:Looking for credentials via: config-file
+DEBUG:botocore.credentials:Looking for credentials via: ec2-credentials-file
+DEBUG:botocore.credentials:Looking for credentials via: boto-config
+DEBUG:botocore.credentials:Looking for credentials via: container-role
+DEBUG:botocore.credentials:Looking for credentials via: iam-role
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 169.254.169.254:80
+DEBUG:urllib3.connectionpool:http://169.254.169.254:80 "PUT /latest/api/token HTTP/1.1" 200 56
+DEBUG:urllib3.connectionpool:Resetting dropped connection: 169.254.169.254
+DEBUG:urllib3.connectionpool:http://169.254.169.254:80 "GET /latest/meta-data/iam/security-credentials/ HTTP/1.1" 200 14
+DEBUG:urllib3.connectionpool:Resetting dropped connection: 169.254.169.254
+DEBUG:urllib3.connectionpool:http://169.254.169.254:80 "GET /latest/meta-data/iam/security-credentials/EC2QueueAccess HTTP/1.1" 200 1582
+INFO:botocore.credentials:Found credentials from IAM Role: EC2QueueAccess
+DEBUG:botocore.loaders:Loading JSON file: /home/ubuntu/.local/lib/python3.10/site-packages/botocore/data/endpoints.json
+DEBUG:botocore.loaders:Loading JSON file: /home/ubuntu/.local/lib/python3.10/site-packages/botocore/data/sdk-default-configuration.json
+DEBUG:botocore.hooks:Event choose-service-name: calling handler <function handle_service_name_alias at 0x7fabf7f97d90>
+DEBUG:botocore.loaders:Loading JSON file: /home/ubuntu/.local/lib/python3.10/site-packages/botocore/data/sqs/2012-11-05/service-2.json
+DEBUG:botocore.loaders:Loading JSON file: /home/ubuntu/.local/lib/python3.10/site-packages/botocore/data/sqs/2012-11-05/endpoint-rule-set-1.json.gz
+DEBUG:botocore.loaders:Loading JSON file: /home/ubuntu/.local/lib/python3.10/site-packages/botocore/data/partitions.json
+DEBUG:botocore.hooks:Event creating-client-class.sqs: calling handler <function add_generate_presigned_url at 0x7fabf81125f0>
+DEBUG:botocore.configprovider:Looking for endpoint for sqs via: environment_service
+DEBUG:botocore.configprovider:Looking for endpoint for sqs via: environment_global
+DEBUG:botocore.configprovider:Looking for endpoint for sqs via: config_service
+DEBUG:botocore.configprovider:Looking for endpoint for sqs via: config_global
+DEBUG:botocore.configprovider:No configured endpoint found.
+DEBUG:botocore.endpoint:Setting sqs timeout as (60, 60)
+DEBUG:botocore.loaders:Loading JSON file: /home/ubuntu/.local/lib/python3.10/site-packages/botocore/data/_retry.json
+DEBUG:botocore.client:Registering retry handlers for service: sqs
+DEBUG:boto3.resources.factory:Loading sqs:sqs
+DEBUG:boto3.resources.action:Calling sqs:get_queue_url with {'QueueName': 'InputQueue'}
+DEBUG:botocore.hooks:Event before-parameter-build.sqs.GetQueueUrl: calling handler <function generate_idempotent_uuid at 0x7fabf7fe5510>
+DEBUG:botocore.regions:Calling endpoint provider with parameters: {'Region': 'us-east-1', 'UseDualStack': False, 'UseFIPS': False}
+DEBUG:botocore.regions:Endpoint provider result: https://sqs.us-east-1.amazonaws.com
+DEBUG:botocore.hooks:Event before-call.sqs.GetQueueUrl: calling handler <function add_recursion_detection_header at 0x7fabf7fe51b0>
+DEBUG:botocore.hooks:Event before-call.sqs.GetQueueUrl: calling handler <function inject_api_version_header_if_needed at 0x7fabf7fe6d40>
+DEBUG:botocore.endpoint:Making request for OperationModel(name=GetQueueUrl) with params: {'url_path': '/', 'query_string': '', 'method': 'POST', 'headers': {'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8', 'User-Agent': 'Boto3/1.28.52 md/Botocore#1.31.52 ua/2.0 os/linux#6.2.0-1009-aws md/arch#x86_64 lang/python#3.10.12 md/pyimpl#CPython cfg/retry-mode#legacy Botocore/1.31.52 Resource'}, 'body': {'Action': 'GetQueueUrl', 'Version': '2012-11-05', 'QueueName': 'InputQueue'}, 'url': 'https://sqs.us-east-1.amazonaws.com/', 'context': {'client_region': 'us-east-1', 'client_config': <botocore.config.Config object at 0x7fabf7d76740>, 'has_streaming_input': False, 'auth_type': None}}
+DEBUG:botocore.hooks:Event request-created.sqs.GetQueueUrl: calling handler <bound method RequestSigner.handler of <botocore.signers.RequestSigner object at 0x7fabf7d75000>>
+DEBUG:botocore.hooks:Event choose-signer.sqs.GetQueueUrl: calling handler <function set_operation_specific_signer at 0x7fabf7fe53f0>
+DEBUG:botocore.auth:Calculating signature using v4 auth.
+DEBUG:botocore.auth:CanonicalRequest:
+POST
+/
+
+content-type:application/x-www-form-urlencoded; charset=utf-8
+host:sqs.us-east-1.amazonaws.com
+x-amz-date:20230922T015322Z
+x-amz-security-token:IQoJb3JpZ2luX2VjEBIaCXVzLWVhc3QtMSJHMEUCIQC7qUE5bYV4NTLDCNsztZfS+p3VBwtpyw2GTSUipTjaVQIgKwn8cXWhQxiApiVUmW0HvY5B9cK6RCspzkCtcUBbgl4qwwUI+///////////ARAAGgw4MDA2NTM5MzY2MDQiDFkZBOAhw3e68VR16CqXBaWaVwgUQkxt/PZNBVmXOjWjVATXeJ3aEypYD6zvXziQo2+TcuMEUaxzdiQ/wk+XznOjC9f/2rs00iPoTuUwGbUy6RuUXCeX2Ndc1+oJS+wT9tvy8qw5EQOeZTglqaCwK6Dx5t8PLRimXgM7qBonYrbT1oQSINLXtd+6Up5gMnWgB1jezaELkxP8zeUqBfI2VOyik8nXUeCpwbDRyQ/1C7bQV66uv/1/zT0pT2IE1x9Va0IKT38Y8F3Nd/ITRDFzplgAhT8NvkhpIMoXotO8DG1nIQbhgJSr4Mn7XFijFoO+f4t8GiLw1LBvqid54Uv8NmoDdtSWaZfyWUuaR+o6hOVtM6AltmR4qRTPMze3CrEvUKVMclKph00rhKMUZdS+qSUbNGU5d6D+OGXXUP+0ec4q/8j7dVXcjzq0Y4qIQ9y7u+XD7fwf1p9MsOJtMzMOPIV+4NJTXes3zbzEW3fivB7hqoR68Im0fN/0ZigPRrlJEG+9MsmIdWA2VamXsgu7cwjk8hxIYp2g0r6FNb3E45cBxoaRLsRTOdMs8tI2CUxKCG6IVytvn+gMEuD3fV+CfSyUd0dXOx0I5rYELrGAPo+hivVNaoNBTSWyb44F0phs+Kv5eNZ0ssu77tyHap6SSRY2HXjaND2aScABHcX8tSJ+vEga0SpxK8cpIWAtuCyFAml+wNJR+UFccSRzJo1og007WsZq8/TEBzZbzoQP5zLyzW3xzDSg3IXXi6wunocqhaqeeL+cLJbngFa2/HHqedjXnk2SfDia/p4U02blKvodDAFF5Jhq6S731ibVHV5iZoQOeuK/D4MZYmu/s/gHwaqVw8iUMyhs3pp7+TZsMqXNdarMwLhL0G0s6/HL8c+kVjbKukkJ3DCm4rOoBjqxAdpLFYHyiDGDGRvAs3/9fOPTu2DP3rgWxWVNPq5rEIexBDe3WRrTBDfTWweyXlJu3Y4K7whbnXgYKnMdqw2brAE9UmStqkz9pisAkDdCpBPpKYL4BwN6PHxgXzUCt1g+x0xhk4skBqR83nsuhtMQyeTCiYcZdTWSpdmKPXTMcr/Mt2JBPGwc3d9bbeyFeWiQDaL/2DXhLJ1NG/k5bZU5zpivCYC3gtxtDa04wWl+EYVV6A==
+
+content-type;host;x-amz-date;x-amz-security-token
+0ccec10b0678da7506ec2efd52da5ba99b24c857304ad773957ba9aea0097f7e
+DEBUG:botocore.auth:StringToSign:
+AWS4-HMAC-SHA256
+20230922T015322Z
+20230922/us-east-1/sqs/aws4_request
+b7c9363ef1e3f542361c92c3f8274eb82f744e5262289081d6a276da01dc721e
+DEBUG:botocore.auth:Signature:
+5247275fa44cf0444abb01e6f9fdaf9494ff467f26eada1960432193737086af
+DEBUG:botocore.hooks:Event request-created.sqs.GetQueueUrl: calling handler <function add_retry_headers at 0x7fabf7fe7400>
+DEBUG:botocore.endpoint:Sending http request: <AWSPreparedRequest stream_output=False, method=POST, url=https://sqs.us-east-1.amazonaws.com/, headers={'Content-Type': b'application/x-www-form-urlencoded; charset=utf-8', 'User-Agent': b'Boto3/1.28.52 md/Botocore#1.31.52 ua/2.0 os/linux#6.2.0-1009-aws md/arch#x86_64 lang/python#3.10.12 md/pyimpl#CPython cfg/retry-mode#legacy Botocore/1.31.52 Resource', 'X-Amz-Date': b'20230922T015322Z', 'X-Amz-Security-Token': b'IQoJb3JpZ2luX2VjEBIaCXVzLWVhc3QtMSJHMEUCIQC7qUE5bYV4NTLDCNsztZfS+p3VBwtpyw2GTSUipTjaVQIgKwn8cXWhQxiApiVUmW0HvY5B9cK6RCspzkCtcUBbgl4qwwUI+///////////ARAAGgw4MDA2NTM5MzY2MDQiDFkZBOAhw3e68VR16CqXBaWaVwgUQkxt/PZNBVmXOjWjVATXeJ3aEypYD6zvXziQo2+TcuMEUaxzdiQ/wk+XznOjC9f/2rs00iPoTuUwGbUy6RuUXCeX2Ndc1+oJS+wT9tvy8qw5EQOeZTglqaCwK6Dx5t8PLRimXgM7qBonYrbT1oQSINLXtd+6Up5gMnWgB1jezaELkxP8zeUqBfI2VOyik8nXUeCpwbDRyQ/1C7bQV66uv/1/zT0pT2IE1x9Va0IKT38Y8F3Nd/ITRDFzplgAhT8NvkhpIMoXotO8DG1nIQbhgJSr4Mn7XFijFoO+f4t8GiLw1LBvqid54Uv8NmoDdtSWaZfyWUuaR+o6hOVtM6AltmR4qRTPMze3CrEvUKVMclKph00rhKMUZdS+qSUbNGU5d6D+OGXXUP+0ec4q/8j7dVXcjzq0Y4qIQ9y7u+XD7fwf1p9MsOJtMzMOPIV+4NJTXes3zbzEW3fivB7hqoR68Im0fN/0ZigPRrlJEG+9MsmIdWA2VamXsgu7cwjk8hxIYp2g0r6FNb3E45cBxoaRLsRTOdMs8tI2CUxKCG6IVytvn+gMEuD3fV+CfSyUd0dXOx0I5rYELrGAPo+hivVNaoNBTSWyb44F0phs+Kv5eNZ0ssu77tyHap6SSRY2HXjaND2aScABHcX8tSJ+vEga0SpxK8cpIWAtuCyFAml+wNJR+UFccSRzJo1og007WsZq8/TEBzZbzoQP5zLyzW3xzDSg3IXXi6wunocqhaqeeL+cLJbngFa2/HHqedjXnk2SfDia/p4U02blKvodDAFF5Jhq6S731ibVHV5iZoQOeuK/D4MZYmu/s/gHwaqVw8iUMyhs3pp7+TZsMqXNdarMwLhL0G0s6/HL8c+kVjbKukkJ3DCm4rOoBjqxAdpLFYHyiDGDGRvAs3/9fOPTu2DP3rgWxWVNPq5rEIexBDe3WRrTBDfTWweyXlJu3Y4K7whbnXgYKnMdqw2brAE9UmStqkz9pisAkDdCpBPpKYL4BwN6PHxgXzUCt1g+x0xhk4skBqR83nsuhtMQyeTCiYcZdTWSpdmKPXTMcr/Mt2JBPGwc3d9bbeyFeWiQDaL/2DXhLJ1NG/k5bZU5zpivCYC3gtxtDa04wWl+EYVV6A==', 'Authorization': b'AWS4-HMAC-SHA256 Credential=ASIA3U2VRQ7OJOLN2SAT/20230922/us-east-1/sqs/aws4_request, SignedHeaders=content-type;host;x-amz-date;x-amz-security-token, Signature=5247275fa44cf0444abb01e6f9fdaf9494ff467f26eada1960432193737086af', 'amz-sdk-invocation-id': b'87f56701-b137-4eb0-b1e3-1f1db66873eb', 'amz-sdk-request': b'attempt=1', 'Content-Length': '58'}>
+DEBUG:botocore.httpsession:Certificate path: /etc/ssl/certs/ca-certificates.crt
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): sqs.us-east-1.amazonaws.com:443
+DEBUG:urllib3.connectionpool:https://sqs.us-east-1.amazonaws.com:443 "POST / HTTP/1.1" 200 330
+DEBUG:botocore.parsers:Response headers: {'x-amzn-RequestId': 'b5f5bcbf-6c00-5984-8b31-e13999d21972', 'Date': 'Fri, 22 Sep 2023 01:53:22 GMT', 'Content-Type': 'text/xml', 'Content-Length': '330', 'connection': 'keep-alive'}
+DEBUG:botocore.parsers:Response body:
+b'<?xml version="1.0"?><GetQueueUrlResponse xmlns="http://queue.amazonaws.com/doc/2012-11-05/"><GetQueueUrlResult><QueueUrl>https://sqs.us-east-1.amazonaws.com/800653936604/InputQueue</QueueUrl></GetQueueUrlResult><ResponseMetadata><RequestId>b5f5bcbf-6c00-5984-8b31-e13999d21972</RequestId></ResponseMetadata></GetQueueUrlResponse>'
+DEBUG:botocore.hooks:Event needs-retry.sqs.GetQueueUrl: calling handler <botocore.retryhandler.RetryHandler object at 0x7fabf7d77cd0>
+DEBUG:botocore.retryhandler:No retry needed.
+DEBUG:boto3.resources.action:Response: {'QueueUrl': 'https://sqs.us-east-1.amazonaws.com/800653936604/InputQueue', 'ResponseMetadata': {'RequestId': 'b5f5bcbf-6c00-5984-8b31-e13999d21972', 'HTTPStatusCode': 200, 'HTTPHeaders': {'x-amzn-requestid': 'b5f5bcbf-6c00-5984-8b31-e13999d21972', 'date': 'Fri, 22 Sep 2023 01:53:22 GMT', 'content-type': 'text/xml', 'content-length': '330', 'connection': 'keep-alive'}, 'RetryAttempts': 0}}
+DEBUG:boto3.resources.factory:Loading sqs:Queue
+DEBUG:boto3.resources.action:Calling sqs:get_queue_url with {'QueueName': 'OutputQueue'}
+DEBUG:botocore.hooks:Event before-parameter-build.sqs.GetQueueUrl: calling handler <function generate_idempotent_uuid at 0x7fabf7fe5510>
+DEBUG:botocore.regions:Calling endpoint provider with parameters: {'Region': 'us-east-1', 'UseDualStack': False, 'UseFIPS': False}
+DEBUG:botocore.regions:Endpoint provider result: https://sqs.us-east-1.amazonaws.com
+DEBUG:botocore.hooks:Event before-call.sqs.GetQueueUrl: calling handler <function add_recursion_detection_header at 0x7fabf7fe51b0>
+DEBUG:botocore.hooks:Event before-call.sqs.GetQueueUrl: calling handler <function inject_api_version_header_if_needed at 0x7fabf7fe6d40>
+DEBUG:botocore.endpoint:Making request for OperationModel(name=GetQueueUrl) with params: {'url_path': '/', 'query_string': '', 'method': 'POST', 'headers': {'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8', 'User-Agent': 'Boto3/1.28.52 md/Botocore#1.31.52 ua/2.0 os/linux#6.2.0-1009-aws md/arch#x86_64 lang/python#3.10.12 md/pyimpl#CPython cfg/retry-mode#legacy Botocore/1.31.52 Resource'}, 'body': {'Action': 'GetQueueUrl', 'Version': '2012-11-05', 'QueueName': 'OutputQueue'}, 'url': 'https://sqs.us-east-1.amazonaws.com/', 'context': {'client_region': 'us-east-1', 'client_config': <botocore.config.Config object at 0x7fabf7d76740>, 'has_streaming_input': False, 'auth_type': None}}
+DEBUG:botocore.hooks:Event request-created.sqs.GetQueueUrl: calling handler <bound method RequestSigner.handler of <botocore.signers.RequestSigner object at 0x7fabf7d75000>>
+DEBUG:botocore.hooks:Event choose-signer.sqs.GetQueueUrl: calling handler <function set_operation_specific_signer at 0x7fabf7fe53f0>
+DEBUG:botocore.auth:Calculating signature using v4 auth.
+DEBUG:botocore.auth:CanonicalRequest:
+POST
+/
+
+content-type:application/x-www-form-urlencoded; charset=utf-8
+host:sqs.us-east-1.amazonaws.com
+x-amz-date:20230922T015322Z
+x-amz-security-token:IQoJb3JpZ2luX2VjEBIaCXVzLWVhc3QtMSJHMEUCIQC7qUE5bYV4NTLDCNsztZfS+p3VBwtpyw2GTSUipTjaVQIgKwn8cXWhQxiApiVUmW0HvY5B9cK6RCspzkCtcUBbgl4qwwUI+///////////ARAAGgw4MDA2NTM5MzY2MDQiDFkZBOAhw3e68VR16CqXBaWaVwgUQkxt/PZNBVmXOjWjVATXeJ3aEypYD6zvXziQo2+TcuMEUaxzdiQ/wk+XznOjC9f/2rs00iPoTuUwGbUy6RuUXCeX2Ndc1+oJS+wT9tvy8qw5EQOeZTglqaCwK6Dx5t8PLRimXgM7qBonYrbT1oQSINLXtd+6Up5gMnWgB1jezaELkxP8zeUqBfI2VOyik8nXUeCpwbDRyQ/1C7bQV66uv/1/zT0pT2IE1x9Va0IKT38Y8F3Nd/ITRDFzplgAhT8NvkhpIMoXotO8DG1nIQbhgJSr4Mn7XFijFoO+f4t8GiLw1LBvqid54Uv8NmoDdtSWaZfyWUuaR+o6hOVtM6AltmR4qRTPMze3CrEvUKVMclKph00rhKMUZdS+qSUbNGU5d6D+OGXXUP+0ec4q/8j7dVXcjzq0Y4qIQ9y7u+XD7fwf1p9MsOJtMzMOPIV+4NJTXes3zbzEW3fivB7hqoR68Im0fN/0ZigPRrlJEG+9MsmIdWA2VamXsgu7cwjk8hxIYp2g0r6FNb3E45cBxoaRLsRTOdMs8tI2CUxKCG6IVytvn+gMEuD3fV+CfSyUd0dXOx0I5rYELrGAPo+hivVNaoNBTSWyb44F0phs+Kv5eNZ0ssu77tyHap6SSRY2HXjaND2aScABHcX8tSJ+vEga0SpxK8cpIWAtuCyFAml+wNJR+UFccSRzJo1og007WsZq8/TEBzZbzoQP5zLyzW3xzDSg3IXXi6wunocqhaqeeL+cLJbngFa2/HHqedjXnk2SfDia/p4U02blKvodDAFF5Jhq6S731ibVHV5iZoQOeuK/D4MZYmu/s/gHwaqVw8iUMyhs3pp7+TZsMqXNdarMwLhL0G0s6/HL8c+kVjbKukkJ3DCm4rOoBjqxAdpLFYHyiDGDGRvAs3/9fOPTu2DP3rgWxWVNPq5rEIexBDe3WRrTBDfTWweyXlJu3Y4K7whbnXgYKnMdqw2brAE9UmStqkz9pisAkDdCpBPpKYL4BwN6PHxgXzUCt1g+x0xhk4skBqR83nsuhtMQyeTCiYcZdTWSpdmKPXTMcr/Mt2JBPGwc3d9bbeyFeWiQDaL/2DXhLJ1NG/k5bZU5zpivCYC3gtxtDa04wWl+EYVV6A==
+
+content-type;host;x-amz-date;x-amz-security-token
+e34c9a41733b1a5a48016c390dd3c065aa2f5129b60229bbfb6f005ce1afc443
+DEBUG:botocore.auth:StringToSign:
+AWS4-HMAC-SHA256
+20230922T015322Z
+20230922/us-east-1/sqs/aws4_request
+28df5ae8112d86ae69bf6211b26d40764192872d4021a45d34c5eecdc9a2123a
+DEBUG:botocore.auth:Signature:
+c6edbd1c58009d402de9dfd6f3568479d966f9d08b0beb33552e1ec8c30b4aeb
+DEBUG:botocore.hooks:Event request-created.sqs.GetQueueUrl: calling handler <function add_retry_headers at 0x7fabf7fe7400>
+DEBUG:botocore.endpoint:Sending http request: <AWSPreparedRequest stream_output=False, method=POST, url=https://sqs.us-east-1.amazonaws.com/, headers={'Content-Type': b'application/x-www-form-urlencoded; charset=utf-8', 'User-Agent': b'Boto3/1.28.52 md/Botocore#1.31.52 ua/2.0 os/linux#6.2.0-1009-aws md/arch#x86_64 lang/python#3.10.12 md/pyimpl#CPython cfg/retry-mode#legacy Botocore/1.31.52 Resource', 'X-Amz-Date': b'20230922T015322Z', 'X-Amz-Security-Token': b'IQoJb3JpZ2luX2VjEBIaCXVzLWVhc3QtMSJHMEUCIQC7qUE5bYV4NTLDCNsztZfS+p3VBwtpyw2GTSUipTjaVQIgKwn8cXWhQxiApiVUmW0HvY5B9cK6RCspzkCtcUBbgl4qwwUI+///////////ARAAGgw4MDA2NTM5MzY2MDQiDFkZBOAhw3e68VR16CqXBaWaVwgUQkxt/PZNBVmXOjWjVATXeJ3aEypYD6zvXziQo2+TcuMEUaxzdiQ/wk+XznOjC9f/2rs00iPoTuUwGbUy6RuUXCeX2Ndc1+oJS+wT9tvy8qw5EQOeZTglqaCwK6Dx5t8PLRimXgM7qBonYrbT1oQSINLXtd+6Up5gMnWgB1jezaELkxP8zeUqBfI2VOyik8nXUeCpwbDRyQ/1C7bQV66uv/1/zT0pT2IE1x9Va0IKT38Y8F3Nd/ITRDFzplgAhT8NvkhpIMoXotO8DG1nIQbhgJSr4Mn7XFijFoO+f4t8GiLw1LBvqid54Uv8NmoDdtSWaZfyWUuaR+o6hOVtM6AltmR4qRTPMze3CrEvUKVMclKph00rhKMUZdS+qSUbNGU5d6D+OGXXUP+0ec4q/8j7dVXcjzq0Y4qIQ9y7u+XD7fwf1p9MsOJtMzMOPIV+4NJTXes3zbzEW3fivB7hqoR68Im0fN/0ZigPRrlJEG+9MsmIdWA2VamXsgu7cwjk8hxIYp2g0r6FNb3E45cBxoaRLsRTOdMs8tI2CUxKCG6IVytvn+gMEuD3fV+CfSyUd0dXOx0I5rYELrGAPo+hivVNaoNBTSWyb44F0phs+Kv5eNZ0ssu77tyHap6SSRY2HXjaND2aScABHcX8tSJ+vEga0SpxK8cpIWAtuCyFAml+wNJR+UFccSRzJo1og007WsZq8/TEBzZbzoQP5zLyzW3xzDSg3IXXi6wunocqhaqeeL+cLJbngFa2/HHqedjXnk2SfDia/p4U02blKvodDAFF5Jhq6S731ibVHV5iZoQOeuK/D4MZYmu/s/gHwaqVw8iUMyhs3pp7+TZsMqXNdarMwLhL0G0s6/HL8c+kVjbKukkJ3DCm4rOoBjqxAdpLFYHyiDGDGRvAs3/9fOPTu2DP3rgWxWVNPq5rEIexBDe3WRrTBDfTWweyXlJu3Y4K7whbnXgYKnMdqw2brAE9UmStqkz9pisAkDdCpBPpKYL4BwN6PHxgXzUCt1g+x0xhk4skBqR83nsuhtMQyeTCiYcZdTWSpdmKPXTMcr/Mt2JBPGwc3d9bbeyFeWiQDaL/2DXhLJ1NG/k5bZU5zpivCYC3gtxtDa04wWl+EYVV6A==', 'Authorization': b'AWS4-HMAC-SHA256 Credential=ASIA3U2VRQ7OJOLN2SAT/20230922/us-east-1/sqs/aws4_request, SignedHeaders=content-type;host;x-amz-date;x-amz-security-token, Signature=c6edbd1c58009d402de9dfd6f3568479d966f9d08b0beb33552e1ec8c30b4aeb', 'amz-sdk-invocation-id': b'143f09f4-0767-47a0-9961-dcb719f9c49a', 'amz-sdk-request': b'attempt=1', 'Content-Length': '59'}>
+DEBUG:botocore.httpsession:Certificate path: /etc/ssl/certs/ca-certificates.crt
+DEBUG:urllib3.connectionpool:https://sqs.us-east-1.amazonaws.com:443 "POST / HTTP/1.1" 200 331
+DEBUG:botocore.parsers:Response headers: {'x-amzn-RequestId': '003b5a2f-3e77-5d55-8f35-07a9cba52da3', 'Date': 'Fri, 22 Sep 2023 01:53:22 GMT', 'Content-Type': 'text/xml', 'Content-Length': '331', 'connection': 'keep-alive'}
+DEBUG:botocore.parsers:Response body:
+b'<?xml version="1.0"?><GetQueueUrlResponse xmlns="http://queue.amazonaws.com/doc/2012-11-05/"><GetQueueUrlResult><QueueUrl>https://sqs.us-east-1.amazonaws.com/800653936604/OutputQueue</QueueUrl></GetQueueUrlResult><ResponseMetadata><RequestId>003b5a2f-3e77-5d55-8f35-07a9cba52da3</RequestId></ResponseMetadata></GetQueueUrlResponse>'
+DEBUG:botocore.hooks:Event needs-retry.sqs.GetQueueUrl: calling handler <botocore.retryhandler.RetryHandler object at 0x7fabf7d77cd0>
+DEBUG:botocore.retryhandler:No retry needed.
+DEBUG:boto3.resources.action:Response: {'QueueUrl': 'https://sqs.us-east-1.amazonaws.com/800653936604/OutputQueue', 'ResponseMetadata': {'RequestId': '003b5a2f-3e77-5d55-8f35-07a9cba52da3', 'HTTPStatusCode': 200, 'HTTPHeaders': {'x-amzn-requestid': '003b5a2f-3e77-5d55-8f35-07a9cba52da3', 'date': 'Fri, 22 Sep 2023 01:53:22 GMT', 'content-type': 'text/xml', 'content-length': '331', 'connection': 'keep-alive'}, 'RetryAttempts': 0}}
+DEBUG:boto3.resources.factory:Loading sqs:Queue
+DEBUG:boto3.resources.action:Calling sqs:receive_message with {'QueueUrl': 'https://sqs.us-east-1.amazonaws.com/800653936604/InputQueue'}
+DEBUG:botocore.hooks:Event before-parameter-build.sqs.ReceiveMessage: calling handler <function generate_idempotent_uuid at 0x7fabf7fe5510>
+DEBUG:botocore.regions:Calling endpoint provider with parameters: {'Region': 'us-east-1', 'UseDualStack': False, 'UseFIPS': False}
+DEBUG:botocore.regions:Endpoint provider result: https://sqs.us-east-1.amazonaws.com
+DEBUG:botocore.hooks:Event before-call.sqs.ReceiveMessage: calling handler <function add_recursion_detection_header at 0x7fabf7fe51b0>
+DEBUG:botocore.hooks:Event before-call.sqs.ReceiveMessage: calling handler <function inject_api_version_header_if_needed at 0x7fabf7fe6d40>
+DEBUG:botocore.endpoint:Making request for OperationModel(name=ReceiveMessage) with params: {'url_path': '/', 'query_string': '', 'method': 'POST', 'headers': {'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8', 'User-Agent': 'Boto3/1.28.52 md/Botocore#1.31.52 ua/2.0 os/linux#6.2.0-1009-aws md/arch#x86_64 lang/python#3.10.12 md/pyimpl#CPython cfg/retry-mode#legacy Botocore/1.31.52 Resource'}, 'body': {'Action': 'ReceiveMessage', 'Version': '2012-11-05', 'QueueUrl': 'https://sqs.us-east-1.amazonaws.com/800653936604/InputQueue'}, 'url': 'https://sqs.us-east-1.amazonaws.com/', 'context': {'client_region': 'us-east-1', 'client_config': <botocore.config.Config object at 0x7fabf7d76740>, 'has_streaming_input': False, 'auth_type': None}}
+DEBUG:botocore.hooks:Event request-created.sqs.ReceiveMessage: calling handler <bound method RequestSigner.handler of <botocore.signers.RequestSigner object at 0x7fabf7d75000>>
+DEBUG:botocore.hooks:Event choose-signer.sqs.ReceiveMessage: calling handler <function set_operation_specific_signer at 0x7fabf7fe53f0>
+DEBUG:botocore.auth:Calculating signature using v4 auth.
+DEBUG:botocore.auth:CanonicalRequest:
+POST
+/
+
+content-type:application/x-www-form-urlencoded; charset=utf-8
+host:sqs.us-east-1.amazonaws.com
+x-amz-date:20230922T015322Z
+x-amz-security-token:IQoJb3JpZ2luX2VjEBIaCXVzLWVhc3QtMSJHMEUCIQC7qUE5bYV4NTLDCNsztZfS+p3VBwtpyw2GTSUipTjaVQIgKwn8cXWhQxiApiVUmW0HvY5B9cK6RCspzkCtcUBbgl4qwwUI+///////////ARAAGgw4MDA2NTM5MzY2MDQiDFkZBOAhw3e68VR16CqXBaWaVwgUQkxt/PZNBVmXOjWjVATXeJ3aEypYD6zvXziQo2+TcuMEUaxzdiQ/wk+XznOjC9f/2rs00iPoTuUwGbUy6RuUXCeX2Ndc1+oJS+wT9tvy8qw5EQOeZTglqaCwK6Dx5t8PLRimXgM7qBonYrbT1oQSINLXtd+6Up5gMnWgB1jezaELkxP8zeUqBfI2VOyik8nXUeCpwbDRyQ/1C7bQV66uv/1/zT0pT2IE1x9Va0IKT38Y8F3Nd/ITRDFzplgAhT8NvkhpIMoXotO8DG1nIQbhgJSr4Mn7XFijFoO+f4t8GiLw1LBvqid54Uv8NmoDdtSWaZfyWUuaR+o6hOVtM6AltmR4qRTPMze3CrEvUKVMclKph00rhKMUZdS+qSUbNGU5d6D+OGXXUP+0ec4q/8j7dVXcjzq0Y4qIQ9y7u+XD7fwf1p9MsOJtMzMOPIV+4NJTXes3zbzEW3fivB7hqoR68Im0fN/0ZigPRrlJEG+9MsmIdWA2VamXsgu7cwjk8hxIYp2g0r6FNb3E45cBxoaRLsRTOdMs8tI2CUxKCG6IVytvn+gMEuD3fV+CfSyUd0dXOx0I5rYELrGAPo+hivVNaoNBTSWyb44F0phs+Kv5eNZ0ssu77tyHap6SSRY2HXjaND2aScABHcX8tSJ+vEga0SpxK8cpIWAtuCyFAml+wNJR+UFccSRzJo1og007WsZq8/TEBzZbzoQP5zLyzW3xzDSg3IXXi6wunocqhaqeeL+cLJbngFa2/HHqedjXnk2SfDia/p4U02blKvodDAFF5Jhq6S731ibVHV5iZoQOeuK/D4MZYmu/s/gHwaqVw8iUMyhs3pp7+TZsMqXNdarMwLhL0G0s6/HL8c+kVjbKukkJ3DCm4rOoBjqxAdpLFYHyiDGDGRvAs3/9fOPTu2DP3rgWxWVNPq5rEIexBDe3WRrTBDfTWweyXlJu3Y4K7whbnXgYKnMdqw2brAE9UmStqkz9pisAkDdCpBPpKYL4BwN6PHxgXzUCt1g+x0xhk4skBqR83nsuhtMQyeTCiYcZdTWSpdmKPXTMcr/Mt2JBPGwc3d9bbeyFeWiQDaL/2DXhLJ1NG/k5bZU5zpivCYC3gtxtDa04wWl+EYVV6A==
+
+content-type;host;x-amz-date;x-amz-security-token
+efebb81553df6cac235a938df4b920d705bab2f76d1d5166451650efa6b7616b
+DEBUG:botocore.auth:StringToSign:
+AWS4-HMAC-SHA256
+20230922T015322Z
+20230922/us-east-1/sqs/aws4_request
+ca7f197353ca17c5fbcc2b90d9a2544d703b8c233d75ad1834d72878e650bfa8
+DEBUG:botocore.auth:Signature:
+d55933095c90e2df8d93acc7108052623001d32d342bdff41508a2dd18759eb8
+DEBUG:botocore.hooks:Event request-created.sqs.ReceiveMessage: calling handler <function add_retry_headers at 0x7fabf7fe7400>
+DEBUG:botocore.endpoint:Sending http request: <AWSPreparedRequest stream_output=False, method=POST, url=https://sqs.us-east-1.amazonaws.com/, headers={'Content-Type': b'application/x-www-form-urlencoded; charset=utf-8', 'User-Agent': b'Boto3/1.28.52 md/Botocore#1.31.52 ua/2.0 os/linux#6.2.0-1009-aws md/arch#x86_64 lang/python#3.10.12 md/pyimpl#CPython cfg/retry-mode#legacy Botocore/1.31.52 Resource', 'X-Amz-Date': b'20230922T015322Z', 'X-Amz-Security-Token': b'IQoJb3JpZ2luX2VjEBIaCXVzLWVhc3QtMSJHMEUCIQC7qUE5bYV4NTLDCNsztZfS+p3VBwtpyw2GTSUipTjaVQIgKwn8cXWhQxiApiVUmW0HvY5B9cK6RCspzkCtcUBbgl4qwwUI+///////////ARAAGgw4MDA2NTM5MzY2MDQiDFkZBOAhw3e68VR16CqXBaWaVwgUQkxt/PZNBVmXOjWjVATXeJ3aEypYD6zvXziQo2+TcuMEUaxzdiQ/wk+XznOjC9f/2rs00iPoTuUwGbUy6RuUXCeX2Ndc1+oJS+wT9tvy8qw5EQOeZTglqaCwK6Dx5t8PLRimXgM7qBonYrbT1oQSINLXtd+6Up5gMnWgB1jezaELkxP8zeUqBfI2VOyik8nXUeCpwbDRyQ/1C7bQV66uv/1/zT0pT2IE1x9Va0IKT38Y8F3Nd/ITRDFzplgAhT8NvkhpIMoXotO8DG1nIQbhgJSr4Mn7XFijFoO+f4t8GiLw1LBvqid54Uv8NmoDdtSWaZfyWUuaR+o6hOVtM6AltmR4qRTPMze3CrEvUKVMclKph00rhKMUZdS+qSUbNGU5d6D+OGXXUP+0ec4q/8j7dVXcjzq0Y4qIQ9y7u+XD7fwf1p9MsOJtMzMOPIV+4NJTXes3zbzEW3fivB7hqoR68Im0fN/0ZigPRrlJEG+9MsmIdWA2VamXsgu7cwjk8hxIYp2g0r6FNb3E45cBxoaRLsRTOdMs8tI2CUxKCG6IVytvn+gMEuD3fV+CfSyUd0dXOx0I5rYELrGAPo+hivVNaoNBTSWyb44F0phs+Kv5eNZ0ssu77tyHap6SSRY2HXjaND2aScABHcX8tSJ+vEga0SpxK8cpIWAtuCyFAml+wNJR+UFccSRzJo1og007WsZq8/TEBzZbzoQP5zLyzW3xzDSg3IXXi6wunocqhaqeeL+cLJbngFa2/HHqedjXnk2SfDia/p4U02blKvodDAFF5Jhq6S731ibVHV5iZoQOeuK/D4MZYmu/s/gHwaqVw8iUMyhs3pp7+TZsMqXNdarMwLhL0G0s6/HL8c+kVjbKukkJ3DCm4rOoBjqxAdpLFYHyiDGDGRvAs3/9fOPTu2DP3rgWxWVNPq5rEIexBDe3WRrTBDfTWweyXlJu3Y4K7whbnXgYKnMdqw2brAE9UmStqkz9pisAkDdCpBPpKYL4BwN6PHxgXzUCt1g+x0xhk4skBqR83nsuhtMQyeTCiYcZdTWSpdmKPXTMcr/Mt2JBPGwc3d9bbeyFeWiQDaL/2DXhLJ1NG/k5bZU5zpivCYC3gtxtDa04wWl+EYVV6A==', 'Authorization': b'AWS4-HMAC-SHA256 Credential=ASIA3U2VRQ7OJOLN2SAT/20230922/us-east-1/sqs/aws4_request, SignedHeaders=content-type;host;x-amz-date;x-amz-security-token, Signature=d55933095c90e2df8d93acc7108052623001d32d342bdff41508a2dd18759eb8', 'amz-sdk-invocation-id': b'e3cf8359-9d0e-4fa2-a661-7c9aa41848df', 'amz-sdk-request': b'attempt=1', 'Content-Length': '119'}>
+DEBUG:botocore.httpsession:Certificate path: /etc/ssl/certs/ca-certificates.crt
+DEBUG:urllib3.connectionpool:https://sqs.us-east-1.amazonaws.com:443 "POST / HTTP/1.1" 200 831
+DEBUG:botocore.parsers:Response headers: {'x-amzn-RequestId': '583aae65-643e-5a47-8aa1-f3e391ec3ab1', 'Date': 'Fri, 22 Sep 2023 01:53:22 GMT', 'Content-Type': 'text/xml', 'Content-Length': '831', 'connection': 'keep-alive'}
+DEBUG:botocore.parsers:Response body:
+b'<?xml version="1.0"?><ReceiveMessageResponse xmlns="http://queue.amazonaws.com/doc/2012-11-05/"><ReceiveMessageResult><Message><MessageId>4e807621-eb9f-493d-8ea8-2ef7864647a9</MessageId><ReceiptHandle>AQEB+pJxQA9kMc6BrIxcIxuMYEoEDCa7j0fT86sNL8eG9Tgk4M4Mv4H8W3idOnskm1sNz5Yj15xb+/dk4tPDtD4S9hTwAn07QuX3fWQjU9nabzTYKhXx6jBREucUDIqWraOVRJizdRrSNJSzTQ1EyA6ipyI6e4iCzvwCSxkINKzOvW+ZkikmfQblAD49UzPJty2A6SbBd9HCg0wNc5JYdI3e6pPyo4BEoVRHBvLhEVkTC1OqkPhHcg02pZlPddSPQqpujFDKg5x5y4psjr0czx4vE7AJhbK9RNqSIzpGK7XCOufGLyrc0nnyoRZf59oPt0AWBzPodIn7YOsstTUiLDBhe1JbKQTAge7ue/Kan+dSrjVIFIExdFYZ0VGnczuLhPDE</ReceiptHandle><MD5OfBody>098f6bcd4621d373cade4e832627b4f6</MD5OfBody><Body>test</Body></Message></ReceiveMessageResult><ResponseMetadata><RequestId>583aae65-643e-5a47-8aa1-f3e391ec3ab1</RequestId></ResponseMetadata></ReceiveMessageResponse>'
+DEBUG:botocore.hooks:Event needs-retry.sqs.ReceiveMessage: calling handler <botocore.retryhandler.RetryHandler object at 0x7fabf7d77cd0>
+DEBUG:botocore.retryhandler:No retry needed.
+DEBUG:boto3.resources.action:Response: {'Messages': [{'MessageId': '4e807621-eb9f-493d-8ea8-2ef7864647a9', 'ReceiptHandle': 'AQEB+pJxQA9kMc6BrIxcIxuMYEoEDCa7j0fT86sNL8eG9Tgk4M4Mv4H8W3idOnskm1sNz5Yj15xb+/dk4tPDtD4S9hTwAn07QuX3fWQjU9nabzTYKhXx6jBREucUDIqWraOVRJizdRrSNJSzTQ1EyA6ipyI6e4iCzvwCSxkINKzOvW+ZkikmfQblAD49UzPJty2A6SbBd9HCg0wNc5JYdI3e6pPyo4BEoVRHBvLhEVkTC1OqkPhHcg02pZlPddSPQqpujFDKg5x5y4psjr0czx4vE7AJhbK9RNqSIzpGK7XCOufGLyrc0nnyoRZf59oPt0AWBzPodIn7YOsstTUiLDBhe1JbKQTAge7ue/Kan+dSrjVIFIExdFYZ0VGnczuLhPDE', 'MD5OfBody': '098f6bcd4621d373cade4e832627b4f6', 'Body': 'test'}], 'ResponseMetadata': {'RequestId': '583aae65-643e-5a47-8aa1-f3e391ec3ab1', 'HTTPStatusCode': 200, 'HTTPHeaders': {'x-amzn-requestid': '583aae65-643e-5a47-8aa1-f3e391ec3ab1', 'date': 'Fri, 22 Sep 2023 01:53:22 GMT', 'content-type': 'text/xml', 'content-length': '831', 'connection': 'keep-alive'}, 'RetryAttempts': 0}}
+DEBUG:boto3.resources.factory:Loading sqs:Message
+DEBUG:boto3.resources.model:Renaming Message attribute receipt_handle
+DEBUG:boto3.resources.action:Calling sqs:delete_message with {'QueueUrl': 'https://sqs.us-east-1.amazonaws.com/800653936604/InputQueue', 'ReceiptHandle': 'AQEB+pJxQA9kMc6BrIxcIxuMYEoEDCa7j0fT86sNL8eG9Tgk4M4Mv4H8W3idOnskm1sNz5Yj15xb+/dk4tPDtD4S9hTwAn07QuX3fWQjU9nabzTYKhXx6jBREucUDIqWraOVRJizdRrSNJSzTQ1EyA6ipyI6e4iCzvwCSxkINKzOvW+ZkikmfQblAD49UzPJty2A6SbBd9HCg0wNc5JYdI3e6pPyo4BEoVRHBvLhEVkTC1OqkPhHcg02pZlPddSPQqpujFDKg5x5y4psjr0czx4vE7AJhbK9RNqSIzpGK7XCOufGLyrc0nnyoRZf59oPt0AWBzPodIn7YOsstTUiLDBhe1JbKQTAge7ue/Kan+dSrjVIFIExdFYZ0VGnczuLhPDE'}
+DEBUG:botocore.hooks:Event before-parameter-build.sqs.DeleteMessage: calling handler <function generate_idempotent_uuid at 0x7fabf7fe5510>
+DEBUG:botocore.regions:Calling endpoint provider with parameters: {'Region': 'us-east-1', 'UseDualStack': False, 'UseFIPS': False}
+DEBUG:botocore.regions:Endpoint provider result: https://sqs.us-east-1.amazonaws.com
+DEBUG:botocore.hooks:Event before-call.sqs.DeleteMessage: calling handler <function add_recursion_detection_header at 0x7fabf7fe51b0>
+DEBUG:botocore.hooks:Event before-call.sqs.DeleteMessage: calling handler <function inject_api_version_header_if_needed at 0x7fabf7fe6d40>
+DEBUG:botocore.endpoint:Making request for OperationModel(name=DeleteMessage) with params: {'url_path': '/', 'query_string': '', 'method': 'POST', 'headers': {'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8', 'User-Agent': 'Boto3/1.28.52 md/Botocore#1.31.52 ua/2.0 os/linux#6.2.0-1009-aws md/arch#x86_64 lang/python#3.10.12 md/pyimpl#CPython cfg/retry-mode#legacy Botocore/1.31.52 Resource'}, 'body': {'Action': 'DeleteMessage', 'Version': '2012-11-05', 'QueueUrl': 'https://sqs.us-east-1.amazonaws.com/800653936604/InputQueue', 'ReceiptHandle': 'AQEB+pJxQA9kMc6BrIxcIxuMYEoEDCa7j0fT86sNL8eG9Tgk4M4Mv4H8W3idOnskm1sNz5Yj15xb+/dk4tPDtD4S9hTwAn07QuX3fWQjU9nabzTYKhXx6jBREucUDIqWraOVRJizdRrSNJSzTQ1EyA6ipyI6e4iCzvwCSxkINKzOvW+ZkikmfQblAD49UzPJty2A6SbBd9HCg0wNc5JYdI3e6pPyo4BEoVRHBvLhEVkTC1OqkPhHcg02pZlPddSPQqpujFDKg5x5y4psjr0czx4vE7AJhbK9RNqSIzpGK7XCOufGLyrc0nnyoRZf59oPt0AWBzPodIn7YOsstTUiLDBhe1JbKQTAge7ue/Kan+dSrjVIFIExdFYZ0VGnczuLhPDE'}, 'url': 'https://sqs.us-east-1.amazonaws.com/', 'context': {'client_region': 'us-east-1', 'client_config': <botocore.config.Config object at 0x7fabf7d76740>, 'has_streaming_input': False, 'auth_type': None}}
+DEBUG:botocore.hooks:Event request-created.sqs.DeleteMessage: calling handler <bound method RequestSigner.handler of <botocore.signers.RequestSigner object at 0x7fabf7d75000>>
+DEBUG:botocore.hooks:Event choose-signer.sqs.DeleteMessage: calling handler <function set_operation_specific_signer at 0x7fabf7fe53f0>
+DEBUG:botocore.auth:Calculating signature using v4 auth.
+DEBUG:botocore.auth:CanonicalRequest:
+POST
+/
+
+content-type:application/x-www-form-urlencoded; charset=utf-8
+host:sqs.us-east-1.amazonaws.com
+x-amz-date:20230922T015322Z
+x-amz-security-token:IQoJb3JpZ2luX2VjEBIaCXVzLWVhc3QtMSJHMEUCIQC7qUE5bYV4NTLDCNsztZfS+p3VBwtpyw2GTSUipTjaVQIgKwn8cXWhQxiApiVUmW0HvY5B9cK6RCspzkCtcUBbgl4qwwUI+///////////ARAAGgw4MDA2NTM5MzY2MDQiDFkZBOAhw3e68VR16CqXBaWaVwgUQkxt/PZNBVmXOjWjVATXeJ3aEypYD6zvXziQo2+TcuMEUaxzdiQ/wk+XznOjC9f/2rs00iPoTuUwGbUy6RuUXCeX2Ndc1+oJS+wT9tvy8qw5EQOeZTglqaCwK6Dx5t8PLRimXgM7qBonYrbT1oQSINLXtd+6Up5gMnWgB1jezaELkxP8zeUqBfI2VOyik8nXUeCpwbDRyQ/1C7bQV66uv/1/zT0pT2IE1x9Va0IKT38Y8F3Nd/ITRDFzplgAhT8NvkhpIMoXotO8DG1nIQbhgJSr4Mn7XFijFoO+f4t8GiLw1LBvqid54Uv8NmoDdtSWaZfyWUuaR+o6hOVtM6AltmR4qRTPMze3CrEvUKVMclKph00rhKMUZdS+qSUbNGU5d6D+OGXXUP+0ec4q/8j7dVXcjzq0Y4qIQ9y7u+XD7fwf1p9MsOJtMzMOPIV+4NJTXes3zbzEW3fivB7hqoR68Im0fN/0ZigPRrlJEG+9MsmIdWA2VamXsgu7cwjk8hxIYp2g0r6FNb3E45cBxoaRLsRTOdMs8tI2CUxKCG6IVytvn+gMEuD3fV+CfSyUd0dXOx0I5rYELrGAPo+hivVNaoNBTSWyb44F0phs+Kv5eNZ0ssu77tyHap6SSRY2HXjaND2aScABHcX8tSJ+vEga0SpxK8cpIWAtuCyFAml+wNJR+UFccSRzJo1og007WsZq8/TEBzZbzoQP5zLyzW3xzDSg3IXXi6wunocqhaqeeL+cLJbngFa2/HHqedjXnk2SfDia/p4U02blKvodDAFF5Jhq6S731ibVHV5iZoQOeuK/D4MZYmu/s/gHwaqVw8iUMyhs3pp7+TZsMqXNdarMwLhL0G0s6/HL8c+kVjbKukkJ3DCm4rOoBjqxAdpLFYHyiDGDGRvAs3/9fOPTu2DP3rgWxWVNPq5rEIexBDe3WRrTBDfTWweyXlJu3Y4K7whbnXgYKnMdqw2brAE9UmStqkz9pisAkDdCpBPpKYL4BwN6PHxgXzUCt1g+x0xhk4skBqR83nsuhtMQyeTCiYcZdTWSpdmKPXTMcr/Mt2JBPGwc3d9bbeyFeWiQDaL/2DXhLJ1NG/k5bZU5zpivCYC3gtxtDa04wWl+EYVV6A==
+
+content-type;host;x-amz-date;x-amz-security-token
+5e0ddaf08bb520716b42d5e23a5715871c18559326f1c7c297d84316470a6a12
+DEBUG:botocore.auth:StringToSign:
+AWS4-HMAC-SHA256
+20230922T015322Z
+20230922/us-east-1/sqs/aws4_request
+a6ea44dec40fefc9c243e8e7841f0c6566623f7d681f1d497748b002550a61bc
+DEBUG:botocore.auth:Signature:
+643c007c5846ec6e389fb48651b4b536b70fbe1c2acdd419f07ac71ca62e3048
+DEBUG:botocore.hooks:Event request-created.sqs.DeleteMessage: calling handler <function add_retry_headers at 0x7fabf7fe7400>
+DEBUG:botocore.endpoint:Sending http request: <AWSPreparedRequest stream_output=False, method=POST, url=https://sqs.us-east-1.amazonaws.com/, headers={'Content-Type': b'application/x-www-form-urlencoded; charset=utf-8', 'User-Agent': b'Boto3/1.28.52 md/Botocore#1.31.52 ua/2.0 os/linux#6.2.0-1009-aws md/arch#x86_64 lang/python#3.10.12 md/pyimpl#CPython cfg/retry-mode#legacy Botocore/1.31.52 Resource', 'X-Amz-Date': b'20230922T015322Z', 'X-Amz-Security-Token': b'IQoJb3JpZ2luX2VjEBIaCXVzLWVhc3QtMSJHMEUCIQC7qUE5bYV4NTLDCNsztZfS+p3VBwtpyw2GTSUipTjaVQIgKwn8cXWhQxiApiVUmW0HvY5B9cK6RCspzkCtcUBbgl4qwwUI+///////////ARAAGgw4MDA2NTM5MzY2MDQiDFkZBOAhw3e68VR16CqXBaWaVwgUQkxt/PZNBVmXOjWjVATXeJ3aEypYD6zvXziQo2+TcuMEUaxzdiQ/wk+XznOjC9f/2rs00iPoTuUwGbUy6RuUXCeX2Ndc1+oJS+wT9tvy8qw5EQOeZTglqaCwK6Dx5t8PLRimXgM7qBonYrbT1oQSINLXtd+6Up5gMnWgB1jezaELkxP8zeUqBfI2VOyik8nXUeCpwbDRyQ/1C7bQV66uv/1/zT0pT2IE1x9Va0IKT38Y8F3Nd/ITRDFzplgAhT8NvkhpIMoXotO8DG1nIQbhgJSr4Mn7XFijFoO+f4t8GiLw1LBvqid54Uv8NmoDdtSWaZfyWUuaR+o6hOVtM6AltmR4qRTPMze3CrEvUKVMclKph00rhKMUZdS+qSUbNGU5d6D+OGXXUP+0ec4q/8j7dVXcjzq0Y4qIQ9y7u+XD7fwf1p9MsOJtMzMOPIV+4NJTXes3zbzEW3fivB7hqoR68Im0fN/0ZigPRrlJEG+9MsmIdWA2VamXsgu7cwjk8hxIYp2g0r6FNb3E45cBxoaRLsRTOdMs8tI2CUxKCG6IVytvn+gMEuD3fV+CfSyUd0dXOx0I5rYELrGAPo+hivVNaoNBTSWyb44F0phs+Kv5eNZ0ssu77tyHap6SSRY2HXjaND2aScABHcX8tSJ+vEga0SpxK8cpIWAtuCyFAml+wNJR+UFccSRzJo1og007WsZq8/TEBzZbzoQP5zLyzW3xzDSg3IXXi6wunocqhaqeeL+cLJbngFa2/HHqedjXnk2SfDia/p4U02blKvodDAFF5Jhq6S731ibVHV5iZoQOeuK/D4MZYmu/s/gHwaqVw8iUMyhs3pp7+TZsMqXNdarMwLhL0G0s6/HL8c+kVjbKukkJ3DCm4rOoBjqxAdpLFYHyiDGDGRvAs3/9fOPTu2DP3rgWxWVNPq5rEIexBDe3WRrTBDfTWweyXlJu3Y4K7whbnXgYKnMdqw2brAE9UmStqkz9pisAkDdCpBPpKYL4BwN6PHxgXzUCt1g+x0xhk4skBqR83nsuhtMQyeTCiYcZdTWSpdmKPXTMcr/Mt2JBPGwc3d9bbeyFeWiQDaL/2DXhLJ1NG/k5bZU5zpivCYC3gtxtDa04wWl+EYVV6A==', 'Authorization': b'AWS4-HMAC-SHA256 Credential=ASIA3U2VRQ7OJOLN2SAT/20230922/us-east-1/sqs/aws4_request, SignedHeaders=content-type;host;x-amz-date;x-amz-security-token, Signature=643c007c5846ec6e389fb48651b4b536b70fbe1c2acdd419f07ac71ca62e3048', 'amz-sdk-invocation-id': b'f348b400-3b49-42d3-9d76-8d54e29eaa29', 'amz-sdk-request': b'attempt=1', 'Content-Length': '533'}>
+DEBUG:botocore.httpsession:Certificate path: /etc/ssl/certs/ca-certificates.crt
+DEBUG:urllib3.connectionpool:https://sqs.us-east-1.amazonaws.com:443 "POST / HTTP/1.1" 200 215
+DEBUG:botocore.parsers:Response headers: {'x-amzn-RequestId': '1b1bef1c-a850-54e0-9346-b29a5d82c416', 'Date': 'Fri, 22 Sep 2023 01:53:22 GMT', 'Content-Type': 'text/xml', 'Content-Length': '215', 'connection': 'keep-alive'}
+DEBUG:botocore.parsers:Response body:
+b'<?xml version="1.0"?><DeleteMessageResponse xmlns="http://queue.amazonaws.com/doc/2012-11-05/"><ResponseMetadata><RequestId>1b1bef1c-a850-54e0-9346-b29a5d82c416</RequestId></ResponseMetadata></DeleteMessageResponse>'
+DEBUG:botocore.hooks:Event needs-retry.sqs.DeleteMessage: calling handler <botocore.retryhandler.RetryHandler object at 0x7fabf7d77cd0>
+DEBUG:botocore.retryhandler:No retry needed.
+DEBUG:boto3.resources.action:Response: {'ResponseMetadata': {'RequestId': '1b1bef1c-a850-54e0-9346-b29a5d82c416', 'HTTPStatusCode': 200, 'HTTPHeaders': {'x-amzn-requestid': '1b1bef1c-a850-54e0-9346-b29a5d82c416', 'date': 'Fri, 22 Sep 2023 01:53:22 GMT', 'content-type': 'text/xml', 'content-length': '215', 'connection': 'keep-alive'}, 'RetryAttempts': 0}}
+DEBUG:boto3.resources.action:Calling sqs:receive_message with {'QueueUrl': 'https://sqs.us-east-1.amazonaws.com/800653936604/InputQueue'}
+DEBUG:botocore.hooks:Event before-parameter-build.sqs.ReceiveMessage: calling handler <function generate_idempotent_uuid at 0x7fabf7fe5510>
+DEBUG:botocore.regions:Calling endpoint provider with parameters: {'Region': 'us-east-1', 'UseDualStack': False, 'UseFIPS': False}
+DEBUG:botocore.regions:Endpoint provider result: https://sqs.us-east-1.amazonaws.com
+DEBUG:botocore.hooks:Event before-call.sqs.ReceiveMessage: calling handler <function add_recursion_detection_header at 0x7fabf7fe51b0>
+DEBUG:botocore.hooks:Event before-call.sqs.ReceiveMessage: calling handler <function inject_api_version_header_if_needed at 0x7fabf7fe6d40>
+DEBUG:botocore.endpoint:Making request for OperationModel(name=ReceiveMessage) with params: {'url_path': '/', 'query_string': '', 'method': 'POST', 'headers': {'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8', 'User-Agent': 'Boto3/1.28.52 md/Botocore#1.31.52 ua/2.0 os/linux#6.2.0-1009-aws md/arch#x86_64 lang/python#3.10.12 md/pyimpl#CPython cfg/retry-mode#legacy Botocore/1.31.52 Resource'}, 'body': {'Action': 'ReceiveMessage', 'Version': '2012-11-05', 'QueueUrl': 'https://sqs.us-east-1.amazonaws.com/800653936604/InputQueue'}, 'url': 'https://sqs.us-east-1.amazonaws.com/', 'context': {'client_region': 'us-east-1', 'client_config': <botocore.config.Config object at 0x7fabf7d76740>, 'has_streaming_input': False, 'auth_type': None}}
+DEBUG:botocore.hooks:Event request-created.sqs.ReceiveMessage: calling handler <bound method RequestSigner.handler of <botocore.signers.RequestSigner object at 0x7fabf7d75000>>
+DEBUG:botocore.hooks:Event choose-signer.sqs.ReceiveMessage: calling handler <function set_operation_specific_signer at 0x7fabf7fe53f0>
+DEBUG:botocore.auth:Calculating signature using v4 auth.
+DEBUG:botocore.auth:CanonicalRequest:
+POST
+/
+
+content-type:application/x-www-form-urlencoded; charset=utf-8
+host:sqs.us-east-1.amazonaws.com
+x-amz-date:20230922T015322Z
+x-amz-security-token:IQoJb3JpZ2luX2VjEBIaCXVzLWVhc3QtMSJHMEUCIQC7qUE5bYV4NTLDCNsztZfS+p3VBwtpyw2GTSUipTjaVQIgKwn8cXWhQxiApiVUmW0HvY5B9cK6RCspzkCtcUBbgl4qwwUI+///////////ARAAGgw4MDA2NTM5MzY2MDQiDFkZBOAhw3e68VR16CqXBaWaVwgUQkxt/PZNBVmXOjWjVATXeJ3aEypYD6zvXziQo2+TcuMEUaxzdiQ/wk+XznOjC9f/2rs00iPoTuUwGbUy6RuUXCeX2Ndc1+oJS+wT9tvy8qw5EQOeZTglqaCwK6Dx5t8PLRimXgM7qBonYrbT1oQSINLXtd+6Up5gMnWgB1jezaELkxP8zeUqBfI2VOyik8nXUeCpwbDRyQ/1C7bQV66uv/1/zT0pT2IE1x9Va0IKT38Y8F3Nd/ITRDFzplgAhT8NvkhpIMoXotO8DG1nIQbhgJSr4Mn7XFijFoO+f4t8GiLw1LBvqid54Uv8NmoDdtSWaZfyWUuaR+o6hOVtM6AltmR4qRTPMze3CrEvUKVMclKph00rhKMUZdS+qSUbNGU5d6D+OGXXUP+0ec4q/8j7dVXcjzq0Y4qIQ9y7u+XD7fwf1p9MsOJtMzMOPIV+4NJTXes3zbzEW3fivB7hqoR68Im0fN/0ZigPRrlJEG+9MsmIdWA2VamXsgu7cwjk8hxIYp2g0r6FNb3E45cBxoaRLsRTOdMs8tI2CUxKCG6IVytvn+gMEuD3fV+CfSyUd0dXOx0I5rYELrGAPo+hivVNaoNBTSWyb44F0phs+Kv5eNZ0ssu77tyHap6SSRY2HXjaND2aScABHcX8tSJ+vEga0SpxK8cpIWAtuCyFAml+wNJR+UFccSRzJo1og007WsZq8/TEBzZbzoQP5zLyzW3xzDSg3IXXi6wunocqhaqeeL+cLJbngFa2/HHqedjXnk2SfDia/p4U02blKvodDAFF5Jhq6S731ibVHV5iZoQOeuK/D4MZYmu/s/gHwaqVw8iUMyhs3pp7+TZsMqXNdarMwLhL0G0s6/HL8c+kVjbKukkJ3DCm4rOoBjqxAdpLFYHyiDGDGRvAs3/9fOPTu2DP3rgWxWVNPq5rEIexBDe3WRrTBDfTWweyXlJu3Y4K7whbnXgYKnMdqw2brAE9UmStqkz9pisAkDdCpBPpKYL4BwN6PHxgXzUCt1g+x0xhk4skBqR83nsuhtMQyeTCiYcZdTWSpdmKPXTMcr/Mt2JBPGwc3d9bbeyFeWiQDaL/2DXhLJ1NG/k5bZU5zpivCYC3gtxtDa04wWl+EYVV6A==
+
+content-type;host;x-amz-date;x-amz-security-token
+efebb81553df6cac235a938df4b920d705bab2f76d1d5166451650efa6b7616b
+DEBUG:botocore.auth:StringToSign:
+AWS4-HMAC-SHA256
+20230922T015322Z
+20230922/us-east-1/sqs/aws4_request
+ca7f197353ca17c5fbcc2b90d9a2544d703b8c233d75ad1834d72878e650bfa8
+DEBUG:botocore.auth:Signature:
+d55933095c90e2df8d93acc7108052623001d32d342bdff41508a2dd18759eb8
+DEBUG:botocore.hooks:Event request-created.sqs.ReceiveMessage: calling handler <function add_retry_headers at 0x7fabf7fe7400>
+DEBUG:botocore.endpoint:Sending http request: <AWSPreparedRequest stream_output=False, method=POST, url=https://sqs.us-east-1.amazonaws.com/, headers={'Content-Type': b'application/x-www-form-urlencoded; charset=utf-8', 'User-Agent': b'Boto3/1.28.52 md/Botocore#1.31.52 ua/2.0 os/linux#6.2.0-1009-aws md/arch#x86_64 lang/python#3.10.12 md/pyimpl#CPython cfg/retry-mode#legacy Botocore/1.31.52 Resource', 'X-Amz-Date': b'20230922T015322Z', 'X-Amz-Security-Token': b'IQoJb3JpZ2luX2VjEBIaCXVzLWVhc3QtMSJHMEUCIQC7qUE5bYV4NTLDCNsztZfS+p3VBwtpyw2GTSUipTjaVQIgKwn8cXWhQxiApiVUmW0HvY5B9cK6RCspzkCtcUBbgl4qwwUI+///////////ARAAGgw4MDA2NTM5MzY2MDQiDFkZBOAhw3e68VR16CqXBaWaVwgUQkxt/PZNBVmXOjWjVATXeJ3aEypYD6zvXziQo2+TcuMEUaxzdiQ/wk+XznOjC9f/2rs00iPoTuUwGbUy6RuUXCeX2Ndc1+oJS+wT9tvy8qw5EQOeZTglqaCwK6Dx5t8PLRimXgM7qBonYrbT1oQSINLXtd+6Up5gMnWgB1jezaELkxP8zeUqBfI2VOyik8nXUeCpwbDRyQ/1C7bQV66uv/1/zT0pT2IE1x9Va0IKT38Y8F3Nd/ITRDFzplgAhT8NvkhpIMoXotO8DG1nIQbhgJSr4Mn7XFijFoO+f4t8GiLw1LBvqid54Uv8NmoDdtSWaZfyWUuaR+o6hOVtM6AltmR4qRTPMze3CrEvUKVMclKph00rhKMUZdS+qSUbNGU5d6D+OGXXUP+0ec4q/8j7dVXcjzq0Y4qIQ9y7u+XD7fwf1p9MsOJtMzMOPIV+4NJTXes3zbzEW3fivB7hqoR68Im0fN/0ZigPRrlJEG+9MsmIdWA2VamXsgu7cwjk8hxIYp2g0r6FNb3E45cBxoaRLsRTOdMs8tI2CUxKCG6IVytvn+gMEuD3fV+CfSyUd0dXOx0I5rYELrGAPo+hivVNaoNBTSWyb44F0phs+Kv5eNZ0ssu77tyHap6SSRY2HXjaND2aScABHcX8tSJ+vEga0SpxK8cpIWAtuCyFAml+wNJR+UFccSRzJo1og007WsZq8/TEBzZbzoQP5zLyzW3xzDSg3IXXi6wunocqhaqeeL+cLJbngFa2/HHqedjXnk2SfDia/p4U02blKvodDAFF5Jhq6S731ibVHV5iZoQOeuK/D4MZYmu/s/gHwaqVw8iUMyhs3pp7+TZsMqXNdarMwLhL0G0s6/HL8c+kVjbKukkJ3DCm4rOoBjqxAdpLFYHyiDGDGRvAs3/9fOPTu2DP3rgWxWVNPq5rEIexBDe3WRrTBDfTWweyXlJu3Y4K7whbnXgYKnMdqw2brAE9UmStqkz9pisAkDdCpBPpKYL4BwN6PHxgXzUCt1g+x0xhk4skBqR83nsuhtMQyeTCiYcZdTWSpdmKPXTMcr/Mt2JBPGwc3d9bbeyFeWiQDaL/2DXhLJ1NG/k5bZU5zpivCYC3gtxtDa04wWl+EYVV6A==', 'Authorization': b'AWS4-HMAC-SHA256 Credential=ASIA3U2VRQ7OJOLN2SAT/20230922/us-east-1/sqs/aws4_request, SignedHeaders=content-type;host;x-amz-date;x-amz-security-token, Signature=d55933095c90e2df8d93acc7108052623001d32d342bdff41508a2dd18759eb8', 'amz-sdk-invocation-id': b'd61f98d8-bf4e-498c-9ffd-7c0ed20b449e', 'amz-sdk-request': b'attempt=1', 'Content-Length': '119'}>
+DEBUG:botocore.httpsession:Certificate path: /etc/ssl/certs/ca-certificates.crt
+DEBUG:urllib3.connectionpool:https://sqs.us-east-1.amazonaws.com:443 "POST / HTTP/1.1" 200 240
+DEBUG:botocore.parsers:Response headers: {'x-amzn-RequestId': '7c1eea98-2913-51c7-88fc-b71edcc1d131', 'Date': 'Fri, 22 Sep 2023 01:53:22 GMT', 'Content-Type': 'text/xml', 'Content-Length': '240', 'connection': 'keep-alive'}
+DEBUG:botocore.parsers:Response body:
+b'<?xml version="1.0"?><ReceiveMessageResponse xmlns="http://queue.amazonaws.com/doc/2012-11-05/"><ReceiveMessageResult/><ResponseMetadata><RequestId>7c1eea98-2913-51c7-88fc-b71edcc1d131</RequestId></ResponseMetadata></ReceiveMessageResponse>'
+DEBUG:botocore.hooks:Event needs-retry.sqs.ReceiveMessage: calling handler <botocore.retryhandler.RetryHandler object at 0x7fabf7d77cd0>
+DEBUG:botocore.retryhandler:No retry needed.
+DEBUG:boto3.resources.action:Response: {'ResponseMetadata': {'RequestId': '7c1eea98-2913-51c7-88fc-b71edcc1d131', 'HTTPStatusCode': 200, 'HTTPHeaders': {'x-amzn-requestid': '7c1eea98-2913-51c7-88fc-b71edcc1d131', 'date': 'Fri, 22 Sep 2023 01:53:22 GMT', 'content-type': 'text/xml', 'content-length': '240', 'connection': 'keep-alive'}, 'RetryAttempts': 0}}
+DEBUG:boto3.resources.factory:Loading sqs:Message
+DEBUG:boto3.resources.model:Renaming Message attribute receipt_handle
