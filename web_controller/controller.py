@@ -47,10 +47,10 @@ def autoScaler():
         try:
             response = ec2.terminate_instances(
                 InstanceIds = stopped_instances 
-            )
-            
+            )            
         except:
             print("Termination failed, will terminate in next iteration")
+        return
 
     # max number of machines is limited to 12
     machines_needed = min(message_count_in_queue // 4, 12)
