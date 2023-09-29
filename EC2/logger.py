@@ -14,7 +14,8 @@
 
 from datetime import datetime
 
-file = './EC2/logs.txt'
+root_dir = '/home/ubuntu/app-tier/CC-1'
+file = root_dir + '/EC2/logs.txt'
 
 def log(level, message):
     fh = open(file, 'a')

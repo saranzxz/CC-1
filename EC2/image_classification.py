@@ -14,7 +14,7 @@ import time
 
 model = models.resnet18(pretrained=True)
 model.eval()
-
+root_dir = '/home/ubuntu/app-tier/CC-1'
 
 def predict(path):
     img = Image.open(path)
@@ -22,7 +22,7 @@ def predict(path):
     outputs = model(img_tensor)
     _, predicted = torch.max(outputs.data, 1)
 
-    with open('EC2/imagenet-labels.json') as f:
+    with open(root_dir + '/EC2/imagenet-labels.json') as f:
         labels = json.load(f)
     result = labels[np.array(predicted)[0]]
     img_name = path.split("/")[-1]
