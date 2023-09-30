@@ -3,21 +3,23 @@ import os
 import schedule
 import time
 
+#Stuff to move to envs
 os.environ["AWS_PROFILE"] = "local Windows"
 os.environ["AWS_DEFAULT_REGION"] = "us-east-1"
+queue_url = "https://sqs.us-east-1.amazonaws.com/800653936604/InputQueue"
+scale_instance_ami_id = "ami-09263ecbca3666094"
 
 def autoScaler():
     # Create SQS client
     sqs = boto3.client("sqs")
-    queue_url = "https://sqs.us-east-1.amazonaws.com/800653936604/InputQueue"
 
     queue_attributes = sqs.get_queue_attributes(QueueUrl=queue_url, AttributeNames=["ApproximateNumberOfMessages"])
     message_count_in_queue = queue_attributes["Attributes"]["ApproximateNumberOfMessages"]
 
 
     # Create EC2 client
-    ec2 = boto3.client("ec2")     
-    instances = ec2.describe_instances(Filters=[
+    ec2_client = boto3.client("ec2")     
+    instances = ec2_client.describe_instances(Filters=[
                 {
                     'Name': 'instance-state-name',
                     'Values': ['running','stopped','pending','stopping']
@@ -45,7 +47,7 @@ def autoScaler():
 
     if(message_count_in_queue == 0):
         try:
-            response = ec2.terminate_instances(
+            response = ec2_client.terminate_instances(
                 InstanceIds = stopped_instances 
             )            
         except:
@@ -56,7 +58,7 @@ def autoScaler():
     machines_needed = min(message_count_in_queue // 4, 12)
     machines_needed -= len(running_instances)
     try:
-        response = ec2.start_instances(
+        response = ec2_client.start_instances(
             InstanceIds = stopped_instances,
         )
         machines_needed -= len(stopped_instances)
@@ -64,8 +66,12 @@ def autoScaler():
         pass
 
     if(machines_needed > 0 ):
-        #create new instances
-        pass
+        ec2_resource = boto3.resource('ec2')
+        new_instance = ec2_resource.create_instances(
+            ImageId=scale_instance_ami_id,
+            MinCount=machines_needed,
+            MaxCount=machines_needed,
+        )
      
 
 schedule.every(1).minutes.do(autoScaler)
