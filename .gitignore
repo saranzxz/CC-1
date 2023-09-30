@@ -1,3 +1,5 @@
 aws
 awscliv2.zip
 EC2/logs.txt
+/uploads/
+node_modules
