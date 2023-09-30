@@ -57,9 +57,17 @@ def autoScaler():
     # max number of machines is limited to 12
     machines_needed = min(message_count_in_queue // 4, 12)
     machines_needed -= len(running_instances)
+    machines_to_start = []
+    if(machines_needed <= len(stopped_instances)):
+        machines_to_start = stopped_instances[:machines_needed]
+        machines_needed = 0
+    else:
+        machines_to_start = stopped_instances
+        machines_needed -=len(stopped_instances)
+
     try:
         response = ec2_client.start_instances(
-            InstanceIds = stopped_instances,
+            InstanceIds = machines_to_start,
         )
         machines_needed -= len(stopped_instances)
     except:
