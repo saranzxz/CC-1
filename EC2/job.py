@@ -56,8 +56,7 @@ while True:
         # res = subprocess.run(['python3 ../image_classification.py {}'.format(id)], shell = True,\
         # capture_output = True, text = True)
         # print(res.stdout)
-        res = predict(id)
-        print(res)
+        res = predict(root_dir + id)
         log('INFO', 'message: {} predicted as: {}'.format(id, res))
 
         # Store result in output S3 bucket
@@ -70,7 +69,7 @@ while True:
         log('INFO', 'message: {} deleted'.format(id))
 
         # Delete locally stored image to save space
-        os.remove(id)
+        os.remove(root_dir + id)
         log('INFO', 'Locally saved file {} removed'.format(id))
     except Exception as e:
         # Delete message if any issue encountered
