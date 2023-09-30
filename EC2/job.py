@@ -12,6 +12,7 @@ def parseImageID(id):
     else:
         return -1
 
+root_dir = '/home/ubuntu/app-tier/CC-1/'
 
 # Get resources
 sqs = boto3.resource('sqs', region_name = 'us-east-1')
@@ -46,7 +47,7 @@ while True:
         
         obj = s3.get_object(Bucket = 'input-bucket-zxz', Key = id)
         img = obj['Body'].read()
-        outfh = open(id, 'wb')
+        outfh = open(root_dir + id, 'wb')
         outfh.write(img)
         outfh.close()
 
@@ -74,8 +75,6 @@ while True:
     except Exception as e:
         # Delete message if any issue encountered
         log('ERROR', str(e))
-        message.delete()
-        log('INFO', 'message: {} deleted'.format(id))
 
 # Stop the instance
 # ec2.stop_instances(InstanceIds = [ec2_metadata.instance_id], DryRun = False)
