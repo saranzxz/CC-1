@@ -11,17 +11,21 @@ const port = 3000;
 const s3 = new S3Client({ region: 'us-east-1' });
 const sqsInput = new SQS({ region: 'us-east-1' });
 const sqsOutput = new SQS({ region: 'us-east-1' });
-const upload = multer({ dest: 'uploads/' });
-
+// const upload = multer({ dest: 'uploads/' });
+const upload = multer({storage: multer.memoryStorage()});
 const inputQueueUrl = 'https://sqs.us-east-1.amazonaws.com/800653936604/InputQueue';
 const outputQueueUrl = 'https://sqs.us-east-1.amazonaws.com/800653936604/OutputQueue';
 
 const pendingResponses = new Map();
 const requestTimeout = 30000; // 30 seconds
 
+const generateUniqueCorrelationId = () => {
+  return Date.now().toString(36) + Math.random().toString(36).slice(2);
+}
+
 server.use(express.json());
 
-server.post('/upload', upload.single('image'), async (req, res) => {
+server.post('/upload', upload.single('myfile'), async (req, res) => {
   try {
     console.log('Request received');
 
@@ -30,7 +34,6 @@ server.post('/upload', upload.single('image'), async (req, res) => {
     }
 
     const correlationId = generateUniqueCorrelationId();
-    console.log(correlationId);
 
     const s3Params = {
       Bucket: 'input-bucket-zxz',
@@ -42,6 +45,7 @@ server.post('/upload', upload.single('image'), async (req, res) => {
       QueueUrl: inputQueueUrl,
       MessageBody: JSON.stringify({ imageName: s3Params.Key, correlationId }),
     };
+    
     await s3.send(new PutObjectCommand(s3Params));
     console.log('Uploaded image to input S3 bucket');
     await sqsInput.send(new SendMessageCommand(inputSqsParams));
@@ -109,8 +113,4 @@ pollOutputQueue();
 
 server.listen(port, hostname, () => {
   console.log(`Server running at http://${hostname}:${port}/`);
-}); 
-
-function generateUniqueCorrelationId() {
-  return Date.now().toString(36) + Math.random().toString(36).slice(2);
-}
+});
