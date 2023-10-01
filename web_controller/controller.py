@@ -69,7 +69,6 @@ def autoScaler():
         response = ec2_client.start_instances(
             InstanceIds = machines_to_start,
         )
-        machines_needed -= len(stopped_instances)
     except:
         pass
 
