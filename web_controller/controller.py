@@ -81,8 +81,8 @@ def autoScaler():
         )
      
 
-schedule.every(1).minutes.do(autoScaler)
+schedule.every(5).seconds.do(autoScaler)
   
 while True:
     schedule.run_pending()
-    time.sleep(5)
+    # time.sleep(5)
