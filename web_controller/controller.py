@@ -4,7 +4,6 @@ import schedule
 import time
 
 #Stuff to move to envs
-os.environ["AWS_PROFILE"] = "local Windows"
 os.environ["AWS_DEFAULT_REGION"] = "us-east-1"
 queue_url = "https://sqs.us-east-1.amazonaws.com/800653936604/InputQueue"
 scale_launch_template = {"LaunchTemplateName" : "scale-template-zxz"}
@@ -14,7 +13,7 @@ def autoScaler():
     sqs = boto3.client("sqs")
 
     queue_attributes = sqs.get_queue_attributes(QueueUrl=queue_url, AttributeNames=["ApproximateNumberOfMessages"])
-    message_count_in_queue = queue_attributes["Attributes"]["ApproximateNumberOfMessages"]
+    message_count_in_queue = int(queue_attributes["Attributes"]["ApproximateNumberOfMessages"])
 
 
     # Create EC2 client
@@ -81,7 +80,7 @@ def autoScaler():
         )
      
 
-schedule.every(5).seconds.do(autoScaler)
+schedule.every(3).seconds.do(autoScaler)
   
 while True:
     schedule.run_pending()
