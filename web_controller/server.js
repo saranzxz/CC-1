@@ -151,5 +151,5 @@ const pollOutputQueue = async () => {
 pollOutputQueue();
 
 server.listen(port, () => {
-  logger.info(`Server running at http://${hostname}:${port}/`);
+  logger.info(`Server running`);
 });
