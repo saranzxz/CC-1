@@ -15,7 +15,7 @@ const logger = winston.createLogger({
   ),
   transports: [
     new winston.transports.Console(),
-    new winston.transports.File({ filename: 'server.log', level: 'debug' }),
+    new winston.transports.File({ filename: '/home/ec2-user/CC-1/web_controller/server.log', level: 'debug' }),
   ],
 });
 
@@ -36,7 +36,7 @@ const generateUniqueCorrelationId = () => {
   return Date.now().toString(36) + Math.random().toString(36).slice(2);
 }
 
-const controllerScript = 'controller.py';
+const controllerScript = '/home/ec2-user/CC-1/web_controller/controller.py';
 const controllerProcess = spawn('python3', [controllerScript]);
 
 controllerProcess.stdout.on('data', (data) => {
