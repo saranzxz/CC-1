@@ -7,6 +7,25 @@ import time
 os.environ["AWS_DEFAULT_REGION"] = "us-east-1"
 queue_url = "https://sqs.us-east-1.amazonaws.com/800653936604/InputQueue"
 scale_launch_template = {"LaunchTemplateName" : "scale-template-zxz"}
+instance_number = 2
+
+def createInstanceFromTemplate(ec2_resource, instance_number):
+     ec2_resource.create_instances(
+            LaunchTemplate = scale_launch_template, 
+            MinCount=1,
+            MaxCount=1,
+            TagSpecifications=[
+                {
+                    'ResourceType': 'instance',
+                    'Tags': [
+                        {
+                            'Key': 'Name',
+                            'Value': 'app_instance'+ str(instance_number)
+                        },
+                    ]
+                }
+            ]
+        )
 
 def autoScaler():
     # Create SQS client
@@ -73,13 +92,10 @@ def autoScaler():
 
     if(machines_needed > 0 ):
         ec2_resource = boto3.resource('ec2')
-        new_instance = ec2_resource.create_instances(
-            LaunchTemplate = scale_launch_template, 
-            MinCount=machines_needed,
-            MaxCount=machines_needed,
-        )
+        for i in range(machines_needed):
+            createInstanceFromTemplate(ec2_resource= ec2_resource, instance_number= instance_number + i)
+        instance_number += machines_needed
      
-
 schedule.every(3).seconds.do(autoScaler)
   
 while True:
