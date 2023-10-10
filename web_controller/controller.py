@@ -28,6 +28,8 @@ def createInstanceFromTemplate(ec2_resource, instance_number):
         )
 
 def autoScaler():
+    global instance_number
+     
     # Create SQS client
     sqs = boto3.client("sqs")
 
@@ -96,7 +98,7 @@ def autoScaler():
             createInstanceFromTemplate(ec2_resource= ec2_resource, instance_number= instance_number + i)
         instance_number += machines_needed
      
-schedule.every(3).seconds.do(autoScaler)
+schedule.every(1).seconds.do(autoScaler)
   
 while True:
     schedule.run_pending()
