@@ -71,7 +71,7 @@ const launchEC2Instance = async () => {
       const upload = multer({storage: multer.memoryStorage()});
 
       const pendingResponses = new Map();
-      const requestTimeout = 60000; // 60 seconds
+      const requestTimeout = 600000; // 60 seconds
 
       const generateUniqueCorrelationId = () => {
         return Date.now().toString(36) + Math.random().toString(36).slice(2);
