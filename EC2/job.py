@@ -35,7 +35,6 @@ while True:
         message_sqs = queue_in.receive_messages()
 
         if not message_sqs:
-            time.sleep(2)
             continue
 
         message = json.loads(message_sqs[0].body)
